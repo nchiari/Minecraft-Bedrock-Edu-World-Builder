@@ -70,8 +70,8 @@ export const I18N = {
     "footer.feedback": "Enviar feedback"
   },
   en: {
-    "app.subtitle": "Upload your world and packs to create a new .mcworld ready to share.",
-    "help.open": "How to use",
+    "app.subtitle": "Build a new .mcworld file with embedded .mcpack/.mcaddon packs for Minecraft Bedrock and Education.",
+    "help.open": "How to use.",
     "help.title": "How to use this tool",
     "help.intro": "This tool combines your world and packs into one .mcworld file, so sharing is much easier.",
     "help.step1": "Upload your base .mcworld file.",
