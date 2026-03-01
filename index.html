@@ -17,8 +17,10 @@
 
   <header class="hero container">
     <h1 class="hero-title">Minecraft Bedrock/Edu World Builder</h1>
-    <p class="hero-subtitle" data-i18n="app.subtitle"></p>
-    <button id="howto-open" type="button" class="howto-link" data-i18n="help.open"></button>
+    <div class="hero-subline">
+      <p class="hero-subtitle" data-i18n="app.subtitle"></p>
+      <button id="howto-open" type="button" class="howto-link" data-i18n="help.open"></button>
+    </div>
 
     <div class="lang-switch" role="group" aria-label="Language selector">
       <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -78,9 +80,13 @@
     <div id="howto-overlay" class="modal-overlay"></div>
     <div class="modal-card">
       <h2 id="howto-title" data-i18n="help.title"></h2>
-      <p data-i18n="help.line1"></p>
-      <p data-i18n="help.line2"></p>
-      <p data-i18n="help.line3"></p>
+      <p class="modal-intro" data-i18n="help.intro"></p>
+      <ol class="modal-steps">
+        <li data-i18n="help.step1"></li>
+        <li data-i18n="help.step2"></li>
+        <li data-i18n="help.step3"></li>
+      </ol>
+      <p class="modal-note" data-i18n="help.note"></p>
       <button id="howto-close" type="button" class="btn btn-primary" data-i18n="help.close"></button>
     </div>
   </div>

@@ -86,13 +86,20 @@ body {
 }
 
 .hero-subtitle {
-  margin: 0.8rem 0 0;
-  max-width: 72ch;
+  margin: 0;
+  max-width: 66ch;
   color: var(--text-muted);
 }
 
+.hero-subline {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
 .howto-link {
-  margin-top: 0.4rem;
   padding: 0;
   border: 0;
   background: transparent;
@@ -378,9 +385,27 @@ body {
   font-family: "Syne", "Outfit", sans-serif;
 }
 
-.modal-card p {
-  margin: 0 0 0.55rem;
+.modal-intro {
+  margin: 0 0 0.7rem;
+  color: var(--text-main);
+}
+
+.modal-steps {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.modal-steps li {
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.modal-note {
+  margin: 0 0 0.8rem;
   color: var(--text-muted);
+  font-size: 0.93rem;
 }
 
 .footer a {
