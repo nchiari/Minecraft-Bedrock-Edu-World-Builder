@@ -204,7 +204,7 @@ async function compileWorld() {
 
     const { included, skipped } = filterDuplicatedPacks(packs, worldState.existingUuids);
     for (const skip of skipped) {
-      appendLog(t("log.skipDuplicate", { name: skip.displayName, uuid: skip.headerUuid }), "warn");
+      appendLog(t("log.skipDuplicate", { name: skip.displayName }), "warn");
     }
 
     const depResult = applyDependencyFixes(included);
@@ -218,6 +218,9 @@ async function compileWorld() {
     const placed = placePacksInWorld(worldZip, worldState, included);
     for (const item of placed) {
       appendLog(t("log.injectPack", { folder: item.targetFolder, name: item.displayName }));
+    }
+    for (const warning of worldState.folderWarnings) {
+      appendLog(t("log.folderConflict", { requested: warning.requested, assigned: warning.assigned }), "warn");
     }
 
     appendLog(t("log.writeWorldRefs"));
@@ -307,13 +310,18 @@ async function loadWorldState(worldZip) {
 
   const nextBp = findNextPackIndex(worldZip, "behavior");
   const nextRp = findNextPackIndex(worldZip, "resource");
+  const usedBehaviorFolders = collectExistingPackFolderNames(worldZip, "behavior");
+  const usedResourceFolders = collectExistingPackFolderNames(worldZip, "resource");
 
   return {
     behaviorRefs,
     resourceRefs,
     existingUuids,
     nextBp,
-    nextRp
+    nextRp,
+    usedBehaviorFolders,
+    usedResourceFolders,
+    folderWarnings: []
   };
 }
 
@@ -351,6 +359,22 @@ function findNextPackIndex(worldZip, type) {
     }
   }
   return maxFound + 1;
+}
+
+function collectExistingPackFolderNames(worldZip, type) {
+  const prefix = type === "behavior" ? "behavior_packs/" : "resource_packs/";
+  const out = new Set();
+  for (const key of Object.keys(worldZip.files)) {
+    if (!key.startsWith(prefix)) {
+      continue;
+    }
+    const rest = key.slice(prefix.length);
+    const firstSegment = rest.split("/")[0];
+    if (firstSegment) {
+      out.add(firstSegment);
+    }
+  }
+  return out;
 }
 
 async function extractPacks(packFiles) {
@@ -528,6 +552,7 @@ async function extractDirectPacksFromZip(options) {
     const files = await readPackFilesFromRoot(zip, root, excludeArchiveEntries);
     const manifestRelPath = normalizePackPath(manifestFile.name.slice(root.length));
     const packVersion = normalizeVersion(manifest?.header?.version);
+    const preferredFolderName = extractRootFolderName(root);
 
     packs.push({
       sourceId,
@@ -538,7 +563,8 @@ async function extractDirectPacksFromZip(options) {
       headerVersion: packVersion,
       manifest,
       manifestPath: manifestRelPath,
-      files
+      files,
+      preferredFolderName
     });
   }
 
@@ -607,6 +633,17 @@ function normalizePackPath(path) {
   const pathFixed = String(path).replace(/\\/g, "/");
   const cleanParts = pathFixed.split("/").filter((p) => p && p !== "." && p !== "..");
   return cleanParts.join("/");
+}
+
+function extractRootFolderName(root) {
+  if (!root) {
+    return null;
+  }
+  const normalized = normalizePackPath(root);
+  if (!normalized || normalized.includes("/")) {
+    return null;
+  }
+  return normalized;
 }
 
 function filterDuplicatedPacks(packs, existingUuids) {
@@ -722,7 +759,7 @@ function placePacksInWorld(worldZip, worldState, packs) {
   const placed = [];
 
   for (const pack of packs) {
-    const folderName = pack.type === "behavior" ? `bp${worldState.nextBp++}` : `rp${worldState.nextRp++}`;
+    const folderName = chooseTargetFolderName(pack, worldState);
     const basePath = pack.type === "behavior" ? "behavior_packs" : "resource_packs";
     const fullPrefix = `${basePath}/${folderName}`;
 
@@ -746,11 +783,52 @@ function placePacksInWorld(worldZip, worldState, packs) {
 
     placed.push({
       displayName: pack.displayName,
-      targetFolder: `${fullPrefix}/`
+      targetFolder: folderName
     });
   }
 
   return placed;
+}
+
+function chooseTargetFolderName(pack, worldState) {
+  const isBehavior = pack.type === "behavior";
+  const usedFolders = isBehavior ? worldState.usedBehaviorFolders : worldState.usedResourceFolders;
+
+  if (pack.preferredFolderName && !usedFolders.has(pack.preferredFolderName)) {
+    usedFolders.add(pack.preferredFolderName);
+    return pack.preferredFolderName;
+  }
+
+  if (pack.preferredFolderName && usedFolders.has(pack.preferredFolderName)) {
+    const assigned = getNextGeneratedFolder(isBehavior, worldState, usedFolders);
+    worldState.folderWarnings.push({
+      requested: pack.preferredFolderName,
+      assigned
+    });
+    return assigned;
+  }
+
+  return getNextGeneratedFolder(isBehavior, worldState, usedFolders);
+}
+
+function getNextGeneratedFolder(isBehavior, worldState, usedFolders) {
+  if (isBehavior) {
+    while (usedFolders.has(`bp${worldState.nextBp}`)) {
+      worldState.nextBp += 1;
+    }
+    const name = `bp${worldState.nextBp}`;
+    worldState.nextBp += 1;
+    usedFolders.add(name);
+    return name;
+  }
+
+  while (usedFolders.has(`rp${worldState.nextRp}`)) {
+    worldState.nextRp += 1;
+  }
+  const name = `rp${worldState.nextRp}`;
+  worldState.nextRp += 1;
+  usedFolders.add(name);
+  return name;
 }
 
 function writeWorldReferenceFiles(worldZip, worldState) {
