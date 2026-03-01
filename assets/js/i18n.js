@@ -1,6 +1,5 @@
 export const I18N = {
   es: {
-    "app.kicker": "Herramienta web local",
     "app.subtitle": "Sube tu mundo y tus packs para crear un nuevo .mcworld listo para compartir.",
     "upload.title": "Archivos",
     "upload.worldLabel": "Mundo base (.mcworld)",
@@ -50,10 +49,11 @@ export const I18N = {
     "error.noValidPacksInAddon": "No se detectaron packs validos dentro de: {file}.",
     "error.invalidPackAbort": "No se pudo crear el .mcworld porque un pack es invalido: {detail}",
     "success.summary": "Nuevo .mcworld creado: {name}. Packs agregados: {added}. Duplicados omitidos: {skipped}.",
-    "footer.note": "Todo se procesa en tu navegador. Ningun archivo se sube a servidores."
+    "footer.note": "Todo se procesa en tu navegador. Ningun archivo se sube a servidores.",
+    "footer.copyright": "Copyright Nico Chiari",
+    "footer.feedback": "Enviar feedback"
   },
   en: {
-    "app.kicker": "Local web tool",
     "app.subtitle": "Upload your world and packs to create a new .mcworld ready to share.",
     "upload.title": "Files",
     "upload.worldLabel": "Base world (.mcworld)",
@@ -103,6 +103,8 @@ export const I18N = {
     "error.noValidPacksInAddon": "No valid packs were found inside: {file}.",
     "error.invalidPackAbort": "Could not create the .mcworld because a pack is invalid: {detail}",
     "success.summary": "New .mcworld created: {name}. Added packs: {added}. Skipped duplicates: {skipped}.",
-    "footer.note": "Everything runs in your browser. No files are uploaded to servers."
+    "footer.note": "Everything runs in your browser. No files are uploaded to servers.",
+    "footer.copyright": "Copyright Nico Chiari",
+    "footer.feedback": "Send feedback"
   }
 };

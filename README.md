@@ -38,8 +38,8 @@ Todo el procesamiento ocurre en el navegador del usuario.
 
 En `assets/js/app.js`:
 
-- `maxWorldBytes`: 500 MB
-- `maxPacksBytes`: 500 MB (suma total)
+- `maxWorldBytes`: 150 MB
+- `maxPacksBytes`: 100 MB (suma total)
 
 ## Despliegue en GitHub Pages
 

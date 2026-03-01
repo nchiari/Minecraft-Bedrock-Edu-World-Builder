@@ -37,6 +37,49 @@ body {
     radial-gradient(circle at 88% 9%, rgba(84, 100, 255, 0.14), transparent 38%),
     linear-gradient(145deg, #222127 0%, #1b1a20 100%);
   line-height: 1.4;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.2;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 23px,
+      rgba(247, 247, 247, 0.06) 23px,
+      rgba(247, 247, 247, 0.06) 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 23px,
+      rgba(247, 247, 247, 0.06) 23px,
+      rgba(247, 247, 247, 0.06) 24px
+    );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 32vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.28;
+  background:
+    linear-gradient(to top, rgba(34, 69, 42, 0.9) 0 18%, transparent 48%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(88, 65, 40, 0.7) 0 32px,
+      rgba(79, 58, 35, 0.7) 32px 64px
+    );
 }
 
 .bg-shape {
@@ -44,7 +87,7 @@ body {
   inset: auto;
   pointer-events: none;
   z-index: -1;
-  filter: blur(3px);
+  filter: blur(1px);
 }
 
 .bg-shape-a {
@@ -52,7 +95,7 @@ body {
   height: 260px;
   top: 58px;
   right: 6%;
-  border-radius: 31% 69% 56% 44% / 30% 38% 62% 70%;
+  border-radius: 8px;
   background: linear-gradient(165deg, rgba(84, 100, 255, 0.3), rgba(84, 100, 255, 0.1));
   animation: floatA 10s ease-in-out infinite;
 }
@@ -62,7 +105,7 @@ body {
   height: 210px;
   bottom: 8%;
   left: 5%;
-  border-radius: 68% 32% 36% 64% / 58% 37% 63% 42%;
+  border-radius: 6px;
   background: linear-gradient(165deg, rgba(84, 100, 255, 0.24), rgba(84, 100, 255, 0.08));
   animation: floatB 12s ease-in-out infinite;
 }
@@ -77,20 +120,8 @@ body {
   animation: riseIn 480ms ease-out both;
 }
 
-.hero-kicker {
-  display: inline-block;
-  margin: 0;
-  font: 600 0.78rem/1 "Outfit", sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-main);
-  background: rgba(84, 100, 255, 0.15);
-  padding: 0.33rem 0.56rem;
-  border-radius: 999px;
-}
-
 .hero-title {
-  margin: 0.85rem 0 0;
+  margin: 0;
   font-family: "Syne", "Outfit", sans-serif;
   font-size: clamp(1.65rem, 4vw, 2.5rem);
   line-height: 1.1;
@@ -165,11 +196,33 @@ body {
 
 .field input[type="file"] {
   width: 100%;
-  border: 1px dashed rgba(0, 107, 95, 0.42);
+  border: 1px dashed rgba(84, 100, 255, 0.5);
   border-radius: var(--radius-md);
   background: var(--bg-card-strong);
-  padding: 0.68rem;
+  padding: 0.6rem;
   color: var(--text-main);
+}
+
+.field input[type="file"]::file-selector-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.6rem;
+  background: linear-gradient(150deg, var(--accent-main), #3949db);
+  color: #fff;
+  font: 600 0.86rem/1 "Outfit", sans-serif;
+  cursor: pointer;
+}
+
+.field input[type="file"]::-webkit-file-upload-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.6rem;
+  background: linear-gradient(150deg, var(--accent-main), #3949db);
+  color: #fff;
+  font: 600 0.86rem/1 "Outfit", sans-serif;
+  cursor: pointer;
 }
 
 .field-help {
@@ -302,6 +355,25 @@ body {
   padding: 0.2rem 0 2rem;
   color: var(--text-muted);
   font-size: 0.88rem;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--accent-main-strong);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-credit {
+  margin: 0.45rem 0 0;
+}
+
+.footer-sep {
+  opacity: 0.6;
+  margin: 0 0.3rem;
 }
 
 @media (max-width: 920px) {

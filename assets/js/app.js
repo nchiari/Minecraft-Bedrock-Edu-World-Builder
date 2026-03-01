@@ -2,8 +2,8 @@ import { I18N } from "./i18n.js";
 
 const MB = 1024 * 1024;
 const LIMITS = {
-  maxWorldBytes: 500 * MB,
-  maxPacksBytes: 500 * MB
+  maxWorldBytes: 150 * MB,
+  maxPacksBytes: 100 * MB
 };
 
 const state = {
@@ -49,7 +49,9 @@ function bindEvents() {
   });
 
   nodes.packsInput.addEventListener("change", () => {
-    state.packFiles = nodes.packsInput.files ? Array.from(nodes.packsInput.files) : [];
+    const newFiles = nodes.packsInput.files ? Array.from(nodes.packsInput.files) : [];
+    state.packFiles = mergePackFiles(state.packFiles, newFiles);
+    nodes.packsInput.value = "";
     refreshSelectedFiles();
     updateActionState();
   });
@@ -74,8 +76,7 @@ function bindEvents() {
 }
 
 function detectInitialLang() {
-  const lang = navigator.language ? navigator.language.toLowerCase() : "es";
-  return lang.startsWith("en") ? "en" : "es";
+  return "en";
 }
 
 function t(key, vars = {}) {
@@ -865,4 +866,22 @@ function formatBytes(bytes) {
     return `${(bytes / 1024).toFixed(1)} KB`;
   }
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function mergePackFiles(existingFiles, newFiles) {
+  const merged = [...existingFiles];
+  const seen = new Set(existingFiles.map(fileFingerprint));
+  for (const file of newFiles) {
+    const fingerprint = fileFingerprint(file);
+    if (seen.has(fingerprint)) {
+      continue;
+    }
+    seen.add(fingerprint);
+    merged.push(file);
+  }
+  return merged;
+}
+
+function fileFingerprint(file) {
+  return `${file.name}::${file.size}::${file.lastModified}`;
 }
