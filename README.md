@@ -1,60 +1,35 @@
 # Minecraft Bedrock/Edu World Builder
 
-Web app estatica para GitHub Pages que:
+This tool creates a new `.mcworld` file that already includes the `.mcpack` / `.mcaddon` files you want to use.
 
-- recibe 1 archivo `.mcworld`
-- recibe uno o varios `.mcpack` y/o `.mcaddon`
-- inserta los packs dentro de `behavior_packs/` y `resource_packs/` usando carpetas `bpX` / `rpX`
-- actualiza `world_behavior_packs.json` y `world_resource_packs.json`
-- corrige `dependencies` cuando detecta el pack complementario en la misma compilacion
-- genera y descarga un nuevo `*_compiled.mcworld`
+It is useful when you want to share one world file that works without asking other users to install packs separately.
 
-Todo el procesamiento ocurre en el navegador del usuario.
+## What This Tool Does
 
-## Estructura del proyecto
+- Takes one base `.mcworld` file
+- Takes one or more `.mcpack` and/or `.mcaddon` files
+- Merges valid packs into the world
+- Generates a new downloadable file: `*_compiled.mcworld`
 
-```text
-.
-├─ index.html
-├─ assets/
-│  ├─ css/
-│  │  └─ styles.css
-│  └─ js/
-│     ├─ app.js
-│     └─ i18n.js
-└─ Ejemplos/
-   └─ (archivos de referencia)
-```
+## How to Use
 
-## Reglas implementadas
+1. Upload your base `.mcworld` file.
+2. Upload your `.mcpack` and/or `.mcaddon` files.
+3. Click **Create new .mcworld**.
+4. When processing finishes, click **Download .mcworld**.
 
-- Si `behavior_packs` o `resource_packs` no existen en el `.mcworld`, se crean.
-- Si `world_behavior_packs.json` o `world_resource_packs.json` no existen, se crean como `[]`.
-- Si hay cualquier pack invalido (sin `manifest.json`, JSON roto, sin tipo compatible, etc.), se cancela toda la compilacion.
-- Si un pack nuevo repite `header.uuid` de un pack ya presente en el mundo, ese pack se omite.
-- Se conserva lo que ya trae el `.mcworld`; solo se agrega lo nuevo.
+## Important Notes
 
-## Limites recomendados (configurables)
+- If any uploaded pack is invalid, the tool stops and shows an error.
+- Existing content already present in your world is preserved.
+- Duplicate packs (same UUID) are skipped.
 
-En `assets/js/app.js`:
+## File Size Limits
 
-- `maxWorldBytes`: 150 MB
-- `maxPacksBytes`: 100 MB (suma total)
+- `.mcworld`: up to **150 MB**
+- Total `.mcpack` + `.mcaddon`: up to **100 MB**
 
-## Despliegue en GitHub Pages
+## Privacy
 
-1. Sube estos archivos a un repositorio.
-2. En GitHub: `Settings` -> `Pages`.
-3. En `Build and deployment`, selecciona:
-   - `Source`: `Deploy from a branch`
-   - `Branch`: la rama principal y carpeta `/ (root)`
-4. Guarda.
-5. GitHub publicara la app en una URL tipo:
-   - `https://TU-USUARIO.github.io/TU-REPO/`
-
-## Personalizacion de marca
-
-Si luego compartes tu branding (colores/fuentes/logo), se adapta desde:
-
-- variables CSS en `assets/css/styles.css` (`:root`)
-- textos en `assets/js/i18n.js`
+All processing happens in your browser.
+Your files are not uploaded to any server.
