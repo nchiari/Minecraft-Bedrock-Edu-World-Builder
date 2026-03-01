@@ -135,7 +135,7 @@ function applyI18n() {
     nodes.packsPickerText.textContent = t("upload.noPacksChosen");
   }
   if (state.generatedName) {
-    nodes.downloadNote.textContent = t("status.downloadReady", { name: state.generatedName });
+    nodes.downloadNote.textContent = t("status.downloadReady");
   }
 
   for (const button of nodes.langButtons) {
@@ -276,7 +276,7 @@ async function compileWorld() {
 
     state.generatedBlob = blob;
     state.generatedName = outputName;
-    nodes.downloadNote.textContent = t("status.downloadReady", { name: outputName });
+    nodes.downloadNote.textContent = t("status.downloadReady");
     nodes.downloadBox.hidden = false;
     setStatus("success", t("success.simple"));
   } catch (error) {

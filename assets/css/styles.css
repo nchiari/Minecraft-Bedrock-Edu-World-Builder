@@ -34,35 +34,7 @@ body {
   color: var(--text-main);
   background: linear-gradient(145deg, #222127 0%, #1b1a20 100%);
   line-height: 1.4;
-  position: relative;
   overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -2;
-  opacity: 0.14;
-  background:
-    linear-gradient(30deg, rgba(255, 255, 255, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.08) 87.5%, rgba(255, 255, 255, 0.08)),
-    linear-gradient(150deg, rgba(255, 255, 255, 0.08) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.08) 87.5%, rgba(255, 255, 255, 0.08)),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2%, transparent 2.5%, transparent 97%, rgba(255, 255, 255, 0.05) 97.5%, rgba(255, 255, 255, 0.05));
-  background-size: 80px 140px;
-  background-position: 0 0, 0 0, 40px 70px;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.08;
-  background:
-    radial-gradient(circle at 14% 22%, rgba(84, 100, 255, 0.28), transparent 43%),
-    radial-gradient(circle at 88% 9%, rgba(84, 100, 255, 0.18), transparent 38%);
 }
 
 .bg-shape {
@@ -70,27 +42,41 @@ body::after {
   inset: auto;
   pointer-events: none;
   z-index: -1;
-  filter: blur(1px);
+  width: 160px;
+  height: 160px;
+  transform: rotate(22deg);
+  animation: floatCube 11s ease-in-out infinite;
+}
+
+.bg-shape::before,
+.bg-shape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.bg-shape::before {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(84, 100, 255, 0.08));
+}
+
+.bg-shape::after {
+  transform: translate(12px, 12px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(84, 100, 255, 0.04));
 }
 
 .bg-shape-a {
-  width: 260px;
-  height: 260px;
-  top: 58px;
-  right: 6%;
-  border-radius: 8px;
-  background: linear-gradient(165deg, rgba(84, 100, 255, 0.3), rgba(84, 100, 255, 0.1));
-  animation: floatA 10s ease-in-out infinite;
+  top: 72px;
+  right: 7%;
 }
 
 .bg-shape-b {
-  width: 210px;
-  height: 210px;
-  bottom: 8%;
-  left: 5%;
-  border-radius: 6px;
-  background: linear-gradient(165deg, rgba(84, 100, 255, 0.24), rgba(84, 100, 255, 0.08));
-  animation: floatB 12s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+  bottom: 11%;
+  left: 6%;
+  transform: rotate(-18deg);
+  animation-duration: 13s;
 }
 
 .container {
@@ -280,6 +266,10 @@ body::after {
   box-shadow: 0 10px 28px rgba(84, 100, 255, 0.31);
 }
 
+#compile-btn {
+  box-shadow: none;
+}
+
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-1px);
 }
@@ -400,22 +390,12 @@ body::after {
   }
 }
 
-@keyframes floatA {
+@keyframes floatCube {
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(4deg);
-  }
-}
-
-@keyframes floatB {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(10px) rotate(-5deg);
+    transform: translateY(-10px) rotate(5deg);
   }
 }

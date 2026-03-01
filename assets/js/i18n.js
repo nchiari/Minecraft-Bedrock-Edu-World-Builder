@@ -6,8 +6,8 @@ export const I18N = {
     "upload.worldHelp": "Selecciona un archivo .mcworld.",
     "upload.packsLabel": "Packs y addons",
     "upload.packsHelp": "Puedes subir varios archivos .mcpack y/o .mcaddon.",
-    "upload.chooseWorld": "Elegir archivo",
-    "upload.choosePacks": "Agregar archivos",
+    "upload.chooseWorld": "Subir archivo",
+    "upload.choosePacks": "Subir archivo",
     "upload.noWorldChosen": "Ningun archivo seleccionado",
     "upload.noPacksChosen": "Ningun archivo seleccionado",
     "upload.packsChosenInline": "{count} archivo(s) seleccionados",
@@ -20,7 +20,7 @@ export const I18N = {
     "status.processing": "Procesando archivos...",
     "status.success": "Listo.",
     "status.error": "No se pudo completar.",
-    "status.downloadReady": "Archivo listo para descargar: {name}",
+    "status.downloadReady": "Archivo listo para descargar.",
     "status.worldFileSelected": "Mundo: {name} ({size})",
     "status.worldFileMissing": "Aun no seleccionaste un .mcworld.",
     "status.packsSelected": "Packs/addons: {count} archivo(s) ({size})",
@@ -58,7 +58,7 @@ export const I18N = {
     "success.simple": "¡Nuevo .mcworld creado!",
     "actions.download": "Descargar .mcworld",
     "footer.note": "Todo se procesa en tu navegador. Ningun archivo se sube a servidores.",
-    "footer.copyright": "Copyright Nico Chiari",
+    "footer.copyright": "Copyright Nico Chiari · Powered by ☕",
     "footer.feedback": "Enviar feedback"
   },
   en: {
@@ -82,7 +82,7 @@ export const I18N = {
     "status.processing": "Processing files...",
     "status.success": "Done.",
     "status.error": "Could not complete.",
-    "status.downloadReady": "File ready to download: {name}",
+    "status.downloadReady": "File ready to download.",
     "status.worldFileSelected": "World: {name} ({size})",
     "status.worldFileMissing": "You have not selected a .mcworld yet.",
     "status.packsSelected": "Packs/addons: {count} file(s) ({size})",
@@ -120,7 +120,7 @@ export const I18N = {
     "success.simple": "New .mcworld created!",
     "actions.download": "Download .mcworld",
     "footer.note": "Everything runs in your browser. No files are uploaded to servers.",
-    "footer.copyright": "Copyright Nico Chiari",
+    "footer.copyright": "Copyright Nico Chiari · Powered by ☕",
     "footer.feedback": "Send feedback"
   }
 };
