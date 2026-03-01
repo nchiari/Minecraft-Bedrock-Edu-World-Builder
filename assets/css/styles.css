@@ -100,7 +100,7 @@ body {
 
 .hero-subline {
   margin-top: 0.8rem;
-  max-width: 78ch;
+  max-width: none;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -120,6 +120,7 @@ body {
   font: 600 0.92rem/1.2 "Outfit", sans-serif;
   cursor: pointer;
   vertical-align: baseline;
+  white-space: nowrap;
 }
 
 .lang-switch {
