@@ -111,7 +111,7 @@ function bindEvents() {
 
   for (const button of nodes.langButtons) {
     button.addEventListener("click", () => {
-      const lang = button.dataset.lang === "en" ? "en" : "es";
+      const lang = ["en", "es", "ja"].includes(button.dataset.lang) ? button.dataset.lang : "en";
       state.lang = lang;
       applyI18n();
       refreshSelectedFiles();
