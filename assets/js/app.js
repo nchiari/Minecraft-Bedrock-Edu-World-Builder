@@ -217,8 +217,12 @@ function clearLog() {
 }
 
 function appendLog(message, level = "info") {
-  void message;
-  void level;
+  const item = document.createElement("li");
+  item.textContent = message;
+  if (level !== "info") {
+    item.classList.add(level);
+  }
+  nodes.statusLog.appendChild(item);
 }
 
 function resetForm() {
@@ -282,8 +286,8 @@ async function compileWorld() {
     const outputName = makeCompiledName(state.worldFile.name);
     appendLog(t("log.generating"));
     let lastLoggedProgress = -1;
-    const blob = await worldZip.generateAsync(
-      { type: "blob", compression: "DEFLATE", compressionOptions: { level: 6 } },
+    const bytes = await worldZip.generateAsync(
+      { type: "uint8array", compression: "DEFLATE", compressionOptions: { level: 6 } },
       (metadata) => {
         const rounded = Math.floor(metadata.percent);
         if (rounded >= 0 && rounded % 10 === 0 && rounded !== lastLoggedProgress) {
@@ -292,11 +296,19 @@ async function compileWorld() {
         }
       }
     );
+    if (!bytes || bytes.byteLength === 0) {
+      throw new Error(t("error.emptyGeneratedWorld"));
+    }
+    const blob = new Blob([bytes], { type: "application/zip" });
+    if (blob.size === 0) {
+      throw new Error(t("error.emptyGeneratedWorld"));
+    }
 
     state.generatedBlob = blob;
     state.generatedName = outputName;
     nodes.downloadNote.textContent = t("status.downloadReady");
     nodes.downloadBox.hidden = false;
+    appendLog(t("log.finished", { name: outputName }), "ok");
     setStatus("success", t("success.simple"));
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
@@ -338,6 +350,9 @@ function validateInputs() {
 async function loadZipFromFile(file) {
   try {
     const data = await file.arrayBuffer();
+    if (!data || data.byteLength === 0) {
+      throw new Error("empty-file");
+    }
     return await globalThis.JSZip.loadAsync(data);
   } catch {
     throw new Error(t("error.badZip", { name: file.name }));
@@ -345,6 +360,8 @@ async function loadZipFromFile(file) {
 }
 
 async function loadWorldState(worldZip) {
+  validateWorldZipContent(worldZip);
+
   worldZip.folder("behavior_packs");
   worldZip.folder("resource_packs");
 
@@ -373,6 +390,18 @@ async function loadWorldState(worldZip) {
     usedResourceFolders,
     folderWarnings: []
   };
+}
+
+function validateWorldZipContent(worldZip) {
+  const fileEntries = Object.values(worldZip.files).filter((entry) => !entry.dir);
+  if (fileEntries.length === 0) {
+    throw new Error(t("error.emptyWorld"));
+  }
+
+  const hasLevelDat = fileEntries.some((entry) => normalizePackPath(entry.name).toLowerCase() === "level.dat");
+  if (!hasLevelDat) {
+    throw new Error(t("error.worldMissingLevel"));
+  }
 }
 
 async function readWorldReferenceFile(worldZip, filename) {

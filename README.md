@@ -1,5 +1,7 @@
 # Minecraft Bedrock/Edu World Builder
 
+Live app: https://nchiari.github.io/Minecraft-Bedrock-Edu-World-Builder/
+
 This tool creates a new `.mcworld` file that already includes the `.mcpack` / `.mcaddon` files you want to use.
 
 It is useful when you want to share one world file that works without asking other users to install packs separately.
