@@ -10,6 +10,7 @@ const state = {
   lang: detectInitialLang(),
   worldFile: null,
   packFiles: [],
+  cleanExistingPacks: true,
   busy: false,
   generatedBlob: null,
   generatedName: ""
@@ -22,6 +23,7 @@ const nodes = {
   packsPickerBtn: document.getElementById("packs-picker-btn"),
   worldPickerText: document.getElementById("world-picker-text"),
   packsPickerText: document.getElementById("packs-picker-text"),
+  cleanExistingPacks: document.getElementById("clean-existing-packs"),
   worldInfo: document.getElementById("world-file-info"),
   packsInfo: document.getElementById("packs-file-info"),
   limitsCopy: document.getElementById("limits-copy"),
@@ -77,6 +79,11 @@ function bindEvents() {
     clearGeneratedOutput();
     refreshSelectedFiles();
     updateActionState();
+  });
+
+  nodes.cleanExistingPacks.addEventListener("change", () => {
+    state.cleanExistingPacks = nodes.cleanExistingPacks.checked;
+    clearGeneratedOutput();
   });
 
   nodes.compileBtn.addEventListener("click", () => {
@@ -191,6 +198,7 @@ function updateActionState() {
   const hasInputs = Boolean(state.worldFile) && state.packFiles.length > 0;
   nodes.compileBtn.disabled = state.busy || !hasInputs;
   nodes.resetBtn.disabled = state.busy;
+  nodes.cleanExistingPacks.disabled = state.busy;
 }
 
 function setStatus(kind, message) {
@@ -228,9 +236,11 @@ function appendLog(message, level = "info") {
 function resetForm() {
   state.worldFile = null;
   state.packFiles = [];
+  state.cleanExistingPacks = true;
   clearGeneratedOutput();
   nodes.worldInput.value = "";
   nodes.packsInput.value = "";
+  nodes.cleanExistingPacks.checked = true;
   clearLog();
   setStatus("idle", t("status.idle"));
   refreshSelectedFiles();
@@ -254,6 +264,10 @@ async function compileWorld() {
     appendLog(t("log.readWorld", { name: state.worldFile.name }));
     const worldZip = await loadZipFromFile(state.worldFile);
     const worldState = await loadWorldState(worldZip);
+    if (state.cleanExistingPacks) {
+      appendLog(t("log.cleanExistingPacks"));
+      cleanExistingWorldPacks(worldZip, worldState);
+    }
 
     appendLog(t("log.readPacks"));
     const packs = await extractPacks(state.packFiles);
@@ -432,6 +446,36 @@ function validateWorldZipContent(worldZip) {
   if (!hasLevelDat) {
     throw new Error(t("error.worldMissingLevel"));
   }
+}
+
+function cleanExistingWorldPacks(worldZip, worldState) {
+  const packRoots = ["behavior_packs/", "resource_packs/"];
+  const namesToRemove = Object.entries(worldZip.files).filter(([name, entry]) => {
+    const normalized = normalizePackPath(name);
+    const normalizedWithSlash = entry.dir ? `${normalized}/` : normalized;
+    return packRoots.some((root) => normalizedWithSlash.toLowerCase().startsWith(root));
+  }).map(([name]) => name);
+
+  for (const name of namesToRemove) {
+    if (worldZip.files[name]) {
+      worldZip.remove(name);
+    }
+  }
+
+  worldZip.remove("world_behavior_packs.json");
+  worldZip.remove("world_resource_packs.json");
+  worldZip.folder("behavior_packs");
+  worldZip.folder("resource_packs");
+
+  worldState.behaviorRefs = [];
+  worldState.resourceRefs = [];
+  worldState.referencedUuids = new Set();
+  worldState.embeddedUuids = new Set();
+  worldState.nextBp = 0;
+  worldState.nextRp = 0;
+  worldState.usedBehaviorFolders = new Set();
+  worldState.usedResourceFolders = new Set();
+  worldState.folderWarnings = [];
 }
 
 async function readWorldReferenceFile(worldZip, filename) {

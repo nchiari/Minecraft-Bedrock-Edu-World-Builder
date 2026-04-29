@@ -257,6 +257,50 @@ body {
   font-size: 0.91rem;
 }
 
+.option-box {
+  margin-top: 1rem;
+}
+
+.check-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-soft);
+  background: rgba(42, 41, 50, 0.72);
+  padding: 0.78rem;
+  cursor: pointer;
+}
+
+.check-option input {
+  width: 1.08rem;
+  height: 1.08rem;
+  margin: 0.08rem 0 0;
+  accent-color: var(--accent-main);
+  flex: 0 0 auto;
+}
+
+.check-option span {
+  min-width: 0;
+}
+
+.check-option strong,
+.check-option small {
+  display: block;
+}
+
+.check-option strong {
+  font-size: 0.93rem;
+  line-height: 1.25;
+}
+
+.check-option small {
+  margin-top: 0.22rem;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
 .actions {
   margin-top: 1rem;
   display: flex;
