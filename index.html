@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Minecraft Bedrock/Edu World Builder</title>
-  <meta name="description" content="Build a new .mcworld file with embedded .mcpack/.mcaddon packs for Minecraft Bedrock and Education.">
+  <title>Minecraft World Builder</title>
+  <meta name="description" content="Create Minecraft Bedrock and Education worlds with packs, or turn a world into a reusable template.">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,10 @@
   <header class="hero container">
     <div class="hero-title-row">
       <img src="assets/images/icon.png" alt="" class="hero-icon">
-      <h1 class="hero-title">Minecraft Bedrock/Edu World Builder</h1>
+      <h1 class="hero-title">Minecraft World Builder</h1>
     </div>
     <p class="hero-subline">
-      <span class="hero-subtitle" data-i18n="app.subtitle"></span>
+      <span id="hero-subtitle" class="hero-subtitle" data-i18n="app.subtitle"></span>
       <button id="howto-open" type="button" class="howto-link" data-i18n="help.open"></button>
     </p>
 
@@ -31,9 +31,30 @@
     </div>
   </header>
 
-  <main class="container layout">
-    <section class="panel panel-input" aria-labelledby="upload-title">
-      <h2 id="upload-title" data-i18n="upload.title"></h2>
+  <nav class="container tool-selector" aria-label="Tool selector" data-i18n-aria-label="tools.selectorLabel">
+    <button id="compiler-tool-btn" class="tool-choice is-active" type="button" data-tool="compiler" aria-controls="compiler-workspace" aria-pressed="true">
+      <span class="tool-choice-icon" aria-hidden="true">⇄</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.compilerTitle"></strong>
+        <small data-i18n="tools.compilerDescription"></small>
+      </span>
+    </button>
+
+    <button id="template-tool-btn" class="tool-choice" type="button" data-tool="template" aria-controls="template-workspace" aria-pressed="false">
+      <span class="tool-choice-icon" aria-hidden="true">◇</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.templateTitle"></strong>
+        <small data-i18n="tools.templateDescription"></small>
+      </span>
+    </button>
+  </nav>
+
+  <main>
+    <section id="compiler-workspace" class="tool-workspace" aria-labelledby="compiler-tool-btn">
+      <div class="container layout">
+        <section class="panel panel-input tool-form-panel" aria-labelledby="compiler-title">
+      <h2 id="compiler-title" data-i18n="compiler.title"></h2>
+      <p class="tool-intro" data-i18n="compiler.intro"></p>
 
       <div class="field">
         <label for="world-input" data-i18n="upload.worldLabel"></label>
@@ -43,7 +64,7 @@
           <span id="world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
         </div>
         <p class="field-help" data-i18n="upload.worldHelp"></p>
-        <p id="world-file-info" class="field-file"></p>
+        <p id="world-file-info" class="field-file" hidden></p>
       </div>
 
       <div class="field">
@@ -54,7 +75,7 @@
           <span id="packs-picker-text" class="file-picker-text" data-i18n="upload.noPacksChosen"></span>
         </div>
         <p class="field-help" data-i18n="upload.packsHelp"></p>
-        <p id="packs-file-info" class="field-file"></p>
+        <p id="packs-file-info" class="field-file" hidden></p>
       </div>
 
       <div class="limits-box">
@@ -76,16 +97,67 @@
         <button id="compile-btn" type="button" class="btn btn-primary" data-i18n="actions.compile"></button>
         <button id="reset-btn" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
       </div>
-    </section>
+        </section>
 
-    <section class="panel panel-status" aria-labelledby="status-title">
+        <section class="panel panel-status" aria-labelledby="status-title">
       <h2 id="status-title" data-i18n="status.title"></h2>
-      <p id="status-summary" class="status-summary" data-i18n="status.idle"></p>
+      <p id="status-summary" class="status-summary" role="status" aria-live="polite"></p>
       <div id="download-box" class="download-box" hidden>
         <p id="download-note" class="download-note"></p>
         <button id="download-btn" type="button" class="btn btn-primary" data-i18n="actions.download"></button>
       </div>
       <ul id="status-log" class="status-log" aria-live="polite"></ul>
+        </section>
+      </div>
+    </section>
+
+    <section id="template-workspace" class="tool-workspace" aria-labelledby="template-tool-btn" hidden>
+      <div class="container layout template-layout">
+        <section class="panel template-panel tool-form-panel" aria-labelledby="template-title">
+          <h2 id="template-title" data-i18n="template.title"></h2>
+          <p class="tool-intro" data-i18n="template.intro"></p>
+
+          <div class="field template-world-field">
+            <label for="template-world-input" data-i18n="template.worldLabel"></label>
+            <div class="file-picker">
+              <input id="template-world-input" class="file-native" type="file" accept=".mcworld,application/octet-stream">
+              <button id="template-world-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseWorld"></button>
+              <span id="template-world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
+            </div>
+            <p class="field-help" data-i18n="template.worldHelp"></p>
+            <p id="template-world-info" class="field-file" hidden></p>
+          </div>
+
+          <div id="template-metadata" hidden>
+            <div class="field">
+              <label for="template-authors" data-i18n="template.authorsLabel"></label>
+              <input id="template-authors" class="text-input" type="text" autocomplete="off" data-i18n-placeholder="template.authorsPlaceholder">
+              <p class="field-help" data-i18n="template.authorsHelp"></p>
+            </div>
+
+            <div class="template-localization-heading">
+              <h3 data-i18n="template.localizationTitle"></h3>
+              <p data-i18n="template.localizationHelp"></p>
+            </div>
+            <div id="template-language-fields" class="template-language-list"></div>
+
+            <div class="actions">
+              <button id="template-create-btn" type="button" class="btn btn-primary" data-i18n="template.create" disabled></button>
+              <button id="template-reset-btn" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel template-analysis-panel panel-status" aria-labelledby="template-analysis-title">
+          <h2 id="template-analysis-title" data-i18n="template.analysisTitle"></h2>
+          <p id="template-status-summary" class="status-summary" role="status" aria-live="polite"></p>
+          <div id="template-download-box" class="download-box" hidden>
+            <p class="download-note" data-i18n="template.downloadReady"></p>
+            <button id="template-download-btn" type="button" class="btn btn-primary" data-i18n="template.download"></button>
+          </div>
+          <div id="template-analysis" class="template-analysis" hidden></div>
+        </section>
+      </div>
     </section>
   </main>
 
@@ -93,13 +165,13 @@
     <div id="howto-overlay" class="modal-overlay"></div>
     <div class="modal-card">
       <h2 id="howto-title" data-i18n="help.title"></h2>
-      <p class="modal-intro" data-i18n="help.intro"></p>
+      <p id="howto-intro" class="modal-intro" data-i18n="help.intro"></p>
       <ol class="modal-steps">
-        <li data-i18n="help.step1"></li>
-        <li data-i18n="help.step2"></li>
-        <li data-i18n="help.step3"></li>
+        <li id="howto-step-1" data-i18n="help.step1"></li>
+        <li id="howto-step-2" data-i18n="help.step2"></li>
+        <li id="howto-step-3" data-i18n="help.step3"></li>
       </ol>
-      <p class="modal-note" data-i18n="help.note"></p>
+      <p id="howto-note" class="modal-note" data-i18n="help.note"></p>
       <button id="howto-close" type="button" class="btn btn-primary" data-i18n="help.close"></button>
     </div>
   </div>

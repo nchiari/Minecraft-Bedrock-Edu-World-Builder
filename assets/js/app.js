@@ -1,4 +1,5 @@
 import { I18N } from "./i18n.js";
+import { initTemplateTool } from "./template.js";
 
 const MB = 1024 * 1024;
 const LIMITS = {
@@ -8,12 +9,14 @@ const LIMITS = {
 
 const state = {
   lang: detectInitialLang(),
+  activeTool: detectInitialTool(),
   worldFile: null,
   packFiles: [],
   cleanExistingPacks: true,
   busy: false,
   generatedBlob: null,
-  generatedName: ""
+  generatedName: "",
+  status: { kind: "idle", key: "status.idle", vars: {}, directMessage: "" }
 };
 
 const nodes = {
@@ -32,28 +35,49 @@ const nodes = {
   downloadBtn: document.getElementById("download-btn"),
   downloadBox: document.getElementById("download-box"),
   downloadNote: document.getElementById("download-note"),
+  heroSubtitle: document.getElementById("hero-subtitle"),
   howtoOpen: document.getElementById("howto-open"),
   howtoClose: document.getElementById("howto-close"),
   howtoModal: document.getElementById("howto-modal"),
   howtoOverlay: document.getElementById("howto-overlay"),
+  howtoTitle: document.getElementById("howto-title"),
+  howtoIntro: document.getElementById("howto-intro"),
+  howtoSteps: [
+    document.getElementById("howto-step-1"),
+    document.getElementById("howto-step-2"),
+    document.getElementById("howto-step-3")
+  ],
+  howtoNote: document.getElementById("howto-note"),
   statusSummary: document.getElementById("status-summary"),
   statusLog: document.getElementById("status-log"),
-  langButtons: Array.from(document.querySelectorAll(".lang-btn"))
+  langButtons: Array.from(document.querySelectorAll(".lang-btn")),
+  toolButtons: Array.from(document.querySelectorAll(".tool-choice")),
+  compilerWorkspace: document.getElementById("compiler-workspace"),
+  templateWorkspace: document.getElementById("template-workspace")
 };
+
+let templateTool = null;
+let lastFocusedBeforeModal = null;
 
 init();
 
 function init() {
   if (!globalThis.JSZip) {
-    setStatus("error", t("error.jszipMissing"));
+    setStatus("error", "", {}, t("error.jszipMissing"));
     return;
   }
 
   bindEvents();
+  templateTool = initTemplateTool({
+    t,
+    formatBytes,
+    maxWorldBytes: LIMITS.maxWorldBytes
+  });
   applyI18n();
+  applyActiveTool();
   refreshSelectedFiles();
   updateActionState();
-  setStatus("idle", t("status.idle"));
+  setStatus("idle", "status.idle");
 }
 
 function bindEvents() {
@@ -66,6 +90,7 @@ function bindEvents() {
     clearGeneratedOutput();
     refreshSelectedFiles();
     updateActionState();
+    updateStatusForInputs();
   });
 
   nodes.packsPickerBtn.addEventListener("click", () => {
@@ -79,11 +104,13 @@ function bindEvents() {
     clearGeneratedOutput();
     refreshSelectedFiles();
     updateActionState();
+    updateStatusForInputs();
   });
 
   nodes.cleanExistingPacks.addEventListener("change", () => {
     state.cleanExistingPacks = nodes.cleanExistingPacks.checked;
     clearGeneratedOutput();
+    updateStatusForInputs();
   });
 
   nodes.compileBtn.addEventListener("click", () => {
@@ -120,15 +147,80 @@ function bindEvents() {
     button.addEventListener("click", () => {
       const lang = button.dataset.lang === "en" ? "en" : "es";
       state.lang = lang;
+      try {
+        localStorage.setItem("world-builder-language", lang);
+      } catch {
+        // Language persistence is optional.
+      }
       applyI18n();
+      applyActiveTool();
       refreshSelectedFiles();
       updateActionState();
+      renderStatus();
     });
   }
+
+  for (const button of nodes.toolButtons) {
+    button.addEventListener("click", () => {
+      selectTool(button.dataset.tool === "template" ? "template" : "compiler");
+    });
+  }
+
+  window.addEventListener("hashchange", () => {
+    const nextTool = detectInitialTool();
+    if (nextTool !== state.activeTool) {
+      state.activeTool = nextTool;
+      applyActiveTool();
+    }
+  });
 }
 
 function detectInitialLang() {
-  return "en";
+  try {
+    const saved = localStorage.getItem("world-builder-language");
+    if (saved === "en" || saved === "es") {
+      return saved;
+    }
+  } catch {
+    // Fall back to the browser language when storage is unavailable.
+  }
+  return navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+}
+
+function detectInitialTool() {
+  return window.location.hash === "#template-creator" ? "template" : "compiler";
+}
+
+function selectTool(tool) {
+  state.activeTool = tool;
+  applyActiveTool();
+
+  const hash = tool === "template" ? "#template-creator" : "#pack-compiler";
+  if (window.location.hash !== hash) {
+    window.history.pushState(null, "", hash);
+  }
+}
+
+function applyActiveTool() {
+  const showTemplate = state.activeTool === "template";
+  nodes.compilerWorkspace.hidden = showTemplate;
+  nodes.templateWorkspace.hidden = !showTemplate;
+  nodes.heroSubtitle.textContent = t("app.subtitle");
+  const helpPrefix = showTemplate ? "templateHelp" : "help";
+  nodes.howtoOpen.hidden = false;
+  nodes.howtoOpen.textContent = t(`${helpPrefix}.open`);
+  nodes.howtoTitle.textContent = t(`${helpPrefix}.title`);
+  nodes.howtoIntro.textContent = t(`${helpPrefix}.intro`);
+  nodes.howtoSteps.forEach((step, index) => {
+    step.textContent = t(`${helpPrefix}.step${index + 1}`);
+  });
+  nodes.howtoNote.textContent = t(`${helpPrefix}.note`);
+
+  for (const button of nodes.toolButtons) {
+    const isActive = button.dataset.tool === state.activeTool;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  }
 }
 
 function t(key, vars = {}) {
@@ -150,6 +242,20 @@ function applyI18n() {
     el.textContent = t(key);
   }
 
+  for (const el of document.querySelectorAll("[data-i18n-aria-label]")) {
+    const key = el.getAttribute("data-i18n-aria-label");
+    if (key) {
+      el.setAttribute("aria-label", t(key));
+    }
+  }
+
+  for (const el of document.querySelectorAll("[data-i18n-placeholder]")) {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (key) {
+      el.setAttribute("placeholder", t(key));
+    }
+  }
+
   nodes.limitsCopy.textContent = t("limits.body", {
     worldMb: LIMITS.maxWorldBytes / MB,
     packsMb: LIMITS.maxPacksBytes / MB
@@ -167,10 +273,12 @@ function applyI18n() {
   for (const button of nodes.langButtons) {
     button.setAttribute("aria-pressed", String(button.dataset.lang === state.lang));
   }
+  templateTool?.refreshLanguage();
 }
 
 function refreshSelectedFiles() {
   if (state.worldFile) {
+    nodes.worldInfo.hidden = false;
     nodes.worldPickerText.textContent = state.worldFile.name;
     nodes.worldInfo.textContent = t("status.worldFileSelected", {
       name: state.worldFile.name,
@@ -178,19 +286,24 @@ function refreshSelectedFiles() {
     });
   } else {
     nodes.worldPickerText.textContent = t("upload.noWorldChosen");
-    nodes.worldInfo.textContent = t("status.worldFileMissing");
+    nodes.worldInfo.textContent = "";
+    nodes.worldInfo.hidden = true;
   }
 
   if (state.packFiles.length > 0) {
-    nodes.packsPickerText.textContent = t("upload.packsChosenInline", { count: state.packFiles.length });
+    nodes.packsInfo.hidden = false;
+    const countKey = state.packFiles.length === 1 ? "upload.packChosenInline" : "upload.packsChosenInline";
+    nodes.packsPickerText.textContent = t(countKey, { count: state.packFiles.length });
     const total = state.packFiles.reduce((sum, file) => sum + file.size, 0);
-    nodes.packsInfo.textContent = t("status.packsSelected", {
+    const statusKey = state.packFiles.length === 1 ? "status.packSelected" : "status.packsSelected";
+    nodes.packsInfo.textContent = t(statusKey, {
       count: state.packFiles.length,
       size: formatBytes(total)
     });
   } else {
     nodes.packsPickerText.textContent = t("upload.noPacksChosen");
-    nodes.packsInfo.textContent = t("status.packsMissing");
+    nodes.packsInfo.textContent = "";
+    nodes.packsInfo.hidden = true;
   }
 }
 
@@ -201,23 +314,27 @@ function updateActionState() {
   nodes.cleanExistingPacks.disabled = state.busy;
 }
 
-function setStatus(kind, message) {
+function setStatus(kind, key, vars = {}, directMessage = "") {
+  state.status = { kind, key, vars, directMessage };
+  renderStatus();
+}
+
+function renderStatus() {
   nodes.statusSummary.className = "status-summary";
-  if (kind === "error") {
+  if (state.status.kind === "error") {
     nodes.statusSummary.classList.add("error");
-    nodes.statusSummary.textContent = message;
-    return;
-  }
-  if (kind === "success") {
+  } else if (state.status.kind === "success") {
     nodes.statusSummary.classList.add("success");
-    nodes.statusSummary.textContent = message;
+  }
+  nodes.statusSummary.textContent = state.status.directMessage || t(state.status.key, state.status.vars);
+}
+
+function updateStatusForInputs() {
+  if (state.busy) {
     return;
   }
-  if (kind === "processing") {
-    nodes.statusSummary.textContent = t("status.processing");
-    return;
-  }
-  nodes.statusSummary.textContent = message;
+  const ready = Boolean(state.worldFile) && state.packFiles.length > 0;
+  setStatus("idle", ready ? "status.ready" : "status.idle");
 }
 
 function clearLog() {
@@ -231,6 +348,16 @@ function appendLog(message, level = "info") {
     item.classList.add(level);
   }
   nodes.statusLog.appendChild(item);
+  return item;
+}
+
+function updateProgressLog(percent) {
+  let item = nodes.statusLog.querySelector("[data-progress]");
+  if (!item) {
+    item = appendLog("");
+    item.dataset.progress = "true";
+  }
+  item.textContent = t("log.progress", { percent });
 }
 
 function resetForm() {
@@ -242,7 +369,7 @@ function resetForm() {
   nodes.packsInput.value = "";
   nodes.cleanExistingPacks.checked = true;
   clearLog();
-  setStatus("idle", t("status.idle"));
+  setStatus("idle", "status.idle");
   refreshSelectedFiles();
   updateActionState();
 }
@@ -257,7 +384,7 @@ async function compileWorld() {
     updateActionState();
     clearGeneratedOutput();
     clearLog();
-    setStatus("processing");
+    setStatus("processing", "status.processing");
     appendLog(t("log.start"));
     validateInputs();
 
@@ -306,7 +433,7 @@ async function compileWorld() {
         const rounded = Math.floor(metadata.percent);
         if (rounded >= 0 && rounded % 10 === 0 && rounded !== lastLoggedProgress) {
           lastLoggedProgress = rounded;
-          appendLog(t("log.progress", { percent: rounded }));
+          updateProgressLog(rounded);
         }
       }
     );
@@ -323,10 +450,10 @@ async function compileWorld() {
     nodes.downloadNote.textContent = t("status.downloadReady");
     nodes.downloadBox.hidden = false;
     appendLog(t("log.finished", { name: outputName }), "ok");
-    setStatus("success", t("success.simple"));
+    setStatus("success", "success.simple");
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    setStatus("error", message);
+    setStatus("error", "", {}, message);
   } finally {
     state.busy = false;
     updateActionState();
@@ -1039,13 +1166,20 @@ function clearGeneratedOutput() {
 }
 
 function showHowtoModal() {
+  lastFocusedBeforeModal = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   nodes.howtoModal.hidden = false;
   nodes.howtoModal.setAttribute("aria-hidden", "false");
+  nodes.howtoClose.focus();
 }
 
 function hideHowtoModal() {
+  if (nodes.howtoModal.hidden) {
+    return;
+  }
   nodes.howtoModal.hidden = true;
   nodes.howtoModal.setAttribute("aria-hidden", "true");
+  lastFocusedBeforeModal?.focus();
+  lastFocusedBeforeModal = null;
 }
 
 function mergePackFiles(existingFiles, newFiles) {
