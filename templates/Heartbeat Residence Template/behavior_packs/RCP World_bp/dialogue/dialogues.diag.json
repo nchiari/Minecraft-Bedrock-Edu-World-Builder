@@ -1,0 +1,1364 @@
+﻿{
+  "format_version": "1.17.100",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "salvacorazones_start_a",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_start_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.next" }] },
+            "commands": ["/lesson @p activity cpr.global.start restart", "/dialogue open @s @a salvacorazones_start_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_start_c",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_start_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cogerdea" }] },
+            "commands": ["/give @p let:dea 6", "/dialogue change @s salvacorazones_start_c @a", "/scoreboard objectives setdisplay sidebar deas"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_start_d",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_start_d", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatpc" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_pc"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatrcp" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_rcp"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatdea" }] },
+            "commands": ["/clear @p let:dea", "/give @p let:dea 6", "/dialogue open @s @a salvacorazones_dea"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatatragantamiento" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_atragantamiento"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.what112" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_112"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_dea",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_dea", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @p salvacorazones_start_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_rcp",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_rcp", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @p salvacorazones_start_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_pc",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_pc", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @p salvacorazones_start_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_112",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_112", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @p salvacorazones_start_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_atragantamiento",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_atragantamiento", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @p salvacorazones_start_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_final_a",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_final_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cert" }] },
+            "url": "https://bit.ly/BrigadeCertificate"
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.next" }] },
+            "commands": ["/lesson @p lesson complete 100", "/dialogue change @s salvacorazones_final_c @a", "/dialogue open @s @a salvacorazones_final_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "salvacorazones_final_c",
+        "text": { "rawtext": [{ "translate": "dialogue.salvacorazones_final_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatpc" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_pc"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatrcp" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_rcp"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatdea" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_dea"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatatragantamiento" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_atragantamiento"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.what112" }] },
+            "commands": ["/dialogue open @s @a salvacorazones_112"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour_intro_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_susana" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_intro_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkourNPC_start",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_eduardo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.parkourNPC_start", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/parkour_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.reglas" }] },
+            "commands": ["/dialogue open @s @a parkourNPC_rules"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkourNPC_rules",
+        "text": { "rawtext": [{ "translate": "dialogue.parkourNPC_rules", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/parkour_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkourNPC_timer",
+        "text": { "rawtext": [{ "translate": "dialogue.parkourNPC_timer", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/function timers/parkour_reset"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkourNPC_end",
+        "text": { "rawtext": [{ "translate": "dialogue.parkourNPC_end", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/dialogue change @s parkourNPC_start @a", "/dialogue open @s @a parkourNPC_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour1",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour1", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.a" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q1.answer_a complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 71 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.b" }] },
+            "commands": [
+              "/lesson @p activity cpr.parkour.q1.answer_b complete 100",
+              "/dialogue change @s parkour_correcto @a",
+              "/dialogue open @s @a parkour_correcto",
+              "/fill 64 78 306 64 78 309 air",
+              "/setblock 72 71 351 lime_wool"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.c" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q1.answer_c complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 73 71 351 red_wool"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour2",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.a" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q2.answer_a complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 75 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.b" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q2.answer_b complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 76 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.c" }] },
+            "commands": [
+              "/lesson @p activity cpr.parkour.q2.answer_c complete 100",
+              "/dialogue change @s parkour_correcto @a",
+              "/dialogue open @s @a parkour_correcto",
+              "/fill 84 79 320 84 79 323 air",
+              "/setblock 77 71 351 lime_wool"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour3",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour3", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.a" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q3.answer_a complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 79 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.b" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q3.answer_b complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 80 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.c" }] },
+            "commands": [
+              "/lesson @p activity cpr.parkour.q3.answer_c complete 100",
+              "/dialogue change @s parkour_correcto @a",
+              "/dialogue open @s @a parkour_correcto",
+              "/fill 81 79 338 84 79 338 air",
+              "/setblock 81 71 351 lime_wool"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour4",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour4", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.a" }] },
+            "commands": [
+              "/lesson @p activity cpr.parkour.q4.answer_a complete 100",
+              "/dialogue change @s parkour_correcto @a",
+              "/dialogue open @s @a parkour_correcto",
+              "/fill 69 70 347 69 70 345 air",
+              "/setblock 83 71 351 lime_wool"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.b" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q4.answer_b complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 84 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.c" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q4.answer_c complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 85 71 351 red_wool"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour5",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour5", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.a" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q5.answer_a complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 87 71 351 red_wool"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.b" }] },
+            "commands": [
+              "/lesson @p activity cpr.parkour.q5.answer_b complete 100",
+              "/playsound tada @p",
+              "/dialogue change @s parkour_final @a",
+              "/dialogue open @s @a parkour_final",
+              "/fill 69 80 360 69 80 363 air",
+              "/setblock 88 71 351 lime_wool",
+              "/setblock 71 68 373 redstone_block",
+              "/dialogue change @e[family=human,tag=parkour_finalNPC] parkour_board @a"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.c" }] },
+            "commands": ["/lesson @p activity cpr.parkour.q5.answer_c complete 1", "/dialogue open @s @a parkour_incorrecto", "/setblock 89 71 351 red_wool"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour_final",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_final", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "parkour_correcto",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_correcto", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "parkour_incorrecto",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_incorrecto", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "parkour_timeup",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_timeup", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.regresar" }] },
+            "commands": ["/tp @p 52 70 282"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour_board",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_board", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/tp @p 52 70 282", "/function timers/parkour_reset"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] },
+            "commands": ["/fill 91 70 363 91 70 365 air", "/setblock 71 68 373 air"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "parkour_board_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_carmela" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_board_2", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "parkour_fall",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_fall", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.checkpoint" }] },
+            "commands": ["/function timers/parkour_tps"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.inicio" }] },
+            "commands": ["/tp @p 52 70 282", "/function timers/parkour_reset"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "simonNPC_start",
+        "text": { "rawtext": [{ "translate": "dialogue.simonNPC_start", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/simon_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.reglas" }] },
+            "commands": ["/dialogue open @s @a simonNPC_rules"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "simonNPC_rules",
+        "npc_name": { "rawtext": [{ "translate": "" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.simonNPC_rules", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/simon_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "simonNPC_timer",
+        "text": { "rawtext": [{ "translate": "dialogue.simonNPC_timer", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/function timers/simon_reset"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "simonNPC_final",
+        "text": { "rawtext": [{ "translate": "dialogue.simonNPC_final", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.again" }] },
+            "commands": ["/function timers/simon_reset", "/dialogue change @s simonNPC_start @a", "/dialogue open @s @a simonNPC_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.points" }] },
+            "commands": [
+              "/titleraw @a title { \"rawtext\": [ { \"translate\" : \"timer.title.puntaje\" },{\"score\":{\"name\":\"@p\",\"objective\":\"simon\"}} ] }"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "school_playing",
+        "text": { "rawtext": [{ "translate": "dialogue.school_playing", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "rcpNPC_start",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_raul" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_start", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/rcp_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.reglas" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_rules"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_rules",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_rules", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/rcp_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_timer",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_timer", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/function timers/rcp_reset"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_asegurar",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_asegurar", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.todo_ok" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_comprobar", "/dialogue change @s rcpNPC_comprobar @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_comprobar",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_comprobar", "with": ["\n"] }] },
+        "on_open_commands": ["/execute at @p[hasitem={item=let:comprobar,quantity=0}] run give @p let:comprobar"],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_phone",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_phone", "with": ["\n"] }] },
+        "on_open_commands": ["/execute at @p[hasitem={item=let:phone,quantity=0}] run give @p let:phone"],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_rcp",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_rcp", "with": ["\n"] }] },
+        "on_open_commands": ["/execute at @p[hasitem={item=let:manos_rcp,quantity=0}] run give @p let:manos_rcp"],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": ["/function timers/rcp_timer", "/dialogue change @s rcpNPC_rcp2 @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_rcp2",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_rcp", "with": ["\n"] }] },
+        "on_open_commands": ["/execute at @p[hasitem={item=let:manos_rcp,quantity=0}] run give @p let:manos_rcp"],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_breath",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_breath", "with": ["\n"] }] },
+        "on_open_commands": ["/execute at @p[hasitem={item=let:respiracion,quantity=0}] run give @p let:respiracion"],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_dea",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_dea", "with": ["\n"] }] },
+        "on_open_commands": [
+          "/execute at @p[hasitem={item=let:dea_item_off,quantity=0}] as @p[hasitem={item=let:dea_item_on,quantity=0}] run give @s let:dea_item_off"
+        ],
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_wait",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_wait", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.end" }] },
+            "commands": ["/dialogue open @s @a rcpNPC_timer"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "emergencia_final",
+        "text": { "rawtext": [{ "translate": "dialogue.emergencia_final", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.gracias" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_final_ok",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_final_ok", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.again" }] },
+            "commands": ["/function timers/rcp_reset", "/dialogue change @s rcpNPC_start @a", "/dialogue open @s @a rcpNPC_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "rcpNPC_final_no",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_final_no", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.again" }] },
+            "commands": ["/function timers/rcp_reset", "/dialogue change @s rcpNPC_start @a", "/dialogue open @s @a rcpNPC_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_a",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.emergencia" }] },
+            "commands": ["/dialogue change @s sos_b @a", "/dialogue open @s @p sos_b"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.nada" }] },
+            "commands": ["/dialogue open @s @a sos_end"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_b",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.salud" }] },
+            "commands": ["/dialogue change @s sos_c @a", "/dialogue open @s @p sos_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_c",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.gracias" }] },
+            "commands": [
+              "/execute as @p[tag=!rcp_help] run dialogue change @e[family=human,tag=rcpNPC] rcpNPC_rcp @p",
+              "/execute as @p[tag=!rcp_help] run dialogue open @e[family=human,tag=rcpNPC] @p rcpNPC_rcp",
+              "/execute as @p[tag=rcp_help] run function timers/rcp_help_timer",
+              "/dialogue change @s sos_d @a",
+              "/scoreboard players set var rcp_112 1"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatrcp" }] },
+            "commands": ["/dialogue open @s @a sos_rcp"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatbreath" }] },
+            "commands": ["/dialogue open @s @a sos_respiracion"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatdea" }] },
+            "commands": ["/dialogue open @s @a sos_dea"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_d",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.gracias" }] },
+            "commands": []
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatrcp" }] },
+            "commands": ["/dialogue open @s @a sos_rcp_2"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatbreath" }] },
+            "commands": ["/dialogue open @s @a sos_respiracion_2"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.whatdea" }] },
+            "commands": ["/dialogue open @s @a sos_dea_2"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_rcp",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_rcp", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_respiracion",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_respiracion", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_dea",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_dea", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_rcp_2",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_rcp", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_respiracion_2",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_respiracion", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_dea_2",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_dea", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.back" }] },
+            "commands": ["/dialogue open @s @a sos_d"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sos_end",
+        "text": { "rawtext": [{ "translate": "dialogue.sos_end", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "parkour_intro",
+        "text": { "rawtext": [{ "translate": "dialogue.parkour_intro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": ["/function timers/parkour_reset"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "heimlichNPC_start",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_sofia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.heimlichNPC_start", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/heimlich_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.reglas" }] },
+            "commands": ["/dialogue open @s @a heimlichNPC_rules"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "heimlichNPC_rules",
+        "text": { "rawtext": [{ "translate": "dialogue.heimlichNPC_rules", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.comencemos" }] },
+            "commands": ["/function timers/heimlich_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "heimlichNPC_timer",
+        "text": { "rawtext": [{ "translate": "dialogue.heimlichNPC_timer", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.si" }] },
+            "commands": ["/function timers/heimlich_reset"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.no" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "heimlichNPC_final",
+        "text": { "rawtext": [{ "translate": "dialogue.heimlichNPC_final", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.again" }] },
+            "commands": ["/function timers/heimlich_reset", "/dialogue change @s heimlichNPC_start @a", "/dialogue open @s @a heimlichNPC_start"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.points" }] },
+            "commands": [
+              "/titleraw @a title { \"rawtext\": [ { \"translate\" : \"timer.title.puntaje\" },{\"score\":{\"name\":\"@p\",\"objective\":\"heimlich\"}} ] }"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "tecnicoRCP",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.tecnico_de_emergencias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.tecnicoRCP", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "tecnicoPARK",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.tecnico_de_emergencias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.tecnicoPARK", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_alberto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_alberto", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.entrar" }] },
+            "commands": ["/lesson @p activity cpr.construction.nursing_classroom restart", "/tp @a -68 70 249", "/gamemode c @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntaria_mikaela",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_mikaela" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_mikaela", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.entrar" }] },
+            "commands": ["/lesson @p activity cpr.construction.nursing_classroom restart", "/tp @a -101 70 249", "/gamemode c @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntarios_colegio_out",
+        "text": { "rawtext": [{ "translate": "dialogue.voluntarios_colegio_out", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.salir" }] },
+            "commands": ["/clear @p", "/give @p let:dea 6", "/tp @a -84 69 246 facing -84 69 240", "/gamemode a @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntario_xavi",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_xavi" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_xavi", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.entrar" }] },
+            "commands": ["/lesson @p activity cpr.construction.hospital restart", "/tp @a 109 70 397", "/gamemode c @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntaria_nancy",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_nancy" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_nancy", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.salir" }] },
+            "commands": ["/clear @p", "/give @p let:dea 6", "/tp @a 105 70 397", "/gamemode a @a"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mastarde" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntaria_paula",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_paula" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_paula", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.gracias" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntaria_sandra",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_sandra" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_sandra", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntaria_ximena",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_ximena" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_ximena", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_guillermo",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_guillermo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_guillermo", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_victor",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_victor" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_victor", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_luis",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_luis" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_luis", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_alonso",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_alonso" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_alonso", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_enrique",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_enrique" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_enrique", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_iciar",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_iciar" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_iciar", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "voluntario_pablo",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntario_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntario_pablo", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.gracias" }] },
+            "commands": []
+          }
+        ]
+      },
+      {
+        "scene_tag": "voluntaria_arantxa",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.voluntaria_arantxa" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.voluntaria_arantxa", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cogerobjetos" }] },
+            "commands": ["/give @p writable_book", "/give @p camera", "/give @p portfolio"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "alejandro",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alejandro" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alejandro", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "ines",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.ines" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.ines", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "angela",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angela" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angela", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "pablo",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.pablo", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "manuel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.manuel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.manuel", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "maria",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.maria", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "alberto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alberto", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "alicia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alicia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alicia", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "alvaro",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alvaro" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alvaro", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "amelia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.amelia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.amelia", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "ana",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.ana" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.ana", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "andres",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.andres" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.andres", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "julia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.julia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.julia", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "antonio",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.antonio", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "beatriz",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.beatriz" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.beatriz", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "carlos",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.carlos" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.carlos", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "carmen",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.carmen" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.carmen", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "carolina",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.carolina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.carolina", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "daniel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.daniel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.daniel", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "david",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.david" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.david", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "diego",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.diego" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.diego", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "elena",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.elena" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.elena", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "enrique",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.enrique" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.enrique", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "esteban",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.esteban" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.esteban", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "eva",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.eva" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.eva", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "felipe",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.felipe" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.felipe", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "fernando",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.fernando" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.fernando", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "francisco",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.francisco" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.francisco", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "gabriel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.gabriel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.gabriel", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "nuria",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nuria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nuria", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "oscar",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.oscar" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.oscar", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "ivan",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.ivan" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.ivan", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "unai",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.unai" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.unai", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "samuel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.samuel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.samuel", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "sara",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.sara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sara", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "sofia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.sofia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sofia", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "violeta",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.violeta" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.violeta", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "jesus",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jesus" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jesus", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "jose",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jose" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jose", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "emilio",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.emilio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.emilio", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "jorge",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jorge" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jorge", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "marina",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.marina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.marina", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "iker",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.iker" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.iker", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "iker_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.iker" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.iker_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.are_u_ok" }] },
+            "commands": ["/function timers/rcp_help_start"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "iker_3",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.iker" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.iker_3", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "rcpNPC_help",
+        "text": { "rawtext": [{ "translate": "dialogue.rcpNPC_help", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "emergencia_help",
+        "text": { "rawtext": [{ "translate": "dialogue.emergencia_help", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "emergencia_help_final",
+        "text": { "rawtext": [{ "translate": "dialogue.emergencia_help_final", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "marta",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.marta" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.marta", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "marcos",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.marcos" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.marcos", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "hector",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.hector" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.hector", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "irene",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.irene" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.irene", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "lola",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.lola" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.lola", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "ignacio",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.ignacio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.ignacio", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "leonardo",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.leonardo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.leonardo", "with": ["\n"] }] }
+      },
+      {
+        "scene_tag": "autobus",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.autobus" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.autobus", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.colegio" }] },
+            "commands": ["/tp @p -101 70 270 facing -100 70 269"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.csalud" }] },
+            "commands": ["/tp @p 27 70 390 facing 26 70 389"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.ccomercial" }] },
+            "commands": ["/tp @p -149 70 338 facing -148 70 339"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.polideportivo" }] },
+            "commands": ["/tp @p 37 70 295 facing 38 70 294"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.hospital" }] },
+            "commands": ["/tp @p 97 70 427 facing 98 70 426"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "comprobar_a",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maniqui" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.comprobar_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": [
+              "/execute if score var rcp_check matches 1 run dialogue change @e[family=human,tag=rcpNPC] rcpNPC_phone @p",
+              "/execute if score var rcp_check matches 1 run dialogue open @e[family=human,tag=rcpNPC] @p rcpNPC_phone",
+              "/event entity @e[family=dummy] npc_component_off"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

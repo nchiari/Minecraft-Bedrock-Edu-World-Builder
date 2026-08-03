@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:orange_marker",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/orange_marker"
+      },
+      "geometry": {
+        "default": "geometry.marker_picker"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#ff00c8",
+        "overlay_color": "#000000"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_toros",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_toros"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_toros"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#289605",
+				"overlay_color": "#b00482"
+			}
+		}
+	}
+}

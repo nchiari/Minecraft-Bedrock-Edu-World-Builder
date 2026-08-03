@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "let:caja_block",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": false,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.basic_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "transparent",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:map_color": "#edf9ff",
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 12
+    }
+  }
+}

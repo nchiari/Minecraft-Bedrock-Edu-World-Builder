@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.projectiles": {
+      "arrays": {
+        "textures": {
+          "Array.colors": [
+            "Texture.light",
+            "Texture.ink",
+            "Texture.block",
+            "Texture.red",
+            "Texture.yellow",
+            "Texture.blue",
+            "Texture.green",
+            "Texture.orange",
+            "Texture.purple",
+            "Texture.memory"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.colors[query.variant]"]
+    }
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:monster_owl",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "attack_on": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 0,
+          "reselect_targets": false,
+          "within_radius": 20.0,
+          "entity_types": [
+            {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "max_dist": 10
+            }
+          ]
+        },
+        "minecraft:behavior.sonic_boom": {
+          "priority": 1,
+          "duration": 1,
+          "speed_multiplier": 1.2,
+          "attack_damage": 0,
+          "attack_range_horizontal": 15,
+          "attack_range_vertical": 20,
+          "attack_cooldown": 2,
+          "knockback_vertical_strength": 0,
+          "knockback_horizontal_strength": 0,
+          "knockback_height_cap": 0,
+          "duration_until_attack_sound": 1.7,
+          "charge_sound": "sonic_charge",
+          "attack_sound": "sonic_boom"
+        }
+      },
+      "move": {
+        "minecraft:behavior.random_hover": {
+          "priority": 0,
+          "xz_dist": 8,
+          "y_dist": 8,
+          "y_offset": -1,
+          "interval": 1,
+          "hover_height": [5, 5]
+        },
+        "minecraft:game_event_movement_tracking": {
+          "emit_flap": true
+        }
+      },
+      "marker": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 0,
+          "must_see": false,
+          "set_persistent": true,
+          "reselect_targets": false,
+          "must_reach": false,
+          "within_radius": 128.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "dummy_marker"
+              },
+              "max_dist": 128.0,
+              "must_see": false,
+              "priority": 1
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": { "require_complete_path": false, "melee_fov": 360 }
+      },
+      "look_at": {
+        "minecraft:behavior.look_at_target": {
+          "look_distance": 64,
+          "probability": 1,
+          "angle_of_view_vertical": 360,
+          "angle_of_view_horizontal": 360,
+          "priority": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["monster_owl"]
+      },
+      "minecraft:health": {
+        "value": 999,
+        "max": 999
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:movement": {
+        "value": 0.375
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 2,
+            "height": 1.5
+          }
+        ]
+      },
+      "minecraft:can_fly": {},
+      "minecraft:behavior.float": {
+        "priority": 3
+      },
+      "minecraft:flying_speed": {
+        "value": 0.4
+      },
+      "minecraft:navigation.fly": {
+        "can_path_over_water": true,
+        "can_sink": false,
+        "can_pass_doors": false,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "avoid_sun": false
+      },
+      "minecraft:movement.hover": {},
+      "minecraft:jump.static": {},
+      "minecraft:behavior.look_at_player": {
+        "look_distance": 8,
+        "target_distance": 8,
+        "look_time": [0.1, 0.1],
+        "priority": 2,
+        "probability": 1
+      },
+      "minecraft:attack": {
+        "damage": 0
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "attack_on": {
+        "add": {
+          "component_groups": ["attack_on"]
+        }
+      },
+      "attack_off": {
+        "remove": {
+          "component_groups": ["attack_on"]
+        }
+      },
+      "move_on": {
+        "add": {
+          "component_groups": ["move"]
+        }
+      },
+      "move_off": {
+        "remove": {
+          "component_groups": ["move"]
+        }
+      },
+      "marker_off": {
+        "remove": {
+          "component_groups": ["marker"]
+        }
+      },
+      "marker_on": {
+        "add": {
+          "component_groups": ["marker", "look_at"]
+        }
+      },
+      "look_off": {
+        "remove": {
+          "component_groups": ["look_at"]
+        }
+      }
+    }
+  }
+}

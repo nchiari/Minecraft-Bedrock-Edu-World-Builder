@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:monster_owl",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "default": "textures/entity/owl"
+      },
+      "geometry": {
+        "default": "geometry.goya_monster"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#2c2c2c",
+        "overlay_color": "#999999"
+      },
+      "animations": {
+        "monster_base_pose": "animation.goya_monster.base_pose",
+        "move": "animation.goya_monster.move",
+        "monster_controller": "controller.animation.goya_monster.base_pose",
+        "monster_controller_2": "controller.animation.goya_monster.move"
+      },
+      "scripts": {
+        "animate": ["monster_controller", "monster_controller_2"]
+      },
+      "sound_effects": {
+        "flap": "flap",
+        "hurt": "hurt",
+        "idle": "idle"
+      }
+    }
+  }
+}

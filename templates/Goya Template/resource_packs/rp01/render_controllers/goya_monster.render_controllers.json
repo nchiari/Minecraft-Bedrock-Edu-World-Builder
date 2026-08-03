@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.monster": {
+      "arrays": {
+        "textures": {
+          "Array.colors": ["Texture.owl", "Texture.bat"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.colors[query.variant]"]
+    },
+    "controller.render.goya_bat": {
+      "arrays": {
+        "textures": {
+          "Array.colors": ["Texture.goya_bat", "Texture.goya_bat_colors"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.colors[query.variant]"]
+    }
+  }
+}

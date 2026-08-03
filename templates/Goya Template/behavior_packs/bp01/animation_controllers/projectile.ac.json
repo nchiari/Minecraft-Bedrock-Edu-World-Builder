@@ -1,0 +1,89 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.projectile.paint": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "hit_light": "q.is_baby && q.variant == 0"
+            },
+            {
+              "hit_ink": "q.is_baby && q.variant == 1"
+            },
+            {
+              "hit_block": "q.is_baby && q.variant == 2"
+            },
+            {
+              "hit_red": "q.is_baby && q.variant == 3"
+            },
+            {
+              "hit_yellow": "q.is_baby && q.variant == 4"
+            },
+            {
+              "hit_blue": "q.is_baby && q.variant == 5"
+            },
+            {
+              "hit_green": "q.is_baby && q.variant == 6"
+            },
+            {
+              "hit_orange": "q.is_baby && q.variant == 7"
+            },
+            {
+              "hit_purple": "q.is_baby && q.variant == 8"
+            },
+            {
+              "hit_memory": "q.is_baby && q.variant == 9"
+            }
+          ]
+        },
+        "hit_light": {
+          "on_entry": ["/execute as @s run particle let:splash_light ~~~", "/execute as @s run particle let:splash_light_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_ink": {
+          "on_entry": ["/execute as @s run particle let:splash_ink ~~~", "/execute as @s run particle let:splash_ink_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_block": {
+          "on_entry": ["/execute as @s run particle let:splash_block ~~~", "/execute as @s run particle let:splash_block_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_red": {
+          "on_entry": ["/execute as @s run particle let:splash_red ~~~", "/execute as @s run particle let:splash_red_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_yellow": {
+          "on_entry": [
+            "/execute as @s run particle let:splash_yellow ~~~",
+            "/execute as @s run particle let:splash_yellow_2 ~~~",
+            "/event entity @s let:despawn"
+          ]
+        },
+        "hit_blue": {
+          "on_entry": ["/execute as @s run particle let:splash_blue ~~~", "/execute as @s run particle let:splash_blue_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_green": {
+          "on_entry": ["/execute as @s run particle let:splash_green ~~~", "/execute as @s run particle let:splash_green_2 ~~~", "/event entity @s let:despawn"]
+        },
+        "hit_orange": {
+          "on_entry": [
+            "/execute as @s run particle let:splash_orange ~~~",
+            "/execute as @s run particle let:splash_orange_2 ~~~",
+            "/event entity @s let:despawn"
+          ]
+        },
+        "hit_purple": {
+          "on_entry": [
+            "/execute as @s run particle let:splash_purple ~~~",
+            "/execute as @s run particle let:splash_purple_2 ~~~",
+            "/event entity @s let:despawn"
+          ]
+        },
+        "hit_memory": {
+          "on_entry": [
+            "/execute as @s run particle let:splash_memory ~~~",
+            "/execute as @s run particle let:splash_memory_2 ~~~",
+            "/event entity @s let:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

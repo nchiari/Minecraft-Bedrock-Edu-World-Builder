@@ -1,0 +1,66 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.human": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": ["idle"],
+          "transitions": [{ "walk": "query.ground_speed" }, { "lay": "query.mark_variant == 1" }]
+        },
+        "walk": {
+          "animations": ["walk"],
+          "transitions": [{ "idle": "!query.ground_speed" }]
+        },
+        "lay": {
+          "animations": ["lay"],
+          "transitions": [{ "lay_static": "q.property('dummy:lay')" }]
+        },
+        "lay_static": {
+          "animations": ["lay_static"],
+          "transitions": [
+            {
+              "wake": "query.mark_variant == 2"
+            },
+            {
+              "check": "q.property('dummy:check')"
+            },
+            {
+              "charge": "q.property('dummy:charge')"
+            },
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            }
+          ]
+        },
+        "wake": {
+          "animations": ["wake"],
+          "transitions": [{ "idle": "!query.ground_speed" }]
+        },
+        "rcp": {
+          "animations": ["rcp"],
+          "sound_effects": [{ "effect": "rcp" }],
+          "transitions": [{ "lay_static": "!q.property('dummy:rcp')" }]
+        },
+        "charge": {
+          "animations": ["charge"],
+          "sound_effects": [{ "effect": "charge" }],
+          "transitions": [{ "lay_static": "!q.property('dummy:charge') && q.all_animations_finished" }]
+        },
+        "check": {
+          "animations": ["check"],
+          "sound_effects": [{ "effect": "check" }],
+          "transitions": [{ "lay_static": "!q.property('dummy:check') && q.all_animations_finished" }]
+        },
+        "breath": {
+          "animations": ["breath"],
+          "sound_effects": [{ "effect": "breath" }],
+          "transitions": [{ "lay_static": "!q.property('dummy:breath') && q.all_animations_finished" }]
+        }
+      }
+    }
+  }
+}

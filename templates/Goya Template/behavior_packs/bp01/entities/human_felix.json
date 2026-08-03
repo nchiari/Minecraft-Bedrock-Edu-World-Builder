@@ -1,0 +1,195 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pix:human_felix",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:npc"
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "skin_2": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "chat_off": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "chat_on": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "npc_component": {
+        "minecraft:npc": {}
+      },
+      "chase_light": {
+        "minecraft:behavior.melee_attack": {
+          "require_complete_path": false,
+          "melee_fov": 360
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 10,
+          "must_see": false,
+          "must_reach": false,
+          "reselect_targets": true,
+          "within_radius": 10.0,
+          "attack_interval": 0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "light_marker"
+              },
+              "max_dist": 10.0,
+              "must_see": false
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["felix"]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:npc": {
+        "npc_data": {
+          "picker_offsets": {
+            "translate": [0, 20, 0],
+            "scale": [1.7, 1.7, 1.7]
+          },
+          "skin_list": [
+            {
+              "variant": 0
+            },
+            {
+              "variant": 1
+            },
+            {
+              "variant": 2
+            }
+          ]
+        }
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 1.9,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1.9
+      },
+      "minecraft:physics": {},
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0.375
+      },
+      "minecraft:jump.static": {},
+      "minecraft:behavior.look_at_player": {
+        "look_distance": 16,
+        "target_distance": 10,
+        "look_time": [0.1, 0.1],
+        "priority": 1,
+        "probability": 1
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 5,
+        "look_time": [5, 8]
+      },
+      "minecraft:navigation.walk": {
+        "can_jump": false,
+        "avoid_portals": true,
+        "avoid_water": true,
+        "can_open_doors": false,
+        "can_open_iron_doors": false,
+        "can_sink": false
+      },
+      "minecraft:attack": {
+        "damage": 0
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "skin_0": {
+        "add": {
+          "component_groups": ["skin_0"]
+        }
+      },
+      "skin_1": {
+        "add": {
+          "component_groups": ["skin_1"]
+        }
+      },
+      "skin_2": {
+        "add": {
+          "component_groups": ["skin_2"]
+        }
+      },
+      "chase:on": {
+        "add": {
+          "component_groups": ["chase_light"]
+        }
+      },
+      "chase:off": {
+        "remove": {
+          "component_groups": ["chase_light"]
+        }
+      },
+      "chat_off": {
+        "add": {
+          "component_groups": ["chat_off"]
+        }
+      },
+      "chat_on": {
+        "add": {
+          "component_groups": ["chat_on"]
+        }
+      }
+    }
+  }
+}

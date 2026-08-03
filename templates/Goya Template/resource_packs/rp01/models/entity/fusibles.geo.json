@@ -1,0 +1,36 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.fusibles",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [-9, 12, 2.9],
+					"cubes": [
+						{
+							"origin": [-8.9995, 0.0005, 4.9005],
+							"size": [17.999, 15.999, 2.999],
+							"inflate": -0.001,
+							"uv": {
+								"north": {"uv": [27, 62.5], "uv_size": [-11, -10.5]},
+								"east": {"uv": [36, 64], "uv_size": [-4, -9.5]},
+								"south": {"uv": [10.5, 63.5], "uv_size": [-10.5, -7.5]},
+								"west": {"uv": [36.5, 54.5], "uv_size": [-4, -9.5]},
+								"up": {"uv": [0, 56], "uv_size": [10.5, 7.5]},
+								"down": {"uv": [0, 56], "uv_size": [10.5, 7.5]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

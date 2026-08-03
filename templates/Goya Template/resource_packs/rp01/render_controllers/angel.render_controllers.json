@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.angel": {
+      "arrays": {
+        "textures": {
+          "Array.skins": ["Texture.skin_0", "Texture.skin_1", "Texture.skin_2", "Texture.skin_3", "Texture.skin_4"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.variant]"]
+    }
+  }
+}

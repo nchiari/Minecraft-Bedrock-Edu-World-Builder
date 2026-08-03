@@ -1,0 +1,14 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/cubo_de_agua",
+    "atlas_tile": "cubo_de_agua",
+    "ticks_per_frame": 10,
+    "blend_frames": false
+  },
+  {
+    "flipbook_texture": "textures/blocks/ink_flipbook",
+    "atlas_tile": "ink_flipbook",
+    "ticks_per_frame": 10,
+    "blend_frames": true
+  }
+]

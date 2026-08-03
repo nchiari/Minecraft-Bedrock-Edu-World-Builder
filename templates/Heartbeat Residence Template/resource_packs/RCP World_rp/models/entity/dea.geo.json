@@ -1,0 +1,40 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.dea",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "dea",
+          "pivot": [0, 12.5, -0.25],
+          "binding": "q.item_slot_to_bone_name(context.item_slot)",
+          "cubes": [
+            { "origin": [-2.5, 10.5, -1], "size": [5, 4, 1.5], "uv": [0, 7] },
+            { "origin": [2, 10.5, -1], "size": [1, 4, 1.5], "uv": [7, 2] },
+            { "origin": [-3, 10.5, -1], "size": [1, 4, 1.5], "uv": [3, 2] },
+            { "origin": [-2.5, 14, -1], "size": [5, 1, 1.5], "uv": [0, 0] },
+            { "origin": [-2.5, 10, -1], "size": [5, 1, 1.5], "pivot": [0, 10.5, -0.25], "rotation": [0, 0, -180], "uv": [0, 12] }
+          ]
+        },
+        {
+          "name": "corners",
+          "parent": "dea",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            { "origin": [1.75, 13.75, -1], "size": [1, 1, 1.5], "uv": [12, 14] },
+            { "origin": [-3.75, 13.75, -1], "size": [1, 1, 1.5], "pivot": [-2.75, 14.25, -0.25], "rotation": [0, 180, 0], "uv": [12, 14] },
+            { "origin": [-2.75, 9.25, -1], "size": [1, 1, 1.5], "pivot": [-2.25, 10.25, -0.25], "rotation": [0, 0, -180], "uv": [12, 14] },
+            { "origin": [1.75, 10.25, -1], "size": [1, 1, 1.5], "pivot": [3.25, 10.75, -0.25], "rotation": [0, 180, -180], "uv": [12, 14] }
+          ]
+        }
+      ]
+    }
+  ]
+}

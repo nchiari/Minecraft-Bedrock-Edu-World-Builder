@@ -1,0 +1,117 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:dea_totem_2",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": ["dea_totem_2"]
+      },
+      "animations": {
+        "dea_totem_2": "controller.animation.dea_totem_2"
+      }
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "variant2": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:type_family": {
+        "family": ["totem"]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "deals_damage": false,
+            "cause": "all"
+          }
+        ]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 2,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 2
+      },
+      "minecraft:interact": {
+        "interactions": {
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "operator": "==",
+                  "subject": "other",
+                  "domain": "hand",
+                  "value": "let:dea"
+                },
+                {
+                  "test": "is_variant",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": 0
+                }
+              ]
+            },
+            "event": "totem:state"
+          }
+        }
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "totem:state": {
+        "add": {
+          "component_groups": ["skin_1"]
+        }
+      },
+      "variant2": {
+        "add": {
+          "component_groups": ["variant2"]
+        }
+      }
+    }
+  }
+}

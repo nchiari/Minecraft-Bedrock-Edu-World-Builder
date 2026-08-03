@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.goya_monster.base_pose": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["monster_base_pose"],
+          "transitions": [{ "dead": "q.variant == 1" }]
+        },
+        "dead": {
+          "animations": ["dead"],
+          "transitions": [{ "default": "q.variant == 2" }]
+        }
+      }
+    },
+    "controller.animation.goya_monster.move": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["move"]
+        }
+      }
+    }
+  }
+}

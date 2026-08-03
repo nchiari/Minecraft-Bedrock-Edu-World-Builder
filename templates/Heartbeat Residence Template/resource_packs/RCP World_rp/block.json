@@ -1,0 +1,53 @@
+{
+  "format_version": "1.20.10",
+  "blocks": {
+    "let:ambulancia_slab_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_1_ew_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_1_ns_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_2_ew_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_2_ns_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_rayas_down_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_rayas_up_en": {
+      "sound": "metal"
+    },
+    "let:ambulancia_slab_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_1_ew_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_1_ns_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_2_ew_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_2_ns_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_rayas_down_es": {
+      "sound": "metal"
+    },
+    "let:ambulancia_rayas_up_es": {
+      "sound": "metal"
+    },
+    "let:bus_azul_top": {
+      "sound": "metal"
+    },
+    "let:bus_azul_botton": {
+      "sound": "metal"
+    }
+  }
+}

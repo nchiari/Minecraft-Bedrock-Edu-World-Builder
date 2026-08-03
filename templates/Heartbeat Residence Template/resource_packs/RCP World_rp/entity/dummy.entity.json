@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pix:dummy",
+      "materials": {
+        "default": "alphatest"
+      },
+      "textures": {
+        "skin_0": "textures/entity/human/skin_dummy",
+        "skin_1": "textures/entity/human/skin_dummy_dea"
+      },
+      "geometry": {
+        "default": "geometry.dummy"
+      },
+      "render_controllers": ["controller.render.dummy"],
+      "spawn_egg": {
+        "base_color": "#ddbe71",
+        "overlay_color": "#9d8247"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "rcp": "animation.dummy.rcp",
+        "check": "animation.dummy.check",
+        "charge": "animation.dummy.charge",
+        "breath": "animation.dummy.breath",
+        "controller": "controller.animation.dummy"
+      },
+      "sound_effects": {
+        "rcp": "balloon.pop", //hit.copper
+        "check": "check",
+        "charge": "ambient.weather.lightning.impact",
+        "breath": "breath"
+      },
+      "particle_effects": {
+        "rcp": "minecraft:critical_hit_emitter",
+        "charge": "minecraft:ice_evaporation_emitter",
+        "breath": "minecraft:misc_fire_vapor_particle"
+      }
+    }
+  }
+}

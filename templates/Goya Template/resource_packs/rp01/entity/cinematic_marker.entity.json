@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:cinematic_marker",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/red_marker"
+      },
+      "geometry": {
+        "default": "geometry.marker_picker"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#791163",
+        "overlay_color": "#535353"
+      }
+    }
+  }
+}

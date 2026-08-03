@@ -1,0 +1,104 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:arpa",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sparks_off": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "sparks_on": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": ["item_angel"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 1
+                  }
+                ]
+              },
+              "event": "picked"
+            }
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1.5,
+        "height": 1.5
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "sparks_on": {
+        "add": {
+          "component_groups": ["sparks_on"]
+        }
+      },
+      "sparks_off": {
+        "add": {
+          "component_groups": ["sparks_off"]
+        }
+      },
+      "picked": {
+        "queue_command": {
+          "command": [
+            "execute as @p run scriptevent let:cancel_block_projectile",
+            "give @a let:arpa 1 0 {\"minecraft:item_lock\":{\"mode\":\"lock_in_inventory\"}}",
+            "titleraw @a title {\"rawtext\":[{\"translate\":\"arpa_pick.title\",\"with\":{\"rawtext\":[{\"text\":\"\n\"}]}}]}",
+            "dialogue change @e[tag=angel_musico] angel_musico_01_b @a",
+            "event entity @s let:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pincel_display": {
+      "states": {
+        "default": {
+          "transitions": [{ "sparkles": "query.variant == 1" }]
+        },
+        "sparkles": {
+          "animations": ["sparkles"],
+          "transitions": [{ "default": "query.variant == 0 || query.variant == 2" }]
+        }
+      }
+    }
+  }
+}

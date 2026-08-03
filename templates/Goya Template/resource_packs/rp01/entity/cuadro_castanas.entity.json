@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_castanas",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_castanas"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_castanas"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#b88a01",
+				"overlay_color": "#917396"
+			}
+		}
+	}
+}

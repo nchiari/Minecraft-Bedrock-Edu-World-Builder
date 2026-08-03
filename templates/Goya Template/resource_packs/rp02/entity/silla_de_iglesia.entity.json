@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:silla_de_iglesia",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/silla_de_iglesia"
+			},
+			"geometry": {
+				"default": "geometry.silla_de_iglesia"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#75d3c3",
+				"overlay_color": "#3b1f6e"
+			}
+		}
+	}
+}

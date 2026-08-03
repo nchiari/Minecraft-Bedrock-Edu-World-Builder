@@ -1,0 +1,4 @@
+function timers/parkour_reset
+function timers/simon_reset
+function timers/rcp_reset
+function timers/heimlich_reset

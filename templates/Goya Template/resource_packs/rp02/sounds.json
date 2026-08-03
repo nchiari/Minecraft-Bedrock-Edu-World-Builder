@@ -1,0 +1,48 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"let:libro_de_iglesia": {
+				"events": {
+					"ambient": "mob.bat.idle",
+					"death": "mob.bat.death",
+					"hurt": "mob.bat.hurt",
+					"takeoff": {
+						"pitch": [0.8, 1.2],
+						"sound": "mob.bat.takeoff",
+						"volume": 0.05
+					}
+				},
+				"pitch": [0.76, 1.14],
+				"volume": 0.1
+			},
+			"let:silla_de_iglesia": {
+				"events": {
+					"ambient": "mob.bat.idle",
+					"death": "mob.bat.death",
+					"hurt": "mob.bat.hurt",
+					"takeoff": {
+						"pitch": [0.8, 1.2],
+						"sound": "mob.bat.takeoff",
+						"volume": 0.05
+					}
+				},
+				"pitch": [0.76, 1.14],
+				"volume": 0.1
+			},
+			"let:podio_de_iglesia": {
+				"events": {
+					"ambient": "mob.bat.idle",
+					"death": "mob.bat.death",
+					"hurt": "mob.bat.hurt",
+					"takeoff": {
+						"pitch": [0.8, 1.2],
+						"sound": "mob.bat.takeoff",
+						"volume": 0.05
+					}
+				},
+				"pitch": [0.76, 1.14],
+				"volume": 0.1
+			}
+		}
+	}
+}

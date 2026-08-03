@@ -1,0 +1,56 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.dummy",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 8,
+				"visible_bounds_offset": [0, 3, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [-12, -6, 0],
+					"rotation": [-90, 90, 0]
+				},
+				{
+					"name": "upper",
+					"parent": "bone",
+					"pivot": [-12, 4, -7]
+				},
+				{
+					"name": "body",
+					"parent": "upper",
+					"pivot": [-12, 9, -9],
+					"cubes": [
+						{"origin": [-18, -3, -12], "size": [12, 12, 6], "uv": [14, 30]}
+					],
+					"locators": {
+						"heart": [-12, -3, -13],
+						"charge": [-12, 6, -16],
+						"breath": [-12, 12, -17]
+					}
+				},
+				{
+					"name": "head",
+					"parent": "upper",
+					"pivot": [-12, 13, -9],
+					"cubes": [
+						{"origin": [-16, 9, -13], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "hat",
+					"parent": "head",
+					"pivot": [-12, 13, -9],
+					"cubes": [
+						{"origin": [-16, 9, -13], "size": [8, 8, 8], "inflate": 0.1, "uv": [32, 0]}
+					]
+				}
+			]
+		}
+	]
+}

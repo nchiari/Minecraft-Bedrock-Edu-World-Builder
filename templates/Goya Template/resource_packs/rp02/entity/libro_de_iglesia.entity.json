@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:libro_de_iglesia",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/libro_de_iglesia"
+			},
+			"geometry": {
+				"default": "geometry.libro_de_iglesia"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#2b07bc",
+				"overlay_color": "#b972dc"
+			}
+		}
+	}
+}

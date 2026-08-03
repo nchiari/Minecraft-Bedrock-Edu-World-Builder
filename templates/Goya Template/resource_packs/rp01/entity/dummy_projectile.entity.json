@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:dummy_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dummy_projectile"
+      },
+      "geometry": {
+        "default": "geometry.dummy_projectile"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#a3a3a3"
+      }
+    }
+  }
+}

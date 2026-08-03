@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:cama_goya",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "cama_goya": "textures/entity/cama_goya",
+        "cama_goya_2": "textures/entity/cama_goya_2"
+      },
+      "geometry": {
+        "default": "geometry.cama_goya"
+      },
+      "render_controllers": ["controller.render.cama_goya"],
+      "spawn_egg": {
+        "base_color": "#ae125b",
+        "overlay_color": "#e4511d"
+      }
+    }
+  }
+}

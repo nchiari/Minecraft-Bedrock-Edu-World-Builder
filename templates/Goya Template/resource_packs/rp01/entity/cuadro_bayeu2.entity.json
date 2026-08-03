@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_bayeu2",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_bayeu2"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_bayeu2"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#e002d8",
+				"overlay_color": "#4e4b14"
+			}
+		}
+	}
+}

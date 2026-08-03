@@ -1,0 +1,53 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pix:dummy_2",
+      "materials": {
+        "default": "alphatest"
+      },
+      "textures": {
+        "skin_0": "textures/entity/human/skin_dummy",
+        "skin_1": "textures/entity/human/skin_dummy_sick1",
+        "skin_2": "textures/entity/human/skin_dummy_sick2",
+        "skin_3": "textures/entity/human/skin_dummy_sick3",
+        "sick_emoji0": "textures/entity/human/sick_emoji0",
+        "sick_emoji1": "textures/entity/human/sick_emoji1",
+        "sick_emoji2": "textures/entity/human/sick_emoji2",
+        "sick_emoji3": "textures/entity/human/sick_emoji3"
+      },
+      "geometry": {
+        "default": "geometry.dummy_2"
+      },
+      "render_controllers": ["controller.render.dummy_2", "controller.render.sick_emoji"],
+      "spawn_egg": {
+        "base_color": "#ddbe71",
+        "overlay_color": "#9d8247"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "sick": "animation.dummy_2.sick",
+        "toser": "animation.dummy_2.toser",
+        "palmadas": "animation.dummy_2.palmadas",
+        "heim": "animation.dummy_2.heim",
+        "controller": "controller.animation.dummy_2"
+      },
+      "sound_effects": {
+        "cough": "cough",
+        "choke": "choke",
+        "spit": "spit",
+        "breath": "breath",
+        "palmadas": "palmadas",
+        "burp": "random.burp",
+        "hurt": "mob.evocation_illager.death"
+      },
+      "particle_effects": {
+        "palmadas": "minecraft:critical_hit_emitter",
+        "toser": "minecraft:misc_fire_vapor_particle",
+        "heim": "minecraft:falling_dust_concrete_powder_particle"
+      }
+    }
+  }
+}

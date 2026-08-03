@@ -1,0 +1,94 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:paleta",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "sparks_off": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "sparks_on": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": ["item_angel"]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 1
+                  }
+                ]
+              },
+              "event": "picked"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "sparks_on": {
+        "add": {
+          "component_groups": ["sparks_on"]
+        }
+      },
+      "sparks_off": {
+        "add": {
+          "component_groups": ["sparks_off"]
+        }
+      },
+      "picked": {
+        "queue_command": {
+          "command": ["give @a let:paleta", "dialoge change @e[tag=angel_artista] angel_artista_01_b @a", "event entity @s let:despawn"]
+        }
+      }
+    }
+  }
+}

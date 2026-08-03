@@ -1,0 +1,18 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "default:entity": {},
+    "alphatest:entity_alphatest": {},
+    "hollow": {
+      "vertexShader": "shaders/entity.vertex",
+	  	"vrGeometryShader": "shaders/entity.geometry",
+	  	"fragmentShader": "shaders/entity.fragment",
+      "+states": ["Blending"]
+    },
+    "animated:entity":{
+      "+defines":[
+          "USE_UV_ANIM"
+      ]
+    }
+  }
+}

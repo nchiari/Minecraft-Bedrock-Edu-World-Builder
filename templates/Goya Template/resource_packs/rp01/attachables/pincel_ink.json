@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "let:pincel_ink",
+      "materials": { "default": "entity_alphatest", "enchanted": "entity_alphatest" },
+      "textures": { "default": "textures/entity/pincel_ink", "enchanted": "textures/entity/pincel_ink" },
+      "geometry": { "default": "geometry.pincel" },
+      "render_controllers": ["controller.render.item_default"],
+      "animations": {
+        "hold_first_person": "animation.pincel.hold_first_person",
+        "hold_third_person": "animation.pincel.hold_third_person",
+        "swing_fp": "animation.pincel.swing_fp",
+        "swing_tp": "animation.pincel.swing_tp",
+        "controller": "controller.animation.pincel"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      }
+    }
+  }
+}

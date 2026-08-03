@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_buscando",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_buscando"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_buscando"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#854ce9",
+				"overlay_color": "#2a84e8"
+			}
+		}
+	}
+}

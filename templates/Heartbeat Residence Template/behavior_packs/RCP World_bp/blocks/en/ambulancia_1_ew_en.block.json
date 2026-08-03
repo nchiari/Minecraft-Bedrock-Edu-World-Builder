@@ -1,0 +1,49 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:block": {
+    "description": {
+      "identifier": "let:ambulancia_1_ew_en",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.ambulancia_slab",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "concrete_white",
+          "render_method": "opaque"
+        },
+        "north": {
+          "texture": "concrete_white",
+          "render_method": "opaque"
+        },
+        "east": {
+          "texture": "ambulancia_1_en",
+          "render_method": "opaque"
+        },
+        "south": {
+          "texture": "concrete_white",
+          "render_method": "opaque"
+        },
+        "west": {
+          "texture": "ambulancia_1_en",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "concrete_white",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "concrete_white",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:map_color": "#7d7d7d"
+    }
+  }
+}

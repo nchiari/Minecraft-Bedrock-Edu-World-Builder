@@ -1,0 +1,444 @@
+## Entities
+
+entity.let:dea_totem.name=AED Totem
+entity.let:dea_totem_2.name=AED Totem
+entity.pix:dummy.name=Training dummy
+entity.pix:human.name=Human
+entity.pix:human_roam.name=Human (ROAM)
+
+## Spawners
+item.spawn_egg.entity.pix:human_roam.name=Human
+item.spawn_egg.entity.pix:human.name=Human
+item.spawn_egg.entity.let:dea_totem.name=AED Totem
+## Items
+
+item.let:dea.name=AED box
+item.let:manos_rcp.name=Compressions
+item.let:manos_heimlich.name=Heimlich maneuver
+item.let:manos_palmadas.name=Back blows
+item.let:comprobar.name=Check
+item.let:phone.name=§cCall 911
+item.let:dea_item_off.name=Defibrillator turned off
+item.let:dea_item_on.name=§2Defibrillator ready
+item.let:respiracion.name=Breathing
+item.let:toser.name=Encourage coughing
+## Bloques
+
+tile.let:ambulancia_slab_en.name=Slab ambulance
+tile.let:ambulancia_1_ns_en.name=Ambulance 1
+tile.let:ambulancia_1_ew_en.name=Ambulance 1
+tile.let:ambulancia_2_ns_en.name=Ambulance 2
+tile.let:ambulancia_2_ew_en.name=Ambulance 2
+tile.let:ambulancia_rayas_down_en.name=Ambulance with stripes (down)
+tile.let:ambulancia_rayas_up_en.name=Ambulance with stripes (up)
+tile.let:bus_azul_bottom.name=Blue bus (bottom)
+tile.let:bus_azul_top.name=Blue bus (top)
+tile.let:ambulancia_slab_es.name=Slab ambulance
+tile.let:ambulancia_1_ns_es.name=Ambulance 1
+tile.let:ambulancia_1_ew_es.name=Ambulance 1
+tile.let:ambulancia_2_ns_es.name=Ambulance 2
+tile.let:ambulancia_2_ew_es.name=Ambulance 2
+tile.let:ambulancia_rayas_down_es.name=Ambulance with stripes (down)
+tile.let:ambulancia_rayas_up_es.name=Ambulance with stripes (up)
+
+## Dialogues
+
+## Botones
+dialogue.button.emergencia=Unconscious
+dialogue.button.nada=Nothing
+dialogue.button.no=No
+dialogue.button.si=Yes
+dialogue.button.vale=Ok
+dialogue.button.mastarde=Later
+dialogue.button.gracias=Thank you
+dialogue.button.next=Next
+dialogue.button.back=Go back
+dialogue.button.cogerDEA=§l§cTake AED
+dialogue.button.whatdea=§lAED
+dialogue.button.whatrcp=§lCPR
+dialogue.button.whatbreath=§lBreathing
+dialogue.button.whatpc=§lCA
+dialogue.button.whatatragantamiento=§lChoking
+dialogue.button.what112=§lEmergency no.
+dialogue.button.a=§lA
+dialogue.button.b=§lB
+dialogue.button.c=§lC
+dialogue.button.regresar=§lGo back
+dialogue.button.checkpoint=§lTo checkpoint
+dialogue.button.inicio=§lStart over
+dialogue.button.facil=§lEasy
+dialogue.button.normal=§lMedium
+dialogue.button.dificil=§lHard
+dialogue.button.entrar=§lEnter
+dialogue.button.salir=§lExit
+dialogue.button.inaugurar=§lInaugurate
+dialogue.button.reglas=§lRules
+dialogue.button.comencemos=§l§2Let's start!
+dialogue.button.rcpydea=CPR and AED
+dialogue.button.usodea=Use of AED
+dialogue.button.pasoapaso=AED step by step
+dialogue.button.svb=BLS and AED
+dialogue.button.atragantamiento=Choking
+dialogue.button.form=§lForm
+dialogue.button.cert=§l§2Certificate
+dialogue.button.points=Score
+dialogue.button.again=§lAgain!
+dialogue.button.end=Finish
+dialogue.button.salud=Healthcare Center
+dialogue.button.todo_ok=It's safe
+dialogue.button.ccomercial=Shopping Mall
+dialogue.button.colegio=School
+dialogue.button.csalud=Health Center
+dialogue.button.polideportivo=Rec Center
+dialogue.button.hospital=Hospital
+dialogue.button.cogerobjetos=Get your tools!
+dialogue.button.are_u_ok=Are you ok?
+
+## Nombres
+
+dialogue.npc_name.mara=Teresa
+dialogue.npc_name.alejandro=Alex
+dialogue.npc_name.ines=Amber
+dialogue.npc_name.angela=Angela
+dialogue.npc_name.pablo=Liam
+dialogue.npc_name.manuel=Joe
+dialogue.npc_name.maria=Olivia
+dialogue.npc_name.alberto=Ben
+dialogue.npc_name.alicia=Amy
+dialogue.npc_name.alvaro=Ryan
+dialogue.npc_name.amelia=Amelia
+dialogue.npc_name.ana=Melissa
+dialogue.npc_name.andres=Andrew
+dialogue.npc_name.julia=Charlotte
+dialogue.npc_name.antonio=Tony
+dialogue.npc_name.beatriz=Isabella
+dialogue.npc_name.carlos=Carlos
+dialogue.npc_name.carmen=Evelyn
+dialogue.npc_name.carolina=Harper
+dialogue.npc_name.daniel=Daniel
+dialogue.npc_name.david=David
+dialogue.npc_name.diego=Noah
+dialogue.npc_name.elena=Helena
+dialogue.npc_name.enrique=Lucas
+dialogue.npc_name.esteban=Mateo
+dialogue.npc_name.eva=Eva
+dialogue.npc_name.felipe=Phil
+dialogue.npc_name.fernando=Miles
+dialogue.npc_name.francisco=Francis
+dialogue.npc_name.gabriel=Jacob
+dialogue.npc_name.nuria=Naomi
+dialogue.npc_name.oscar=Builder Oscar
+dialogue.npc_name.ivan=Builder Ezra
+dialogue.npc_name.unai=Levi
+dialogue.npc_name.samuel=Samuel
+dialogue.npc_name.sara=Sarah
+dialogue.npc_name.sofia=Allison
+dialogue.npc_name.violeta=Violet
+dialogue.npc_name.jesus=Cooper
+dialogue.npc_name.jose=Owen
+dialogue.npc_name.emilio=Dylan
+dialogue.npc_name.jorge=George
+dialogue.npc_name.marina=Riley
+dialogue.npc_name.iker=Adam
+dialogue.npc_name.marta=Willow
+dialogue.npc_name.marcos=Cameron
+dialogue.npc_name.hector=Enzo
+dialogue.npc_name.irene=Layla
+dialogue.npc_name.lola=Emilia
+dialogue.npc_name.ignacio=Builder Micah
+dialogue.npc_name.leonardo=Builder Leo
+dialogue.npc_name.maria=Sadie
+dialogue.npc_name.voluntaria_paula=Volunteer Pamela
+dialogue.npc_name.voluntario_alonso=Volunteer Alfred
+dialogue.npc_name.voluntario_enrique=Volunteer Harry
+dialogue.npc_name.voluntaria_iciar=Volunteer Nicole
+dialogue.npc_name.voluntario_pablo=Volunteer Paul
+dialogue.npc_name.dra_salvacorazones=Dr. Heartsaver
+dialogue.npc_name.voluntario_raul=Volunteer Rick
+dialogue.npc_name.voluntaria_susana=Volunteer Susan
+dialogue.npc_name.voluntario_eduardo=Volunteer Edward
+dialogue.npc_name.voluntaria_carmela=Volunteer Catherine
+dialogue.npc_name.voluntaria_andrea=Volunteer Julia
+dialogue.npc_name.voluntaria_patricia=Volunteer Patricia
+dialogue.npc_name.voluntario_miguel=Volunteer Mike
+dialogue.npc_name.voluntario_nicolas=Volunteer Niko
+dialogue.npc_name.voluntaria_vicenta=Volunteer Veronica
+dialogue.npc_name.voluntaria_marisa=Volunteer Mary
+dialogue.npc_name.voluntario_emilio=Volunteer Dan
+dialogue.npc_name.voluntario_mariano=Volunteer Bob
+dialogue.npc_name.voluntaria_alicia=Volunteer Alicia
+dialogue.npc_name.voluntario_manuel=Volunteer Francis
+dialogue.npc_name.voluntaria_sandra=Volunteer Sandra
+dialogue.npc_name.voluntaria_ximena=Volunteer Cate
+dialogue.npc_name.voluntario_guillermo=Volunteer Will
+dialogue.npc_name.voluntario_victor=Volunteer Victor
+dialogue.npc_name.voluntaria_ana_belen=Volunteer Anna
+dialogue.npc_name.voluntario_luis=Volunteer Louis
+dialogue.npc_name.voluntario_leandro=Volunteer Mark
+dialogue.npc_name.voluntaria_amaya=Volunteer Natalie
+dialogue.npc_name.voluntaria_sofia=Volunteer Sophia
+dialogue.npc_name.voluntario_xavi=Volunteer Xavier
+dialogue.npc_name.voluntaria_nancy=Volunteer Nancy
+dialogue.npc_name.voluntario_alberto=Volunteer John
+dialogue.npc_name.voluntaria_mikaela=Volunteer Emma
+dialogue.npc_name.voluntaria_arantxa=Volunteer Laura
+dialogue.npc_name.tecnico_de_emergencias=Emergency medical technician
+dialogue.npc_name.112=911
+dialogue.npc_name.maniqui=Training dummy
+dialogue.npc_name.autobus=Bus driver
+
+## Diálogos NPCs random
+
+dialogue.alejandro=Mushu! What are you doing there? Come down, please...
+dialogue.ines=I could spend the whole day playing on the park's slides!
+dialogue.angela=It's Jaki's first walk, I just got him vaccinated
+dialogue.pablo=How cute! My dog Rufi is already 12 years old...
+dialogue.manuel=Let me have this swing, come on, please!
+dialogue.maria=No, Joe, the other one is broken. Let me have it...
+dialogue.alberto=It seems they're doing something at the health center...
+dialogue.alicia=Yes, I think it was a §lCPR course§r, but I am not sure
+dialogue.alvaro=Very welcome to my school!
+dialogue.amelia=It is amazing all that you can learn in this school!
+dialogue.ana=Sometimes I like to come here to see the landscape to clear my mind from studying...
+dialogue.andres=From up here, you can see the whole fair!
+dialogue.julia=Shhhhh... Go away, they're going to see me!
+dialogue.antonio=Hey! Get me out already, this isn't funny!
+dialogue.beatriz=I can't do it! I am going to ask for help!
+dialogue.carlos=Sometimes we come here to get away from our boss
+dialogue.carmen=He is a bit strict, to be honest...
+dialogue.carolina=It's amazing how good they are at Parkour...
+dialogue.daniel=I would never be able to do that
+dialogue.david=This is amazing, baseball and parkour.
+dialogue.diego=I totally agree!
+dialogue.elena=To be honest, we are doing great here...
+dialogue.enrique=You know, I used to be a professional player until a ball hit my knee...
+dialogue.esteban=The ball went out of the field and I can't find it
+dialogue.eva=This construction takes forever, haha
+dialogue.felipe=Your ticket, please...
+dialogue.fernando=I've come to the §lhealth center§r to sign up for the §lCPR simulation§r
+dialogue.francisco=Do you like the mural I made? The §lBrigade§r volunteers ordered it!
+dialogue.gabriel=Taking a walk is the best way to check out!
+dialogue.nuria=These construction works, they don't let me sleep...
+dialogue.oscar=This leak is so big...
+dialogue.ivan=We've been called urgently to fix the roof...
+dialogue.unai=It seems like this bus is running late...
+dialogue.samuel=Finally, classes are over.
+dialogue.sara=I know.. but we need to come tomorrow again... puf
+dialogue.sofia=Silly me... I forgot my keys.
+dialogue.violeta=I'm waiting for my friend, we were supposed to meet half an hour ago...
+dialogue.jesus=We're clearing these weeds for the Town Hall.
+dialogue.jose=It's impossible to work in this heat...
+dialogue.emilio=I don`t where the school is, I am lost.
+dialogue.jorge=This trash can fills up quickly...
+dialogue.marina=I just bought this car!
+dialogue.iker=I don't feel so good...
+dialogue.marta=Have you come to do the CPR practice? You can talk to the §lvolunteers§r inside the room to start
+dialogue.marcos=I'm impressed to see people learning first aid skills. Safety is key everywhere.
+dialogue.hector=It's great to see people caring about learning how to help in emergency situations. You never know when it might be useful.
+dialogue.irene=It's reassuring to know that safety and emergency preparedness are encouraged in this place. Everyone should be aware of this
+dialogue.lola=Sometimes, first aid knowledge can make the difference between life and death. I'm glad they're promoting this here.
+dialogue.ignacio=We are excited about the construction of the §lhospital of the future§r. Every brick we lay brings us one step closer to creating an incredible place for the health of our neighbors. Thank you very much for your help!
+dialogue.leonardo=The construction of the §lhospital of the future§r is in full swing. Every day, we are closer to completing this incredible project
+dialogue.autobus=Welcome aboard! Where are we going today?
+## Dra. SalvaCorazones - Inicio
+
+dialogue.salvacorazones_start_a=Welcome to §lHeartbeat Residence§r! Nice to meet you!%1I'm Dr. Heartsaver, and I'm here to guide you on your journey to becoming a valuable member of our §lRescue Brigade§r.%1To officially join the Brigade, you'll need to complete a series of §2activities§r provided by our §2volunteers§r located throughout the Residence.
+dialogue.salvacorazones_start_c=For your first mission, I'll give you some §cAutomated External Defibrillators (AEDs)§r that you must place at the §l6 designated AED stations§r. %1%1Try it out with the one I have here by my side!
+dialogue.salvacorazones_start_d=That's how simple it is! To navigate through the §lResidence§r and locate the other §2volunteers§r, you can use the §lmap§r right behind me. If you have any questions, I'm here to assist! %1%1Once you've §lcompleted all the activities§r and have §lplaced all the AEDs§r, come back and talk to me. I'll be delighted to officially welcome you as a new member of the §lRescue Brigade§r!
+## Objetos de registro
+
+dialogue.voluntaria_arantxa=To become a Brigade member, it is crucial that you meticulously document and capture all your activities. Here, you are provided with a §lbook and pen§, a §lcamera§r, and a §lportfolio§r to record your experiences.%1%1If you require additional items, feel free to come and ask, okay?
+## Dra. SalvaCorazones - Final
+
+dialogue.salvacorazones_final_a=Excellent job! You've completed all the missions with a high level of skill and knowledge in §lfirst aid§r! You are now officially part of the Rescue Brigade! %1%1Here is your §lofficial member certificate§r!
+dialogue.salvacorazones_final_c=Even though you've grasped the fundamentals, I'll leave you with some additional resources so you can continue refining your knowledge. If you feel you can learn even more, don't hesitate to §lspeak with the volunteers§r and take on the missions again.%1%1You have a bright future ahead as part of this team of heroes. Congratulations!
+## Dra. SalvaCorazones - Preguntas
+
+dialogue.salvacorazones_rcp=§3CPR§r, or §lcardiopulmonary resuscitation§r, is essential when%1someone has stopped breathing or their heart has stopped. Applying §lstrong and rapid compressions at the center of the chest§r can help sustain their heart until the AED or ambulance arrives. It's a vital skill that everyone should know. If you want to learn how to do it, our §lvolunteers§r at the §lhealth center§r and at the §lschool§r will teach you
+dialogue.salvacorazones_pc=§5CA§r, or §lcardiorespiratory arrest§r, is a very serious situation where §lthe heart and lungs cease to function§r. Imagine a clock stopping: everything halts, and §lyou need to act quickly§r. The person won't speak, move, or breathe. To learn how to respond in such a situation, the §lvolunteers§r at the §lhealth center§r and at the §lschool§r conduct drills and practical exercises.
+dialogue.salvacorazones_dea=§2Automated External Defibrillators (AEDs)§r are vital devices that can save lives in the event of a cardiac emergency. The AED helps §lrestart the heart§r. %1If you need more §2AEDs§r, don't hesitate to come and see me. I have an extra supply to ensure all stations are well equipped!
+dialogue.salvacorazones_atragantamiento=§6Choking§r happens when something, like food or a small object, §lblocks your throat and makes breathing%1difficult§r. In these moments, §levery second counts§r. Do you know how to perform the §lHeimlich maneuver§r to help someone who is choking? If not, don't worry. The §lvolunteers§r at the §lschool§r and at the §lshopping center§r are ready to teach you.
+dialogue.salvacorazones_112=The §cemergency number§r is the number you should §lcontact for any emergency§r. When you call, you'll need%1to §lrespond to questions clearly and quickly§r. At the §lhealth center§r,%1the §lvolunteers§r will teach you exactly what to say and how to handle it. In the United States and Canada we use §c9-1-1§r, but §c§lthis number can change depending on the country§r. If you're%1not sure which one applies where you live, always ask a §ltrusted adult§r to confirm it.
+## Colegio
+
+dialogue.voluntario_enrique=Welcome! Inside the school, there's a §lfirst aid fair§r happening with super fun game about §lCPR§r. Why not join in the fun?
+## Stands
+dialogue.voluntario_luis=Our §lFirst Aid Fair§r is in full swing! We not only have an exciting game about §lCPR§r, but you can also §lstroll through the booths§r, read informative posters, and §lchat with other volunteers§r to delve even deeper into these vital topics. Go ahead and explore!
+dialogue.voluntaria_ximena=Did you know that the first few minutes after a cardiac arrest are critical to saving a life? Let me tell you about the first two steps in the §lsurvival chain§r:%1%1§l1. Recognize and seek help:§r If you see someone becoming unconscious or having issues, it's vital to call 911 §7(or your local emergency number)§r as quickly as possible. The sooner the experts arrive, the better.%1%1§l2. Perform CPR:§r While waiting for professionals, you can begin CPR maneuvers. These involve strong chest compressions, between 100 to 120 per minute. If you're unsure how to do it, don't worry! Emergency services will guide you over the phone.%1%1Talk to Sandra; she'll tell you the next two steps to take.
+dialogue.voluntaria_sandra=Cate already talked to you about the first two steps of the §lsurvival chain§r? Now it's time to learn about the last two:%1%1§l3. Use an AED:§r If used within the first few minutes along with CPR, the chances of survival increase by 70%-80% in most cases.%1%1§l4. Professional help and hospital care:§r This is when healthcare professionals come into play. They will use specialized equipment to continue helping. Once the person is stabilized, it's vital to continue with care at the hospital to ensure their well-being.
+dialogue.voluntario_guillermo=I assume Victor has already told you about the types of choking, so here we go with the solutions:%1%1§l1. Back blows:§r Stand beside the person and give them 5 strong back blows at the upper back with your hand. If it doesn't work, move to the next technique.%1%1§l2. Heimlich maneuver:§r Stand behind the person, place your hands around their stomach, and do 5 quick, strong upward thrusts, as if you're trying to lift them slightly.%1%1Knowing these steps is crucial; acting quickly makes a difference.
+dialogue.voluntario_victor=Choking is a problem that can arise at any moment, and trust me, it's better to be prepared. There are two main types of choking you should know about:%1%1§l1. Mild obstruction (partial):§r If someone is coughing and can speak, they have a partial obstruction in their throat. Here, the best course of action is to encourage the person to continue coughing forcefully, as coughing is the most effective way to clear the airways.%1%1§l2. Severe obstruction (complete):§r If you see someone who can't speak, breathe, or cough, it's time to act quickly...%1%1Talk to Will; he will tell you what steps to take in these cases.
+dialogue.simonNPC_start=It's good to see someone aspiring to be part of our §lRescue Brigade§r. Here you'll get to know two essential concepts: §lcardiac compressions§r and the §lAED§r. Through a fun game, you'll test your reflexes to get ready to react to emergency situations. You'll have to repeat the §lcolor pattern§r I'll tell you within a specific time period.%1%1What do you say, shall we begin?
+dialogue.simonNPC_rules=In front of you, you'll see our 'block-dummy' with §lfour buttons and a lever§r, each placed over a different color. The buttons represent the §lchest compressions§r, and the lever symbolizes the use of the §lAED§r.%1%1For §l1 minute§r, messages with §lcolor names§r will appear on the screen, and you should press the button or lever whose name matches the word on the screen. Each correct action earns you §l§21 point§r. But be careful! If you make a mistake, you'll lose §l§41 point§r.%1Remember: pay attention to the §lcolor name§r in the message, not the color itself, it can be misleading!.%1%1Shall we start?
+dialogue.simonNPC_timer=Hurry up, time is running out!%1%1Would you rather take a break and try again later?
+dialogue.simonNPC_final=Great job! Now you understand the concept of §lcardiac compressions§r, but there's still much to learn and practice. Talk to my colleagues right behind me, and don't forget to visit the §lhealth center§r, where my colleagues are offering a §lCPR workshop§r.%1%1Would you like to check the points you've earned, or would you like to give it another try?
+dialogue.school_playing=It looks like you're already in the middle of another activity! Finish that game first and then come back to talk to me. Come on, there's not much time left!
+dialogue.sos_a=Emergency services.%1%1How can I assist you?%1%1§lA.§r There is an unconscious person not breathing.%1§lB.§r Nothing at the moment.
+dialogue.sos_b=Understood. I need to know your exact location to send assistance.%1%1Where are you located?%1%1§lResponse:§r Health Center, Hope Street number 5
+dialogue.sos_c=The ambulance is on its way. Please, keep the line open and start performing CPR.%1%1I won't hang up; I'll stay with you to provide necessary guidance.
+dialogue.sos_rcp=Place your hands in the center of the person's chest, one on top of the other. Keep your arms straight and press forcefully and quickly, at a rate of about 100 to 120 compressions per minute.%1%1Continue doing this until the AED arrives or help from the ambulance arrives.
+dialogue.sos_respiracion=Tilt the victim's head back and lift the chin. Close their nose and give two quick breaths to make their chest rise.%1%1Then, immediately return to compressions and continue this cycle until help arrives in the ambulance or the AED.
+dialogue.sos_dea=First, turn on the device. Place the adhesive pads as illustrated on the package: one on the upper right side of the chest and the other on the lower left side.%1The AED will provide audio instructions, listen carefully. If it advises administering an electric shock, ensure nobody is touching the person and press the button to administer it.%1%1Then, continue with chest compressions until help arrives.
+dialogue.sos_end=We're here for you whenever you need us.
+dialogue.comprobar_a=The dummy is not responding...
+dialogue.voluntario_alonso=Hello! At the Health Center, we are conducting a training session on how to deal with a §lcardiorespiratory arrest§r.%1%1I invite you to give it a try. It's of vital importance!
+dialogue.rcpNPC_start=Hello there, aspiring member of the §lRescue Brigade§r! We're here to teach you how to respond to a §lheart attack§r step by step to save lives. If you'd like to participate in this practice, your task will be to attend to our §lpractice mannequin§r correctly, using different techniques and tools required for an emergency situation. Don't worry, we'll be with you every step of the way. %1Now, shall we begin?
+dialogue.rcpNPC_rules=In this practice, your task is to follow the correct procedure. You should start by §lchecking§r if the subject is responsive. Next, §lcall 911§r and report the emergency. While waiting, start performing §lcompressions§r at a steady pace. Following that, proceed with a series of §lventilations§r to assist with breathing. Finally, use the §ldefibrillator§r and continue with compressions §luntil the emergency technician arrives§r. %1To perform each action, just select it from the §litem bar§r and right-click on the dummy.%1%1Show me your skills!
+dialogue.rcpNPC_asegurar=Before approaching the victim, the first thing we'll do is §lensure there is no danger around you§r.%1%1Take a quick look around to make sure there are no dangers such as fires or risks of collapse.
+dialogue.rcpNPC_comprobar=Now that we know there are no dangers around, we must §lcheck if the victim is conscious§r.%1%1Try speaking  to them and if there's no response, firmly touch their shoulder to see if they react.
+dialogue.rcpNPC_phone=Seeing that there's no response, it's crucial to get §lprofessional help§r.%1%1Here's a phone. Use it to §lcall 911§r and follow the instructions given on the other end of the line. And remember to ask a §ltrusted adult§r what the §lemergency number§r is in your country so you always know who to call.
+dialogue.rcpNPC_rcp=While you wait for help, let's start §lCPR§r   %1%1Place your hands in the center of the victim's chest and push down firmly. You should §lfollow the rhythm§r of the metronome to apply §l100 to 120 compressions per minute§r, helping you maintain the correct compression frequency.%1%1Try performing §l30 compressions§r at the right pace.
+dialogue.rcpNPC_breath=You've performed the compressions correctly. Now, it's crucial to do the §lventilations§r  %1%1You should tilt the victim's head back and lift their chin. Cover their mouth with yours and give two strong breaths.%1%1Apply §ltwo ventilations§r now to practice.
+dialogue.rcpNPC_dea=The victim remains unresponsive, and we have an available §lAED§r  %1%1Place the electrodes on the victim's chest and use the device to attempt to revive the heart.
+dialogue.rcpNPC_wait=Well done! Now, stay calm and repeat all the steps while the §lemergency technician§r arrives.%1%1Remember to do §l30 compressions followed by 2 ventilations§r, always §lfollowing the AED's instructions§r for a possible shock.
+dialogue.rcpNPC_timer=Would you prefer to take a break and try again later?
+dialogue.rcpNPC_final_ok=Great! You've performed all the steps in the correct order: checking for any dangers around, checking the dummy's condition, calling 911, applying quality compressions, performing ventilations, and applying and using the defibrillator. All while waiting for the §lemergency technician§r.%1%1Well done! Would you like to try again?
+dialogue.rcpNPC_final_no=You've taken an important step in learning CPR! However, it seems that time ran out before we could complete all the necessary procedures. Remember: §levery action counts when we're saving a life§r.%1%1Don't be discouraged, this is an opportunity to improve! Are you ready to try again?
+dialogue.emergencia_final=Great job! You've provided valuable assistance.%1%1Thanks to your quick intervention, performing CPR, ventilations, and using the AED, you kept the situation under control until we arrived. From here on, we'll take over.%1%1Now I must go to attend to an emergency, but I can assure you that we will be there when you need us
+## Voluntario RCP info
+
+dialogue.voluntaria_paula=Have you ever thought about what you would do if someone collapsed beside you? If their heart and lungs stop working, §levery second counts§r. But wait, safety first.%1%1§lMake sure there are no risks§r like fires, electricity, or nearby traffic. Then, get to work with §lCPR§r. It's something we should all know how to do. If you have any doubts, I advise you to §lvisit the school§r so our colleagues can provide you with more information.
+## Persona que se desmaya
+
+dialogue.iker_2=I don't feel so good...
+dialogue.iker_3=...
+dialogue.emergencia_help=Fantastic! Your training and quick response have made all the difference, this patient is no longer in danger. You've played a key role in saving a life!%1%1Now we'll take care of transporting him to the nearest hospital and make sure she knows how crucial your intervention was. Thank you!
+## Heimlich
+
+## Inicio
+dialogue.voluntario_iciar=With my colleagues from the §lRescue Brigade§r, we've taken over the food court at the mall for a §lchoking drill§r. Would you like to join us in practicing the §lHeimlich maneuver§r? It's for a good cause!
+dialogue.heimlichNPC_start=We're delighted to welcome candidates aspiring to join the §lRescue Brigade§r! As you know, to become a part of it, you'll need to acquire knowledge about first aid. Here, you can learn how to respond to §lchoking incidents§r.%1The §lBrigade§r has obtained permission from the mall owners to conduct a drill, so we've placed §ldummies§r in the cooking corner to teach you how to react when someone has an §lairway obstruction§r.%1What are you waiting for? Let's get started!
+dialogue.heimlichNPC_rules=For §l2 minutes§r, you'll be in the culinary corner surrounded by dummies programmed to §lsimulate different types of choking scenarios§r.%1Each dummy will §lchange color based on the severity of its situation§r, and you'll have a few seconds to assist:%1%1- If it turns §6orange§r, encourage them to §lcough§r  several times.%1%1- If it turns §5purple§r, give §l5 back slaps§r .%1%1- If it turns §1blue§r, perform the §lHeimlich maneuver 5 times§r  to clear the obstruction.%1%1To intervene, select the correct action from the object bar and §lright-click§r on the affected dummy. For each correct action, you'll earn §l3 points§r.%1%1Shall we begin?
+dialogue.heimlichNPC_timer=Time is ticking! Remember:%1%1- If it turns §6orange§r, encourage them to §lcough§r  several times.%1%1- If it turns §5purple§r, give §l5 back slaps§r .%1%1- If it turns §1blue§r, perform the §lHeimlich maneuver 5 times§r  to clear the obstruction%1%1Would you prefer to take a break and try again later?
+dialogue.heimlichNPC_final=Awesome! You've shown exceptional skill in quickly reacting and applying various techniques, like the Heimlich maneuver, for different types of obstructions, and in such a bustling environment like a shopping center!%1Thanks for being part of this simulation, each dummy you've helped represents a real life you could save.%1%1Would you like to check the points you've earned or would you like to give it another go?
+## Voluntario Heimlich info
+
+dialogue.voluntario_pablo=Imagine you're with a friend, and suddenly they start §lchoking§r on a piece of candy. If they can talk or cough, §lencourage them to cough forcefully§r. But if they turn purple and can't breathe, that's when §lstrong slap on the back and abdominal thrusts§r come into play. In extreme situations, you might even have to perform §lCPR§r.%1%1Why not visit our §lschool partners§r? They can provide more details.%1%1Here are some videos for you to watch and learn each maneuver. Mastering these steps is of utmost importance!
+## Parkour
+
+dialogue.parkour_intro=We're open! Are you up for trying the new parkour circuit we've designed? During your run, you'll encounter §lfirst aid questions§r that, if answered correctly, could save a life.%1%1If you're ready to start, speak to my colleague inside.
+## Inicio
+
+dialogue.parkour_intro_2=Greetings, aspirant! This is the place where we train to face any emergency. We're fine-tuning the last details, but don't worry, there's much more to learn. In the meantime, how about visiting our expert volunteers?%1You can find them at the §lschool§r, the §lhealth center§r, and the §lmall§r.
+dialogue.parkourNPC_start=So, you aspire to be part of the §lRescue Brigade§r? Well, you'll need to test your knowledge!%1We've prepared a §lparkour§r challenge for new aspirants. But here's the fun part: along the course, you'll encounter a series of questions related to §lfirst aid§r. Answer correctly and reach the end of the course.%1%1So, do you dare to accept the challenge?
+dialogue.parkourNPC_rules=You have §l5 minutes§r to cross the obstacle course. During the journey, you'll encounter §l5 volunteers§r who, upon speaking to them, will ask you §lfirst aid-related questions§r that you must answer to progress. If you fall, speak to our volunteers, and they'll §lhelp you return to the last checkpoint§r. Each stop along the route has a §lcheckpoint§r, so you won't have to start all over.%1%1Ready?
+dialogue.parkourNPC_timer=Hurry up, time is running out! Would you prefer to take a break and try again later?
+dialogue.parkourNPC_end=Oh! You didn't make it in time! Do you want to start over?
+## Pregunta 1
+dialogue.parkour1=What would you do first if you find a person on the ground?%1%1§lA.§r Before approaching, I would ask for help around me.%1§lB.§r Before approaching, I would check for danger around me.%1§lC.§r Before starting cardiopulmonary resuscitation (CPR), blow air into their mouth.
+parkour.title.q1=What would you do first if you find a person on the ground?
+parkour.title.q1a1=Before approaching, I would ask for help around me
+parkour.title.q1a2=Before approaching, I would check for danger around me
+parkour.title.q1a3=Before starting CPR, blow air into their mouth
+## Pregunta 2
+dialogue.parkour2=How do I know if a person is having a cardiac arrest?%1%1§lA.§r When their eyes are closed and they don't move%1§lB.§r When their heart beats very slowly%1§lC.§r When I call them and they don't respond or they're not breathing or not breathing normally
+parkour.title.q2=How do I know if a person is having a cardiac arrest?
+parkour.title.q2a1=When their eyes are closed and they don't move
+parkour.title.q2a2=When their heart beats very slowly
+parkour.title.q2a3=When I call them and they don't respond or they're not breathing
+## Pregunta 3
+dialogue.parkour3=What should I say when I call the emergency service (911)?%1%1§lA.§r When calling, I shout for help and hang up%1§lB.§r Only an adult can call 911%1§lC.§r If they ask, I will tell them where I am
+parkour.title.q3=What should I say when I call the emergency service (911)?
+parkour.title.q3a1=When calling, I shout for help and hang up
+parkour.title.q3a2=Only an adult can call 911
+parkour.title.q3a3=If they ask, I will tell them where I am
+## Pregunta 4
+dialogue.parkour4=While waiting for the ambulance, how many chest compressions should I perform?%1%1§lA.§r Between 100 and 120 compressions per minute%1§lB.§r 30 compressions in 1 minute%1§lC.§r Rapid compressions for 5 minutes
+parkour.title.q4=While waiting for the ambulance, how many chest compressions should I perform?
+parkour.title.q4a1=Between 100 and 120 compressions per minute
+parkour.title.q4a2=Just 30 compressions in 1 minute
+parkour.title.q4a3=Rapid compressions for 5 minutes
+## Pregunta 5
+dialogue.parkour5=What is the purpose of the AED or defibrillator?%1%1§lA.§r We keep it for when the ambulance arrives%1§lB.§r If we follow its instructions, it can help restart the heart%1§lC.§r I'll use it when the person starts breathing again
+parkour.title.q5=What is the purpose of the AED or defibrillator?
+parkour.title.q5a1=We keep it for when the ambulance arrives
+parkour.title.q5a2=If we follow its instructions, it can help restart the heart
+parkour.title.q5a3=I'll use it when the person starts breathing again
+## NPC tabla final
+dialogue.parkour_board=Wow, you did it!%1Check your results on the board next to you.%1%1Do you think you can do better? Feel free to try again!
+dialogue.parkour_board_2=Oh! Are you an aspiring member of the Rescue Brigade? If you want to participate in the parkour challenge, just turn around and talk to volunteer Susan. She will guide you to start the test. Good luck!
+## NPC caída
+dialogue.parkour_fall=Ups! It looks like you've fallen, but don't worry...%1%1Do you want to go up to the last checkpoint or do you prefer to start over?
+## Respuesta correcta
+dialogue.parkour_correcto=Excellent, you got it right! Move on to the next question!
+## Respuesta incorrecta
+dialogue.parkour_incorrecto=Oh, that wasn't the right answer... Try again!
+## Tiempo completado
+dialogue.parkour_timeup=Oops, time's up! Don't worry, you can go back to the beginning and try again
+## Respuesta final
+dialogue.parkour_final=Impressive! You've answered all the questions! That shows you have a good knowledge base in CPR and first aid.%1%1Go ahead and jump into the water and check the scoreboard to see how you did this time.
+## Construcciones
+
+## Colegio
+dialogue.voluntario_alberto=Two more hands to help us with the §lconstructions§r! The members of the §lRescue Brigade§r are making some §lnursing classrooms§r for our school. Help is always welcome, as this classroom will serve to train future aspirants of the §lBrigade§r. Could you please help with the construction?
+dialogue.voluntaria_mikaela=Two more hands to help us with the §lconstructions§r! The members of the §lRescue Brigade§r are making some §lnursing classrooms§r for our school. Help is always welcome, as this classroom will serve to train future aspirants of the §lBrigade§r. Could you please help with the construction?
+dialogue.voluntarios_colegio_out=Working here can be exhausting! Need a break from construction? If you want to get out of this area and re-explore the school, just let me know and I'll take you outside.
+## Hospital
+
+dialogue.voluntario_xavi=I'm glad you're here! §lDr. Heartsaver§r has summoned us to §lcreate the hospital of the future§r, which will be a benchmark in health and well-being for the Residence. We would really appreciate your help in this very important project. §lCould you help with the construction?§r Whenever you want, let me know and I will give you access to the construction zone. Thank you!
+dialogue.voluntaria_nancy=Need a break from construction? If you want to get out of this area and back to the Residence, just let me know and I'll take you outside.
+## Técnicos de emergencias (ambulancias)
+
+dialogue.tecnicoRCP=The first step before any emergency care begins with checking that the environment is safe, that there is no danger to me or to the person who needs help, due to a traffic accident, fire, being run over, poor visibility, etc.
+dialogue.tecnicoPARK=Hello! We are always here to ensure your safety. If any issues arise or you need assistance, don't hesitate to reach out. We are ready to help you in any emergency.
+dialogue.tecnico_dummy=Hello! We are always here to ensure your safety. If any issues arise or you need assistance, don't hesitate to reach out. We are ready to help you in any emergency.
+## Titles
+
+start.title.title=§aWelcome!
+start.title.subtitle=Speak to Dr. Heartsaver
+parkour.title.preparados=Ready?
+parkour.title.adelante=§oGo!
+dea.title.placed=§aAED Placed!
+dea.title.remain=AED left: §f
+dea.title.end=You have placed all the AED
+timer.title.stopped=§oGame stopped
+timer.title.timeup=§cTime's up!
+timer.title.tiempo=§6Time: §f
+timer.title.puntaje=§6Score: §f
+food.title.veggies=%1%1§2Fruits & Vegetables
+food.title.meats=%1%1 §cCooked Food
+food.title.golden=%1%1§6Golden Apple
+heimlich.title.ovace=If someone chokes completely, they won't be able to speak and will put their hands to their neck as a warning sign.
+heimlich.title.toser=If someone chokes but can still cough, encourage them to keep coughing so that they expel the stuck object.
+heimlich.title.palmadas=If the cough hasn't solved the problem, we'll help you by patting 5 times on the back.
+heimlich.title.maniobra=If the patting doesn't work, do 5 abdominal compressions with the Heimlich maneuver: stand behind the person, hug them, place your fist on their abdomen and compress tightly.
+ending.title.top=§aWell done!
+ending.title.bottom=Dr. Heartsaver has something for you...
+zone.title.ccomercial=Shopping Mall
+zone.title.csalud=Health Center
+zone.title.colegio=First Aid Fair
+zone.title.polideportivo=Rec Center
+zone.title.hospital=Health Center Area
+zone.title.hentrance=Health Center Entrance
+zone.title.enfermeria=Nursing Classroom
+rcp.title.breath=Perform 2 ventilations!
+## Simon titles
+
+simon.title.rojo=§4Red
+simon.title.verde=§2Green
+simon.title.morado=§5Purple
+simon.title.amarillo=§gYellow
+simon.title.azul=§9AED!
+simon.title.rojo2=§5Red
+simon.title.verde2=§gGreen
+simon.title.morado2=§2Purple
+simon.title.amarillo2=§4Yellow
+simon.title.rojo3=§gRed
+simon.title.verde3=§5Green
+simon.title.morado3=§4Purple
+simon.title.amarillo3=§2Yellow
+simon.title.rojo4=§2Red
+simon.title.verde4=§4Green
+simon.title.morado4=§gPurple
+simon.title.amarillo4=§5Yellow
+simon.title.correcto=§o§2 CORRECT
+simon.title.incorrecto=§o§4 INCORRECT
+## Scores titles
+
+objective.dea.title=AED Placed
+objective.puntaje.title=Score
+objective.heimlich.title=Score
+## Otros
+
+item.itemLock.popupNotice.cantDrop= 
+item.itemLock.popupNotice.cantMove= 

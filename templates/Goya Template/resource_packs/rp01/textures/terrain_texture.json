@@ -1,0 +1,197 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "cortinas_bottom": {
+      "textures": "textures/blocks/cortinas_bottom.png"
+    },
+    "cortinas_top": {
+      "textures": "textures/blocks/cortinas_top.png"
+    },
+    "cuerda_museo": {
+      "textures": "textures/blocks/cuerda_museo.png"
+    },
+    "poste_museo": {
+      "textures": "textures/blocks/poste_museo.png"
+    },
+    "display_grabados_2": {
+      "textures": "textures/blocks/display_grabados_2.png"
+    },
+    "display_grabados": {
+      "textures": "textures/blocks/display_grabados.png"
+    },
+    "display_grabados_3": {
+      "textures": "textures/blocks/display_grabados_3.png"
+    },
+    "display_grabados_4": {
+      "textures": "textures/blocks/display_grabados_4.png"
+    },
+    "light_dampen": {
+      "textures": "textures/blocks/light_dampen.png"
+    },
+    "light_source": {
+      "textures": "textures/blocks/light_source.png"
+    },
+    "clouds": {
+      "textures": "textures/blocks/clouds.png"
+    },
+    "transparent": {
+      "textures": "textures/blocks/transparent.png"
+    },
+    "platos_decorativos": {
+      "textures": "textures/blocks/platos_decorativos.png"
+    },
+    "cubo_de_agua": {
+      "textures": "textures/blocks/cubo_de_agua.png"
+    },
+    "ink": {
+      "textures": "textures/blocks/ink.png"
+    },
+    "ink_flipbook": {
+      "textures": "textures/blocks/ink_flipbook.png"
+    },
+    "cofre_goya": {
+      "textures": "textures/blocks/cofre_goya.png"
+    },
+    "aire_acondicionado_pared": {
+      "textures": "textures/blocks/aire_acondicionado_pared.png"
+    },
+    "carretilla": {
+      "textures": "textures/blocks/carretilla.png"
+    },
+    "reloj_de_pared": {
+      "textures": "textures/blocks/reloj_de_pared.png"
+    },
+    "luz_calle_pared": {
+      "textures": "textures/blocks/luz_calle_pared.png"
+    },
+    "luz_calle": {
+      "textures": "textures/blocks/luz_calle.png"
+    },
+    "banco_plaza": {
+      "textures": "textures/blocks/banco_plaza.png"
+    },
+    "planta_amarilla": {
+      "textures": "textures/blocks/planta_amarilla.png"
+    },
+    "luz_techo": {
+      "textures": "textures/blocks/luz_techo.png"
+    },
+    "barril_de_trafico": {
+      "textures": "textures/blocks/barril_de_trafico.png"
+    },
+    "maceta_flores_azules": {
+      "textures": "textures/blocks/maceta_flores_azules.png"
+    },
+    "maceta_flores_amarillas": {
+      "textures": "textures/blocks/maceta_flores_amarillas.png"
+    },
+    "maceta_flores_rojas": {
+      "textures": "textures/blocks/maceta_flores_rojas.png"
+    },
+    "maceta_flores_negras": {
+      "textures": "textures/blocks/maceta_flores_negras.png"
+    },
+    "maceta_colgante_roja": {
+      "textures": "textures/blocks/maceta_colgante_roja.png"
+    },
+    "maceta_colgante_morada": {
+      "textures": "textures/blocks/maceta_colgante_morada.png"
+    },
+    "piedras_decorativas": {
+      "textures": "textures/blocks/piedras_decorativas.png"
+    },
+    "alcantarilla": {
+      "textures": "textures/blocks/alcantarilla.png"
+    },
+    "caja": {
+      "textures": "textures/blocks/caja.png"
+    },
+    "contenedor": {
+      "textures": "textures/blocks/contenedor.png"
+    },
+    "valla_de_seguridad": {
+      "textures": "textures/blocks/valla_de_seguridad.png"
+    },
+    "banco": {
+      "textures": "textures/blocks/banco.png"
+    },
+    "tiesto_de_hojas_anchas": {
+      "textures": "textures/blocks/tiesto_de_hojas_anchas.png"
+    },
+    "tiesto_de_hojas_largas": {
+      "textures": "textures/blocks/tiesto_de_hojas_largas.png"
+    },
+    "mesa_de_madera": {
+      "textures": "textures/blocks/mesa_de_madera.png"
+    },
+    "cofre_antiguo": {
+      "textures": "textures/blocks/cofre_antiguo.png"
+    },
+    "silla_de_madera": {
+      "textures": "textures/blocks/silla_de_madera.png"
+    },
+    "silla_de_madera_oscura": {
+      "textures": "textures/blocks/silla_de_madera_oscura.png"
+    },
+    "sofa_rojo": {
+      "textures": "textures/blocks/sofa_rojo.png"
+    },
+    "vela_de_pared": {
+      "textures": "textures/blocks/vela_de_pared.png"
+    },
+    "columna_con_vela": {
+      "textures": "textures/blocks/columna_con_vela.png"
+    },
+    "libro_de_iglesia": {
+      "textures": "textures/blocks/libro_de_iglesia.png"
+    },
+    "podio_de_iglesia": {
+      "textures": "textures/blocks/podio_de_iglesia.png"
+    },
+    "crucifijo_decorativo": {
+      "textures": "textures/blocks/crucifijo_decorativo.png"
+    },
+    "agua_bendita": {
+      "textures": "textures/blocks/agua_bendita.png"
+    },
+    "silla_de_iglesia": {
+      "textures": "textures/blocks/silla_de_iglesia.png"
+    },
+    "poste_de_discapacitados": {
+      "textures": "textures/blocks/poste_de_discapacitados.png"
+    },
+    "poste_de_ruidos": {
+      "textures": "textures/blocks/poste_de_ruidos.png"
+    },
+    "poste_de_parking": {
+      "textures": "textures/blocks/poste_de_parking.png"
+    },
+    "poste_con_flechas": {
+      "textures": "textures/blocks/poste_con_flechas.png"
+    },
+    "barricada": {
+      "textures": "textures/blocks/barricada.png"
+    },
+    "barrera_de_hormign": {
+      "textures": "textures/blocks/barrera_de_hormign.png"
+    },
+    "pivote": {
+      "textures": "textures/blocks/pivote.png"
+    },
+    "barra_de_poste": {
+      "textures": "textures/blocks/barra_de_poste.png"
+    },
+    "base_columna_vela": {
+      "textures": "textures/blocks/base_columna_vela.png"
+    },
+    "extintor": {
+      "textures": "textures/blocks/extintor.png"
+    },
+    "flower_red": {
+      "textures": "textures/blocks/flower_red.png"
+    }
+  }
+}

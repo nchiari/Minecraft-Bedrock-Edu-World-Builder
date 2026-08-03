@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.firmas_6x3",
+				"texture_width": 400,
+				"texture_height": 96,
+				"visible_bounds_width": 19,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 2.5, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-75, 16, -27],
+							"size": [166, 0, 55],
+							"pivot": [0, 16, -7],
+							"rotation": [90, 180, 0],
+							"uv": {
+								"up": {"uv": [50, 0], "uv_size": [300, 96]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

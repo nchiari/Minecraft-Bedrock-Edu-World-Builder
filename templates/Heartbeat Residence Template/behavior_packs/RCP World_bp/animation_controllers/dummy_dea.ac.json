@@ -1,0 +1,72 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy_dea": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dea_apply": "q.variant == 1"
+            },
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "dummy_check": "q.property('dummy:check')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            }
+          ]
+        },
+        "rcp": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:rcp') && q.all_animations_finished"
+            }
+          ],
+          "on_entry": ["/setblock 13 68 356 redstone_block"],
+          "on_exit": ["/scoreboard players add var rcp_rcp 1", "/setblock 13 68 356 air"]
+        },
+        "dea_apply": {
+          "transitions": [
+            {
+              "default": "q.variant == 0"
+            },
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "dummy_check": "q.property('dummy:check')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            }
+          ],
+          "on_entry": [
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=0..}] run clear @p let:dea_item_off",
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=2..}] run clear @p let:dea_item_on",
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=0}] run give @p let:dea_item_on"
+          ]
+        },
+        "dummy_check": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:check') && q.all_animations_finished"
+            }
+          ],
+          "on_entry": ["/scoreboard players add var rcp_check 1", "/dialogue change @e[family=dummy] comprobar_a @a"],
+          "on_exit": ["/dialogue open @e[family=dummy] @p comprobar_a"]
+        },
+        "breath": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:breath') && q.all_animations_finished"
+            }
+          ],
+          "on_exit": ["/scoreboard players add var rcp_breath 1"]
+        }
+      }
+    }
+  }
+}

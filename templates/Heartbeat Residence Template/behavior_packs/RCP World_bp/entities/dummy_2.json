@@ -1,0 +1,470 @@
+{
+  "format_version": "1.19.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pix:dummy_2",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "properties": {
+        "dummy:sick": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:cough": {
+          "client_sync": true,
+          "type": "bool",
+          "default": true
+        },
+        "dummy:toser": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:palmadas": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:hits": {
+          "client_sync": true,
+          "type": "int",
+          "range": [0, 5],
+          "default": 0
+        },
+        "dummy:heim": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      },
+      "scripts": {
+        "animate": ["dummy_heim"]
+      },
+      "animations": {
+        "dummy_heim": "controller.animation.dummy_heim"
+      }
+    },
+    "component_groups": {
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "emoji_off": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "skin_2": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "skin_3": {
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:mark_variant": {
+          "value": 3
+        }
+      },
+      "timer_sick": {
+        "minecraft:timer": {
+          "time": 4.5,
+          "time_down_event": {
+            "event": "dummy_reset",
+            "target": "self"
+          }
+        }
+      },
+      "anim_toser": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_sick",
+            "target": "self"
+          }
+        }
+      },
+      "anim_toser_2": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_reset",
+            "target": "self"
+          }
+        }
+      },
+      "anim_palmadas": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_sick2",
+            "target": "self"
+          }
+        }
+      },
+      "anim_palmadas_2": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_reset",
+            "target": "self"
+          }
+        }
+      },
+      "anim_heim": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_sick3",
+            "target": "self"
+          }
+        }
+      },
+      "anim_heim_2": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy_reset",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": ["dummy_2"]
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.7,
+            "height": 1,
+            "pivot": [0, 0.3, 0.1]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0.5
+      },
+      "minecraft:physics": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:scale": {
+        "value": 1.35
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:toser"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 1
+                  },
+                  {
+                    "test": "bool_property",
+                    "domain": "dummy:toser",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "toser"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:manos_palmadas"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 2
+                  },
+                  {
+                    "test": "bool_property",
+                    "domain": "dummy:palmadas",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "palmadas"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:manos_heimlich"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 3
+                  },
+                  {
+                    "test": "bool_property",
+                    "domain": "dummy:heim",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "heim"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "dummy_sick": {
+        "set_property": {
+          "dummy:toser": false,
+          "dummy:palmadas": false,
+          "dummy:heim": false,
+          "dummy:sick": true
+        },
+        "add": {
+          "component_groups": ["skin_1", "timer_sick"]
+        },
+        "remove": {
+          "component_groups": ["skin_0", "skin_2", "skin_3"]
+        }
+      },
+      "toser": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "==",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:sick": false,
+              "dummy:toser": true,
+              "dummy:hits": 5
+            },
+            "add": {
+              "component_groups": ["anim_toser_2", "emoji_off"]
+            },
+            "remove": {
+              "component_groups": ["timer_sick"]
+            }
+          },
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "<",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:hits": "q.property('dummy:hits') + 1",
+              "dummy:sick": false,
+              "dummy:cough": false,
+              "dummy:toser": true
+            },
+            "add": {
+              "component_groups": ["anim_toser", "emoji_off"]
+            }
+          }
+        ]
+      },
+      "dummy_sick2": {
+        "set_property": {
+          "dummy:toser": false,
+          "dummy:palmadas": false,
+          "dummy:heim": false,
+          "dummy:sick": true
+        },
+        "add": {
+          "component_groups": ["skin_2", "timer_sick"]
+        },
+        "remove": {
+          "component_groups": ["skin_0", "skin_1", "skin_3"]
+        }
+      },
+      "palmadas": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "==",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:sick": false,
+              "dummy:palmadas": true,
+              "dummy:hits": 5
+            },
+            "add": {
+              "component_groups": ["anim_palmadas_2", "emoji_off"]
+            },
+            "remove": {
+              "component_groups": ["timer_sick"]
+            }
+          },
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "<",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:hits": "q.property('dummy:hits') + 1",
+              "dummy:sick": false,
+              "dummy:cough": false,
+              "dummy:palmadas": true
+            },
+            "add": {
+              "component_groups": ["anim_palmadas", "emoji_off"]
+            }
+          }
+        ]
+      },
+      "dummy_sick3": {
+        "set_property": {
+          "dummy:toser": false,
+          "dummy:palmadas": false,
+          "dummy:heim": false,
+          "dummy:sick": true
+        },
+        "add": {
+          "component_groups": ["skin_3", "timer_sick"]
+        },
+        "remove": {
+          "component_groups": ["skin_0", "skin_1", "skin_2"]
+        }
+      },
+      "heim": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "==",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:sick": false,
+              "dummy:heim": true,
+              "dummy:hits": 5
+            },
+            "add": {
+              "component_groups": ["anim_heim_2", "emoji_off"]
+            },
+            "remove": {
+              "component_groups": ["timer_sick"]
+            }
+          },
+          {
+            "filters": {
+              "test": "int_property",
+              "domain": "dummy:hits",
+              "operator": "<",
+              "value": 4
+            },
+            "set_property": {
+              "dummy:cough": false,
+              "dummy:hits": "q.property('dummy:hits') + 1",
+              "dummy:sick": false,
+              "dummy:heim": true
+            },
+            "add": {
+              "component_groups": ["anim_heim", "emoji_off"]
+            }
+          }
+        ]
+      },
+      "dummy_reset": {
+        "set_property": {
+          "dummy:sick": false,
+          "dummy:toser": false,
+          "dummy:palmadas": false,
+          "dummy:heim": false,
+          "dummy:cough": true,
+          "dummy:hits": 0
+        },
+        "remove": {
+          "component_groups": ["skin_1", "skin_2", "skin_3", "anim_toser", "anim_palmadas", "anim_heim", "timer_sick"]
+        },
+        "add": {
+          "component_groups": ["skin_0"]
+        }
+      }
+    }
+  }
+}

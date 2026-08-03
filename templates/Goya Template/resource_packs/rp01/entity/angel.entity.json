@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:angel",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "skin_0": "textures/entity/angel_1",
+        "skin_1": "textures/entity/angel_2",
+        "skin_2": "textures/entity/angel_3",
+        "skin_3": "textures/entity/angel_4",
+        "skin_4": "textures/entity/angel_5",
+        "chat_off": "textures/entity/human/chat_off",
+        "chat_on": "textures/entity/human/chat_on"
+      },
+      "geometry": {
+        "default": "geometry.angel"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "idle": "animation.angel.idle",
+        "chat": "animation.angel.chat",
+        "controller": "controller.animation.angel"
+      },
+      "render_controllers": ["controller.render.angel", "controller.render.chat"],
+      "spawn_egg": {
+        "base_color": "#1fa5ff",
+        "overlay_color": "#f0beff"
+      }
+    }
+  }
+}

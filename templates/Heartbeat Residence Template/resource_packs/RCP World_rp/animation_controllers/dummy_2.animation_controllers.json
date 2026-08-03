@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy_2": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "sick": "q.property('dummy:sick') && q.property('dummy:cough')"
+            },
+            {
+              "sick2": "q.property('dummy:sick') && !q.property('dummy:cough')"
+            },
+            {
+              "toser2": "q.property('dummy:toser') && q.property('dummy:hits') == 3"
+            },
+            {
+              "toser": "q.property('dummy:toser')"
+            },
+            {
+              "palmadas2": "q.property('dummy:palmadas') && q.property('dummy:hits') == 3"
+            },
+            {
+              "palmadas": "q.property('dummy:palmadas')"
+            },
+            {
+              "heim2": "q.property('dummy:heim') && q.property('dummy:hits') == 3"
+            },
+            {
+              "heim": "q.property('dummy:heim')"
+            }
+          ]
+        },
+        "sick": {
+          "animations": ["sick"],
+          "sound_effects": [{ "effect": "choke" }],
+          "transitions": [{ "default": "query.variant == 0 || !q.property('dummy:sick')" }]
+        },
+        "sick2": {
+          "animations": ["sick"],
+          "transitions": [{ "default": "query.variant == 0 || !q.property('dummy:sick')" }]
+        },
+        "toser": {
+          "animations": ["toser"],
+          "sound_effects": [{ "effect": "cough" }],
+          "transitions": [{ "default": "!q.property('dummy:toser')" }]
+        },
+        "toser2": {
+          "animations": ["toser"],
+          "sound_effects": [{ "effect": "breath" }],
+          "transitions": [{ "default": "!q.property('dummy:toser')" }]
+        },
+        "palmadas": {
+          "animations": ["palmadas"],
+          "sound_effects": [{ "effect": "palmadas" }],
+          "transitions": [{ "default": "!q.property('dummy:palmadas')" }]
+        },
+        "palmadas2": {
+          "animations": ["palmadas"],
+          "sound_effects": [{ "effect": "burp" }],
+          "transitions": [{ "default": "!q.property('dummy:palmadas')" }]
+        },
+        "heim": {
+          "animations": ["heim"],
+          "sound_effects": [{ "effect": "spit" }],
+          "transitions": [{ "default": "!q.property('dummy:heim')" }]
+        },
+        "heim2": {
+          "animations": ["heim"],
+          "sound_effects": [{ "effect": "hurt" }],
+          "transitions": [{ "default": "!q.property('dummy:heim')" }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:laptop",
+      "geometry": {
+        "default": "geometry.laptop"
+      },
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "render_controllers": ["controller.render.default"],
+      "textures": {
+        "default": "textures/entity/laptop_on"
+      },
+      "spawn_egg": {
+        "base_color": "#ff1f1f",
+        "overlay_color": "#1f1fff"
+      }
+    }
+  }
+}

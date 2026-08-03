@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_felix",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_felix"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_felix"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#b6e636",
+				"overlay_color": "#b3c390"
+			}
+		}
+	}
+}

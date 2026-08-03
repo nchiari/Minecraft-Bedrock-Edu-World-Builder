@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.monster_bat": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "run": "q.property('monster:run')"
+            },
+            {
+              "chase": "q.property('monster:chase')"
+            }
+          ]
+        },
+        "run": {
+          "animations": ["run"],
+          "transitions": [
+            {
+              "default": "!q.property('monster:run')"
+            }
+          ],
+          "on_entry": ["/function museo/monstruo_run"],
+          "on_exit": ["@s let:despawn", "/function museo/monstruo_run_end"]
+        },
+        "chase": {
+          "animations": ["chase"],
+          "transitions": [
+            {
+              "default": "!q.property('monster:chase')"
+            }
+          ],
+          "on_entry": ["/playanimation @s animation.goya_monster.chase"],
+          "on_exit": [
+            "/event entity @s let:despawn",
+            "/summon let:monster_bat -633 3 -168",
+            "/tp @s -633 3 -168 facing -634 -1 -159",
+            "/event entity @s look_on",
+            "/tag @e[family=monster_bat] add bat"
+          ]
+        }
+      }
+    }
+  }
+}

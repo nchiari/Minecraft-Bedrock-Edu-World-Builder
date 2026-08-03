@@ -1,0 +1,54 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.laptop",
+        "texture_width": 128,
+        "texture_height": 128,
+        "visible_bounds_width": 5,
+        "visible_bounds_height": 6.5,
+        "visible_bounds_offset": [0, 2.75, 0]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [0, 0, -2]
+        },
+        {
+          "name": "monitor",
+          "parent": "root",
+          "pivot": [0, 0, 2],
+          "cubes": [
+            {
+              "origin": [-8, 0, -8],
+              "size": [16, 1, 11],
+              "uv": {
+                "north": { "uv": [109, 107], "uv_size": [6, 1] },
+                "east": { "uv": [82, 110], "uv_size": [4, 1] },
+                "south": { "uv": [109, 109], "uv_size": [6, 1] },
+                "west": { "uv": [109, 115], "uv_size": [4, 1] },
+                "up": { "uv": [107, 87], "uv_size": [15, 8] },
+                "down": { "uv": [66, 109], "uv_size": [16, -8] }
+              }
+            },
+            {
+              "origin": [-8, 1, 2],
+              "size": [16, 11, 1],
+              "pivot": [0, 0, 0],
+              "rotation": [-10, 0, 0],
+              "uv": {
+                "north": { "uv": [66, 73], "uv_size": [20, 13] },
+                "east": { "uv": [80, 113], "uv_size": [1, 13] },
+                "south": { "uv": [86, 97], "uv_size": [16, 13] },
+                "west": { "uv": [81, 113], "uv_size": [1, 13] },
+                "up": { "uv": [107, 95], "uv_size": [20, 1] },
+                "down": { "uv": [107, 97], "uv_size": [20, -1] }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

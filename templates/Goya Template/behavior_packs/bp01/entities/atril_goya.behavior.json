@@ -1,0 +1,172 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:atril_goya",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "atril:waiting": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "atril:construccion": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      }
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "atril_off": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "atril_sparkles": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "atril_on": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["atril"]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 2.4,
+            "height": 1.2,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "bool_property",
+                    "domain": "atril:waiting",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": true
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "operator": "==",
+                    "domain": "hand",
+                    "value": "let:pincel_base"
+                  }
+                ]
+              },
+              "event": "atril_on"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "bool_property",
+                    "domain": "atril:construccion",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "construccion_go"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "atril_off": {
+        "add": {
+          "component_groups": ["atril_off"]
+        }
+      },
+      "atril_sparkles": {
+        "add": {
+          "component_groups": ["atril_sparkles"]
+        },
+        "remove": {
+          "component_groups": ["atril_off"]
+        }
+      },
+      "atril_on": {
+        "queue_command": {
+          "command": ["clear @p", "dialogue change @e[tag=goya] goya_47 @a", "event entity @e[tag=goya] chat_off", "scoreboard players set var tooltips 100"]
+        },
+        "add": {
+          "component_groups": ["atril_on"]
+        },
+        "remove": {
+          "component_groups": ["atril_sparkles"]
+        }
+      },
+      "waiting_on": {
+        "set_property": {
+          "atril:waiting": true
+        }
+      },
+      "waiting_off": {
+        "set_property": {
+          "atril:waiting": false
+        }
+      },
+      "construccion_on": {
+        "set_property": {
+          "atril:construccion": true
+        }
+      },
+      "construccion_off": {
+        "set_property": {
+          "atril:construccion": false
+        }
+      },
+      "construccion_go": {
+        "queue_command": {
+          "command": ["setblock -39 -57 -623 air", "function fade_out_white", "setblock -41 -57 -625 redstone_block", "scoreboard players set var tooltips 100"]
+        }
+      }
+    }
+  }
+}

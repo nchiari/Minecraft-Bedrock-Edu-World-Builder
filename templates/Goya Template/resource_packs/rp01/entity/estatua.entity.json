@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:estatua",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/estatua"
+      },
+      "geometry": {
+        "default": "geometry.estatua"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#24d730",
+        "overlay_color": "#22913b"
+      }
+    }
+  }
+}

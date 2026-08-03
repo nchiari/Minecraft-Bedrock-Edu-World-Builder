@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:santiago",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/santiago"
+      },
+      "geometry": {
+        "default": "geometry.santiago"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#ce570c",
+        "overlay_color": "#aea085"
+      }
+    }
+  }
+}

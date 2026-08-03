@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_1x1",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_1x1"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_1x1"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#01fe39",
+				"overlay_color": "#36dfa5"
+			}
+		}
+	}
+}

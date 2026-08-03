@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.dea_totem_2": {
+      "arrays": {
+        "textures": {
+          "Array.dea_totem_2": ["Texture.skin_0", "Texture.skin_1", "Texture.skin_1"]
+        }
+      },
+      "textures": ["Array.dea_totem_2[q.variant]"],
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.20.50",
+  "minecraft:item": {
+    "description": {
+      "identifier": "let:pincel_purple"
+    },
+    "components": {
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": {
+        "texture": "pincel_purple"
+      },
+      "minecraft:use_modifiers": { "use_duration": 9999 },
+      "minecraft:cooldown": {
+        "category": "attack",
+        "duration": 0.6
+      },
+      "minecraft:use_duration": 9999,
+      "minecraft:food": {
+        "nutrition": 0,
+        "can_always_eat": true
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.item_angel": {
+      "initial_state": "sparks_off",
+      "states": {
+        "sparks_off": {
+          "animations": ["idle"],
+          "transitions": [{ "sparks_on": "q.variant == 1" }]
+        },
+        "sparks_on": {
+          "animations": ["idle", "sparks_on"],
+          "transitions": [{ "sparks_off": "q.variant == 0" }]
+        }
+      }
+    }
+  }
+}

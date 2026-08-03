@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:paleta",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/paleta"
+      },
+      "geometry": {
+        "default": "geometry.paleta"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "texture": "paleta"
+      },
+      "particle_effects": {
+        "sparks": "let:sparks_round_2"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "idle": "animation.item_angel.idle",
+        "sparks_on": "animation.item_angel.sparks_on",
+        "controller": "controller.animation.item_angel"
+      }
+    }
+  }
+}

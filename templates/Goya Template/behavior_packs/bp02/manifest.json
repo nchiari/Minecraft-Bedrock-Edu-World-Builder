@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Let BP",
+    "description": "Let BP",
+    "uuid": "32f807fd-f321-4c63-8962-908b19df03cd",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [1, 0, 0],
+      "uuid": "1b7a3cef-3269-400d-8013-02ed2791abf5",
+      "type": "data"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "3b5215e7-456a-4afe-b242-b76bf697a66b",
+      "version": [1, 0, 0]
+    }
+  ]
+}

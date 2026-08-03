@@ -2,22 +2,23 @@
 
 Live app: https://nchiari.github.io/Minecraft-Bedrock-Edu-World-Builder/
 
-This browser-based app provides two tools for Minecraft Bedrock and Education:
+This browser-based app provides three tools for Minecraft Bedrock and Education:
 
-- A tool for adding `.mcpack` / `.mcaddon` files to a world and creating a new `.mcworld`.
+- A tool for adding `.mcpack` / `.mcaddon` files or pack folders to a world and creating a new `.mcworld`.
 - A world template creator that converts a `.mcworld` into a localized `.mctemplate`.
+- A world inspector that finds pack, manifest, reference, dependency, cleanup, and version compatibility issues and can export a repaired `.mcworld`.
 
 ## Add Packs to a World
 
 - Takes one base `.mcworld` file
-- Takes one or more `.mcpack` and/or `.mcaddon` files
+- Takes one or more `.mcpack` / `.mcaddon` files, pack folders, or a folder containing multiple packs
 - Merges valid packs into the world
 - Generates a new downloadable file: `*_compiled.mcworld`
 
 ## How to Use
 
 1. Choose your `.mcworld` file.
-2. Choose your `.mcpack` and/or `.mcaddon` files.
+2. Choose your `.mcpack` / `.mcaddon` files, pack folders, or both.
 3. Click **Create .mcworld**.
 4. When processing finishes, click **Download .mcworld**.
 
@@ -30,6 +31,15 @@ This browser-based app provides two tools for Minecraft Bedrock and Education:
 5. Click **Create .mctemplate**, then download the generated file.
 
 The creator preserves the world contents, renames embedded pack folders to `bp0`, `bp1`, `rp0`, `rp1`, and so on, generates new template UUIDs, and adds the root `manifest.json` and localized `texts` files required by a world template.
+
+## Inspect and Repair a World
+
+1. Choose a `.mcworld` file. Analysis starts automatically.
+2. Review findings grouped by cleanup, manifests, references and dependencies, and version compatibility.
+3. Select the fixes you want to apply. Safe cleanup and deterministic reference/version fixes are selected by default; changes that may affect compatibility remain optional.
+4. Create and download a new `*_repaired.mcworld` file.
+
+The inspector can remove unsupported pack files and dot-prefixed or empty folders, validate pack manifests and JSON, repair deterministic world references and dependency versions, and identify `format_version` values newer than their pack's `min_engine_version`. It does not blindly rewrite definition format versions because changing only the number can make content invalid or alter behavior.
 
 ## Important Notes
 

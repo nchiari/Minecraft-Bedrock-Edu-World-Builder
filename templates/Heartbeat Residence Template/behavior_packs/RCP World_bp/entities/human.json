@@ -1,0 +1,809 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pix:human",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:npc",
+      "properties": {
+        "dummy:lay": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:rcp": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:check": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:charge": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:breath": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:dea_timer": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      },
+      "scripts": {
+        "animate": ["human_dea"]
+      },
+      "animations": {
+        "human_dea": "controller.animation.human_dea"
+      }
+    },
+    "component_groups": {
+      "npc_sleeping": {
+        "minecraft:mark_variant": {
+          "value": 1
+        },
+        "minecraft:custom_hit_test": {
+          "hitboxes": [
+            {
+              "width": 1,
+              "height": 0.5,
+              "pivot": [0, 1, 0]
+            }
+          ]
+        },
+        "minecraft:collision_box": {
+          "width": 1,
+          "height": 0.5
+        }
+      },
+      "npc_wake": {
+        "minecraft:mark_variant": {
+          "value": 2
+        }
+      },
+      "npc_look_player": {
+        "minecraft:behavior.look_at_player": {
+          "look_distance": 16,
+          "target_distance": 10,
+          "look_time": [0.1, 0.1],
+          "priority": 1,
+          "probability": 1
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 5,
+          "look_time": [5, 8]
+        }
+      },
+      "timer_lay": {
+        "minecraft:timer": {
+          "time": 0.3,
+          "time_down_event": {
+            "event": "dummy:lay",
+            "target": "self"
+          }
+        }
+      },
+      "timer_rcp": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "timer_anim": {
+        "minecraft:timer": {
+          "time": 0.375,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "timer_charge": {
+        "minecraft:timer": {
+          "time": 0.375,
+          "time_down_event": {
+            "event": "timer_dea",
+            "target": "self"
+          }
+        }
+      },
+      "timer_dea": {
+        "minecraft:timer": {
+          "time": 10,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "skin_2": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "skin_3": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "skin_4": {
+        "minecraft:variant": {
+          "value": 4
+        }
+      },
+      "skin_5": {
+        "minecraft:variant": {
+          "value": 5
+        }
+      },
+      "skin_6": {
+        "minecraft:variant": {
+          "value": 6
+        }
+      },
+      "skin_7": {
+        "minecraft:variant": {
+          "value": 7
+        }
+      },
+      "skin_8": {
+        "minecraft:variant": {
+          "value": 8
+        }
+      },
+      "skin_9": {
+        "minecraft:variant": {
+          "value": 9
+        }
+      },
+      "skin_10": {
+        "minecraft:variant": {
+          "value": 10
+        }
+      },
+      "skin_11": {
+        "minecraft:variant": {
+          "value": 11
+        }
+      },
+      "skin_12": {
+        "minecraft:variant": {
+          "value": 12
+        }
+      },
+      "skin_13": {
+        "minecraft:variant": {
+          "value": 13
+        }
+      },
+      "skin_14": {
+        "minecraft:variant": {
+          "value": 14
+        }
+      },
+      "skin_15": {
+        "minecraft:variant": {
+          "value": 15
+        }
+      },
+      "skin_16": {
+        "minecraft:variant": {
+          "value": 16
+        }
+      },
+      "skin_17": {
+        "minecraft:variant": {
+          "value": 17
+        }
+      },
+      "skin_18": {
+        "minecraft:variant": {
+          "value": 18
+        }
+      },
+      "skin_19": {
+        "minecraft:variant": {
+          "value": 19
+        }
+      },
+      "skin_20": {
+        "minecraft:variant": {
+          "value": 20
+        }
+      },
+      "skin_21": {
+        "minecraft:variant": {
+          "value": 21
+        }
+      },
+      "skin_22": {
+        "minecraft:variant": {
+          "value": 22
+        }
+      },
+      "skin_23": {
+        "minecraft:variant": {
+          "value": 23
+        }
+      },
+      "skin_24": {
+        "minecraft:variant": {
+          "value": 24
+        }
+      },
+      "skin_25": {
+        "minecraft:variant": {
+          "value": 25
+        }
+      },
+      "skin_26": {
+        "minecraft:variant": {
+          "value": 26
+        }
+      },
+      "skin_27": {
+        "minecraft:variant": {
+          "value": 27
+        }
+      },
+      "skin_28": {
+        "minecraft:variant": {
+          "value": 28
+        }
+      },
+      "skin_29": {
+        "minecraft:variant": {
+          "value": 29
+        }
+      },
+      "npc_component": {
+        "minecraft:npc": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["human"]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:npc": {
+        "npc_data": {
+          "picker_offsets": {
+            "translate": [0, 20, 0],
+            "scale": [1.7, 1.7, 1.7]
+          },
+          "skin_list": [
+            {
+              "variant": 0
+            },
+            {
+              "variant": 1
+            },
+            {
+              "variant": 2
+            },
+            {
+              "variant": 3
+            },
+            {
+              "variant": 4
+            },
+            {
+              "variant": 5
+            },
+            {
+              "variant": 6
+            },
+            {
+              "variant": 7
+            },
+            {
+              "variant": 8
+            },
+            {
+              "variant": 9
+            },
+            {
+              "variant": 10
+            },
+            {
+              "variant": 11
+            },
+            {
+              "variant": 12
+            },
+            {
+              "variant": 13
+            },
+            {
+              "variant": 14
+            },
+            {
+              "variant": 15
+            },
+            {
+              "variant": 16
+            },
+            {
+              "variant": 17
+            },
+            {
+              "variant": 18
+            },
+            {
+              "variant": 19
+            },
+            {
+              "variant": 20
+            },
+            {
+              "variant": 21
+            },
+            {
+              "variant": 22
+            },
+            {
+              "variant": 23
+            },
+            {
+              "variant": 24
+            },
+            {
+              "variant": 25
+            },
+            {
+              "variant": 26
+            },
+            {
+              "variant": 27
+            },
+            {
+              "variant": 28
+            },
+            {
+              "variant": 29
+            }
+          ]
+        }
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 2,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 2
+      },
+      "minecraft:physics": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:navigation.generic": {
+        "avoid_damage_blocks": true,
+        "can_swim": true,
+        "can_sink": false
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:jump.static": {},
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:manos_rcp"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:rcp",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "rcp"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:comprobar"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:check",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "check"
+            }
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:respiracion"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:breath",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "breath"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:dea_item_off"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 27
+                  }
+                ]
+              },
+              "event": "dea_apply"
+            }
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:dea_item_on"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 28
+                  },
+                  {
+                    "test": "bool_property",
+                    "subject": "self",
+                    "domain": "dummy:dea_timer",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "charge"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "npc_component_off": {
+        "remove": {
+          "component_groups": ["npc_component"]
+        }
+      },
+      "dummy:off": {
+        "set_property": {
+          "dummy:rcp": false,
+          "dummy:check": false,
+          "dummy:charge": false,
+          "dummy:breath": false,
+          "dummy:dea_timer": false
+        },
+        "remove": {
+          "component_groups": ["timer_rcp", "timer_anim"]
+        }
+      },
+      "rcp": {
+        "set_property": {
+          "dummy:rcp": true
+        },
+        "add": {
+          "component_groups": ["timer_rcp"]
+        }
+      },
+      "check": {
+        "set_property": {
+          "dummy:check": true
+        },
+        "add": {
+          "component_groups": ["timer_anim"]
+        }
+      },
+      "breath": {
+        "set_property": {
+          "dummy:breath": true
+        },
+        "add": {
+          "component_groups": ["timer_anim"]
+        }
+      },
+      "dea_apply": {
+        "add": {
+          "component_groups": ["skin_28"]
+        }
+      },
+      "charge": {
+        "set_property": {
+          "dummy:charge": true,
+          "dummy:dea_timer": true
+        },
+        "add": {
+          "component_groups": ["timer_charge"]
+        }
+      },
+      "timer_dea": {
+        "remove": {
+          "component_groups": ["timer_charge"]
+        },
+        "add": {
+          "component_groups": ["timer_dea"]
+        }
+      },
+      "dummy:lay": {
+        "remove": {
+          "component_groups": ["timer_lay"]
+        },
+        "set_property": {
+          "dummy:lay": true
+        }
+      },
+      "pix:spawn": {
+        "add": {
+          "component_groups": ["npc_look_player"]
+        }
+      },
+      "pix:sleep": {
+        "add": {
+          "component_groups": ["npc_sleeping", "timer_lay", "skin_27"]
+        },
+        "remove": {
+          "component_groups": ["npc_follow", "npc_wake", "npc_look_player"]
+        }
+      },
+      "pix:wake": {
+        "add": {
+          "component_groups": ["npc_wake", "npc_look_player"]
+        },
+        "remove": {
+          "component_groups": ["npc_sleeping", "npc_follow"]
+        },
+        "set_property": {
+          "dummy:lay": false
+        }
+      },
+      "pix:skin_0": {
+        "add": {
+          "component_groups": ["skin_0"]
+        }
+      },
+      "pix:skin_1": {
+        "add": {
+          "component_groups": ["skin_1"]
+        }
+      },
+      "pix:skin_2": {
+        "add": {
+          "component_groups": ["skin_2"]
+        }
+      },
+      "pix:skin_3": {
+        "add": {
+          "component_groups": ["skin_3"]
+        }
+      },
+      "pix:skin_4": {
+        "add": {
+          "component_groups": ["skin_4"]
+        }
+      },
+      "pix:skin_5": {
+        "add": {
+          "component_groups": ["skin_5"]
+        }
+      },
+      "pix:skin_6": {
+        "add": {
+          "component_groups": ["skin_6"]
+        }
+      },
+      "pix:skin_7": {
+        "add": {
+          "component_groups": ["skin_7"]
+        }
+      },
+      "pix:skin_8": {
+        "add": {
+          "component_groups": ["skin_8"]
+        }
+      },
+      "pix:skin_9": {
+        "add": {
+          "component_groups": ["skin_9"]
+        }
+      },
+      "pix:skin_10": {
+        "add": {
+          "component_groups": ["skin_10"]
+        }
+      },
+      "pix:skin_11": {
+        "add": {
+          "component_groups": ["skin_11"]
+        }
+      },
+      "pix:skin_12": {
+        "add": {
+          "component_groups": ["skin_12"]
+        }
+      },
+      "pix:skin_13": {
+        "add": {
+          "component_groups": ["skin_13"]
+        }
+      },
+      "pix:skin_14": {
+        "add": {
+          "component_groups": ["skin_14"]
+        }
+      },
+      "pix:skin_15": {
+        "add": {
+          "component_groups": ["skin_15"]
+        }
+      },
+      "pix:skin_16": {
+        "add": {
+          "component_groups": ["skin_16"]
+        }
+      },
+      "pix:skin_17": {
+        "add": {
+          "component_groups": ["skin_17"]
+        }
+      },
+      "pix:skin_18": {
+        "add": {
+          "component_groups": ["skin_18"]
+        }
+      },
+      "pix:skin_19": {
+        "add": {
+          "component_groups": ["skin_19"]
+        }
+      },
+      "pix:skin_20": {
+        "add": {
+          "component_groups": ["skin_20"]
+        }
+      },
+      "pix:skin_21": {
+        "add": {
+          "component_groups": ["skin_21"]
+        }
+      },
+      "pix:skin_22": {
+        "add": {
+          "component_groups": ["skin_22"]
+        }
+      },
+      "pix:skin_23": {
+        "add": {
+          "component_groups": ["skin_23"]
+        }
+      },
+      "pix:skin_24": {
+        "add": {
+          "component_groups": ["skin_24"]
+        }
+      },
+      "pix:skin_25": {
+        "add": {
+          "component_groups": ["skin_25"]
+        }
+      },
+      "pix:skin_26": {
+        "add": {
+          "component_groups": ["skin_26"]
+        }
+      },
+      "pix:skin_27": {
+        "add": {
+          "component_groups": ["skin_27"]
+        }
+      },
+      "pix:skin_28": {
+        "add": {
+          "component_groups": ["skin_28"]
+        }
+      },
+      "pix:skin_29": {
+        "add": {
+          "component_groups": ["skin_29"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+execute if score var minutes matches 1.. if score var seconds matches 0 run scoreboard players remove var minutes 1
+execute if score var minutes matches 0.. if score var seconds matches 0 run scoreboard players set var seconds 59

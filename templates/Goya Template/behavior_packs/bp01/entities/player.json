@@ -1,0 +1,535 @@
+{
+  "format_version": "1.18.20",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": true,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": ["projectile"]
+      },
+      "animations": {
+        "projectile": "controller.animation.player.projectile"
+      },
+      "properties": {
+        "player:delay": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      }
+    },
+
+    "component_groups": {
+      "delay": {
+        "minecraft:timer": {
+          "time": 0.5,
+          "looping": false,
+          "time_down_event": {
+            "event": "delay_off",
+            "target": "self"
+          }
+        }
+      },
+      "light_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:light"
+          }
+        }
+      },
+      "red_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:red"
+          }
+        }
+      },
+      "yellow_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:yellow"
+          }
+        }
+      },
+      "blue_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:blue"
+          }
+        }
+      },
+      "green_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:green"
+          }
+        }
+      },
+      "orange_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:orange"
+          }
+        }
+      },
+      "purple_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:purple"
+          }
+        }
+      },
+      "ink_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:ink"
+          }
+        }
+      },
+      "block_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:block"
+          }
+        }
+      },
+      "memory_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "single_use": true,
+            "spawn_entity": "let:projectile",
+            "num_to_spawn": 1,
+            "spawn_event": "projectile:memory"
+          }
+        }
+      },
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "visible": false,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [0.0, 0.0],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {}
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          { "cause": "entity_attack", "deals_damage": true },
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": ["player"]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {},
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": {
+        "heal": 0,
+        "jump": 0,
+        "sprint_jump": 0,
+        "mine": 0,
+        "attack": 0,
+        "damage": 0,
+        "walk": 0,
+        "sprint": 0,
+        "swim": 0
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+        "push_towards_closest_space": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": ["parrot_tame"],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [0.4, -0.2, -0.1],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [-0.4, -0.2, -0.1],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:trigger_raid"
+        }
+      }
+    },
+
+    "events": {
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": ["minecraft:add_bad_omen"]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": ["minecraft:add_bad_omen"]
+        },
+        "add": {
+          "component_groups": ["minecraft:clear_bad_omen_spell_effect"]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": ["minecraft:raid_trigger"]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": ["minecraft:raid_trigger"]
+        }
+      },
+      "player:light_projectile": {
+        "add": {
+          "component_groups": ["light_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "yellow_projectile"
+          ]
+        }
+      },
+      "player:ink_projectile": {
+        "add": {
+          "component_groups": ["ink_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "yellow_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:block_projectile": {
+        "add": {
+          "component_groups": ["block_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "yellow_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:red_projectile": {
+        "add": {
+          "component_groups": ["red_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "yellow_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:yellow_projectile": {
+        "add": {
+          "component_groups": ["yellow_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:blue_projectile": {
+        "add": {
+          "component_groups": ["blue_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "yellow_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:green_projectile": {
+        "add": {
+          "component_groups": ["green_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "yellow_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:orange_projectile": {
+        "add": {
+          "component_groups": ["orange_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "yellow_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:purple_projectile": {
+        "add": {
+          "component_groups": ["purple_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "memory_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "yellow_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:memory_projectile": {
+        "add": {
+          "component_groups": ["memory_projectile"]
+        },
+        "remove": {
+          "component_groups": [
+            "yellow_projectile",
+            "block_projectile",
+            "ink_projectile",
+            "green_projectile",
+            "purple_projectile",
+            "orange_projectile",
+            "blue_projectile",
+            "red_projectile",
+            "light_projectile"
+          ]
+        }
+      },
+      "player:stop_projectile": {
+        "remove": {
+          "component_groups": [
+            "light_projectile",
+            "block_projectile",
+            "red_projectile",
+            "yellow_projectile",
+            "blue_projectile",
+            "green_projectile",
+            "orange_projectile",
+            "purple_projectile",
+            "memory_projectile"
+          ]
+        }
+      },
+      "delay_on": {
+        "set_property": {
+          "player:delay": true
+        },
+        "add": {
+          "component_groups": ["delay"]
+        }
+      },
+      "delay_off": {
+        "set_property": {
+          "player:delay": false
+        },
+        "remove": {
+          "component_groups": ["delay"]
+        }
+      }
+    }
+  }
+}

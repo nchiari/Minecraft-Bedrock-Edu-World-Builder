@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.dummy": {
+      "arrays": {
+        "textures": { "Array.skins": ["Texture.skin_0", "Texture.skin_1", "Texture.skin_1"] }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.variant]"]
+    }
+  }
+}

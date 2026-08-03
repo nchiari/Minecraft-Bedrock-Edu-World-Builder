@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "let:manos_rcp"
+    },
+    "components": {
+      "minecraft:icon": "manos_rcp.icon",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.items": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "phone": "q.is_item_name_any('slot.weapon.mainhand', 0, 'let:phone') && q.is_using_item"
+            },
+            {
+              "comprobar": "q.is_item_name_any('slot.weapon.mainhand', 0, 'let:comprobar')"
+            },
+            {
+              "metronomo": "q.is_item_name_any('slot.weapon.mainhand',0, 'let:manos_rcp')"
+            }
+          ]
+        },
+        "metronomo": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 'let:manos_rcp')"
+            }
+          ],
+          "on_entry": ["/scoreboard players set var metronomo 0", "/setblock 18 68 366 redstone_block"],
+          "on_exit": ["/stopsound @a metronomo", "/setblock 18 68 366 air", "/scoreboard players set var rcp_counter 0"]
+        },
+        "phone": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'let:phone') || !q.is_using_item"
+            }
+          ],
+          "on_entry": [
+            "/execute if score var rcp_112 matches 1 run dialogue open @e[family=human,tag=sos] @s sos_d",
+            "/execute if score var rcp_112 matches 0 run dialogue open @e[family=human,tag=sos] @s sos_a"
+          ]
+        },
+        "comprobar": {
+          "transitions": [
+            {
+              "default": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'let:comprobar')"
+            }
+          ],
+          "on_entry": ["/event entity @e[family=dummy] npc_component_on"],
+          "on_exit": ["/event entity @e[family=dummy] npc_component_off"]
+        }
+      }
+    }
+  }
+}

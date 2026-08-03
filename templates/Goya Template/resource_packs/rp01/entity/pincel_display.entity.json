@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:pincel_display",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "pincel_on": "textures/entity/pincel_display_on",
+        "pincel_off": "textures/entity/pincel_display_off"
+      },
+      "geometry": {
+        "default": "geometry.pincel_display"
+      },
+      "render_controllers": ["controller.render.pincel_display"],
+      "spawn_egg": {
+        "base_color": "#d5d1c2",
+        "overlay_color": "#aea085"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "sparkles": "animation.pincel_display.sparkles",
+        "controller": "controller.animation.pincel_display"
+      },
+      "particle_effects": {
+        "sparkles": "let:sparks"
+      }
+    }
+  }
+}

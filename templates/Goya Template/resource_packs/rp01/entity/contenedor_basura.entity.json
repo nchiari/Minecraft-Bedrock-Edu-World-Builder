@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:contenedor_basura",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/contenedor_basura"
+      },
+      "geometry": {
+        "default": "geometry.contenedor_basura"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#877712",
+        "overlay_color": "#945522"
+      }
+    }
+  }
+}

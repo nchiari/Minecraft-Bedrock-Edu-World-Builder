@@ -1,0 +1,33 @@
+## Dialogos de los NPCs de Fuendetodos
+
+dialogue change @e[name=José] jose @a
+dialogue change @e[name=Alberto] alberto_0 @a
+dialogue change @e[name=Isabel] isabel @a
+dialogue change @e[name=Sara] sara @a
+dialogue change @e[name=Manuel] manuel @a
+dialogue change @e[name=Remedios] remedios @a
+dialogue change @e[name=Alejandro] alejandro @a
+dialogue change @e[name=Andrea] andrea @a
+dialogue change @e[name=Vicente] vicente @a
+dialogue change @e[name=Marcos] marcos @a
+dialogue change @e[name=Elena] elena @a
+dialogue change @e[name=Luisa] luisa @a
+dialogue change @e[name=Mario] mario @a
+dialogue change @e[name=Jaime] jaime @a
+dialogue change @e[name=Fernando] fernando @a
+dialogue change @e[name=Daniela] daniela @a
+dialogue change @e[name=Carlos] carlos @a
+dialogue change @e[name=Victoria] victoria @a
+dialogue change @e[name=Marta] marta @a
+dialogue change @e[name=Borja] borja @a
+dialogue change @e[name=Cristina] cristina @a
+dialogue change @e[name=Raúl] raul @a
+dialogue change @e[name=Gonzalo] gonzalo  @a
+dialogue change @e[name=Mariano] mariano @a
+dialogue change @e[name=Antonia] antonia @a
+dialogue change @e[name=Emilio] emilio @a
+dialogue change @e[name=Julián] julian @a
+dialogue change @e[name=Leandro] leandro @a
+dialogue change @e[name=Patricia] patricia @a
+dialogue change @e[name=Lorena] lorena @a
+dialogue change @e[name=Carmen] carmen @a

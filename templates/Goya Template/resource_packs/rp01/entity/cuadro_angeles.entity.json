@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_angeles",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_angeles"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_angeles"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#526eaa",
+				"overlay_color": "#a697a3"
+			}
+		}
+	}
+}

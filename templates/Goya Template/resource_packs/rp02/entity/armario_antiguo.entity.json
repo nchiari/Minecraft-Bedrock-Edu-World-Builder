@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:armario_antiguo",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/armario_antiguo"
+			},
+			"geometry": {
+				"default": "geometry.armario_antiguo"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#60d196",
+				"overlay_color": "#32f836"
+			}
+		}
+	}
+}

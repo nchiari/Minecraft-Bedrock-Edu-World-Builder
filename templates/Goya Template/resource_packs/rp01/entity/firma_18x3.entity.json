@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:firma_18x3",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/firma_18x3"
+			},
+			"geometry": {
+				"default": "geometry.firma_18x3"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#be2dc9",
+				"overlay_color": "#b3ecba"
+			}
+		}
+	}
+}

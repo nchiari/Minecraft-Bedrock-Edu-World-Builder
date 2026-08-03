@@ -47,6 +47,14 @@
         <small data-i18n="tools.templateDescription"></small>
       </span>
     </button>
+
+    <button id="inspector-tool-btn" class="tool-choice" type="button" data-tool="inspector" aria-controls="inspector-workspace" aria-pressed="false">
+      <span class="tool-choice-icon" aria-hidden="true">✓</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.inspectorTitle"></strong>
+        <small data-i18n="tools.inspectorDescription"></small>
+      </span>
+    </button>
   </nav>
 
   <main>
@@ -76,6 +84,17 @@
         </div>
         <p class="field-help" data-i18n="upload.packsHelp"></p>
         <p id="packs-file-info" class="field-file" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="packs-folder-input" data-i18n="upload.packFoldersLabel"></label>
+        <div class="file-picker">
+          <input id="packs-folder-input" class="file-native" type="file" webkitdirectory multiple>
+          <button id="packs-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.choosePackFolder"></button>
+          <span id="packs-folder-picker-text" class="file-picker-text" data-i18n="upload.noPackFoldersChosen"></span>
+        </div>
+        <p class="field-help" data-i18n="upload.packFoldersHelp"></p>
+        <p id="packs-folder-info" class="field-file" hidden></p>
       </div>
 
       <div class="limits-box">
@@ -156,6 +175,47 @@
             <button id="template-download-btn" type="button" class="btn btn-primary" data-i18n="template.download"></button>
           </div>
           <div id="template-analysis" class="template-analysis" hidden></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="inspector-workspace" class="tool-workspace" aria-labelledby="inspector-tool-btn" hidden>
+      <div class="container layout inspector-layout">
+        <section class="panel tool-form-panel" aria-labelledby="inspector-title">
+          <h2 id="inspector-title" data-i18n="inspector.title"></h2>
+          <p class="tool-intro" data-i18n="inspector.intro"></p>
+
+          <div class="field">
+            <label for="inspector-world-input" data-i18n="inspector.worldLabel"></label>
+            <div class="file-picker">
+              <input id="inspector-world-input" class="file-native" type="file" accept=".mcworld,application/octet-stream">
+              <button id="inspector-world-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseWorld"></button>
+              <span id="inspector-world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
+            </div>
+            <p class="field-help" data-i18n="inspector.worldHelp"></p>
+            <p id="inspector-world-info" class="field-file" hidden></p>
+          </div>
+
+          <div class="inspector-explainer">
+            <h3 data-i18n="inspector.explainerTitle"></h3>
+            <p data-i18n="inspector.explainerBody"></p>
+          </div>
+
+          <div id="inspector-actions" class="actions" hidden>
+            <button id="inspector-repair-btn" type="button" class="btn btn-primary" data-i18n="inspector.repair" disabled></button>
+            <button id="inspector-reset-btn" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
+          </div>
+        </section>
+
+        <section class="panel panel-status inspector-results-panel" aria-labelledby="inspector-results-title">
+          <h2 id="inspector-results-title" data-i18n="inspector.resultsTitle"></h2>
+          <p id="inspector-status-summary" class="status-summary" role="status" aria-live="polite"></p>
+          <div id="inspector-download-box" class="download-box" hidden>
+            <p class="download-note" data-i18n="inspector.downloadReady"></p>
+            <button id="inspector-download-btn" type="button" class="btn btn-primary" data-i18n="inspector.download"></button>
+          </div>
+          <div id="inspector-overview" class="inspector-overview" hidden></div>
+          <div id="inspector-results" class="inspector-results" hidden></div>
         </section>
       </div>
     </section>

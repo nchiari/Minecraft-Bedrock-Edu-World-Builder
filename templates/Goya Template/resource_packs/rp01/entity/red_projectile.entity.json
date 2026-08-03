@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:red_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/red_projectile"
+      },
+      "geometry": {
+        "default": "geometry.red_projectile"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#ac1313",
+        "overlay_color": "#771212"
+      },
+      "animations": {
+        "rotation": "animation.red_projectile.rotation"
+      },
+      "scripts": {
+        "animate": ["rotation"]
+      }
+    }
+  }
+}

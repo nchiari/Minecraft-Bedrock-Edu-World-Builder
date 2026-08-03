@@ -1,0 +1,125 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.projectile": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "pincel_light": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_light') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_red": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_red') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_yellow": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_yellow') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_blue": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_blue') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_green": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_green') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_orange": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_orange') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_purple": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_purple') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_ink": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_ink') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_block": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_block') && q.is_using_item && !q.property('player:delay')"
+            },
+            {
+              "pincel_memory": "q.is_item_name_any('slot.weapon.mainhand', 'let:pincel_memory') && q.is_using_item && !q.property('player:delay')"
+            }
+          ],
+          "on_entry": ["@s player:stop_projectile"]
+        },
+        "pincel_light": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:light_projectile"]
+        },
+        "pincel_red": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:red_projectile"]
+        },
+        "pincel_yellow": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:yellow_projectile"]
+        },
+        "pincel_blue": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:blue_projectile"]
+        },
+        "pincel_green": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:green_projectile"]
+        },
+        "pincel_orange": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:orange_projectile"]
+        },
+        "pincel_purple": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:purple_projectile"]
+        },
+        "pincel_ink": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:ink_projectile"]
+        },
+        "pincel_block": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:block_projectile"]
+        },
+        "pincel_memory": {
+          "transitions": [
+            {
+              "default": "!q.is_using_item"
+            }
+          ],
+          "on_entry": ["@s player:memory_projectile"]
+        }
+      }
+    }
+  }
+}

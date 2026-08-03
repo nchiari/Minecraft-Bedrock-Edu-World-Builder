@@ -1,0 +1,288 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pix:human_goya",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:npc"
+    },
+    "component_groups": {
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:tick_world": {}
+      },
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "follow": {
+        "minecraft:behavior.follow_owner": {
+          "priority": 0,
+          "start_distance": 4,
+          "stop_distance": 3,
+          "speed_multiplier": 0.7,
+          "can_teleport": true
+        }
+      },
+      "tamed": {
+        "minecraft:is_tamed": {}
+      },
+      "wild": {
+        "minecraft:tameable": {
+          "tame_items": "bone",
+          "tame_event": {
+            "event": "tame"
+          }
+        }
+      },
+      "chat_off": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "chat_on": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "goya_light": {
+        "minecraft:entity_sensor": {
+          "subsensors": [
+            {
+              "range": 128,
+              "cooldown": -1,
+              "require_all": false,
+              "event_filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "light_marker"
+                  }
+                ]
+              },
+              "event": "goya_light_on"
+            }
+          ]
+        }
+      },
+      "goya_nubes": {
+        "minecraft:entity_sensor": {
+          "subsensors": [
+            {
+              "range": 128,
+              "cooldown": -1,
+              "require_all": false,
+              "event_filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": "block_marker"
+                  }
+                ]
+              },
+              "event": "goya_nubes_on"
+            }
+          ]
+        }
+      },
+      "goya_timer_light": {
+        "minecraft:timer": {
+          "time": 0.5,
+          "looping": false,
+          "time_down_event": {
+            "event": "goya_light_off",
+            "target": "self"
+          }
+        }
+      },
+      "goya_timer_nubes": {
+        "minecraft:timer": {
+          "time": 0.5,
+          "looping": false,
+          "time_down_event": {
+            "event": "goya_nubes_off",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["goya"]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": false,
+        "always_show": false
+      },
+      "minecraft:npc": {
+        "npc_data": {
+          "picker_offsets": {
+            "translate": [0, 20, 0],
+            "scale": [1.7, 1.7, 1.7]
+          }
+        }
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 1.9,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1.9
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "angle_of_view_horizontal": 270,
+        "angle_of_view_vertical": 75,
+        "probability": 1
+      },
+      "minecraft:physics": {},
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:navigation.walk": {
+        "can_walk": true,
+        "avoid_damage_blocks": true,
+        "can_swim": true,
+        "can_sink": false,
+        "can_jump": true,
+        "can_open_doors": true,
+        "can_float": true,
+        "can_pass_doors": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:jump.static": {},
+      "minecraft:persistent": {}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["wild"]
+        }
+      },
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "tame": {
+        "add": {
+          "component_groups": ["tamed"]
+        },
+        "remove": {
+          "component_groups": ["wild"]
+        }
+      },
+      "follow": {
+        "add": {
+          "component_groups": ["follow"]
+        }
+      },
+      "stay": {
+        "remove": {
+          "component_groups": ["follow"]
+        }
+      },
+      "skin_0": {
+        "add": {
+          "component_groups": ["skin_0"]
+        },
+        "remove": {
+          "component_groups": ["skin_1"]
+        }
+      },
+      "skin_1": {
+        "queue_command": {
+          "command": [
+            "particle let:sparks_round_2 ~~1~",
+            "particle let:sparks_round_2 ~~1~",
+            "particle let:sparks_round_2 ~~~",
+            "particle let:sparks_round_2 ~~~",
+            "particle let:sparks_edificios",
+            "event entity @s skin_final"
+          ]
+        }
+      },
+      "skin_final": {
+        "add": {
+          "component_groups": ["skin_1"]
+        },
+        "remove": {
+          "component_groups": ["skin_0"]
+        }
+      },
+      "chat_off": {
+        "add": {
+          "component_groups": ["chat_off"]
+        }
+      },
+      "chat_on": {
+        "add": {
+          "component_groups": ["chat_on"]
+        }
+      },
+      "goya_light_idle": {
+        "add": {
+          "component_groups": ["goya_light"]
+        }
+      },
+      "goya_light_on": {
+        "add": {
+          "component_groups": ["goya_timer_light"]
+        },
+        "remove": {
+          "component_groups": ["goya_light"]
+        }
+      },
+      "goya_light_off": {
+        "queue_command": { "command": ["dialogue change @s goya_14 @a", "dialogue open @s @p goya_14"] }
+      },
+      "goya_nubes_idle": {
+        "add": {
+          "component_groups": ["goya_nubes"]
+        }
+      },
+      "goya_nubes_on": {
+        "add": {
+          "component_groups": ["goya_timer_nubes"]
+        },
+        "remove": {
+          "component_groups": ["goya_nubes"]
+        }
+      },
+      "goya_nubes_off": {
+        "queue_command": { "command": ["dialogue change @s goya_26_c @a", "dialogue open @s @p goya_26_c"] }
+      }
+    }
+  }
+}

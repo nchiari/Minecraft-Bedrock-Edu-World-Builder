@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:display_grabado",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/display_grabado"
+      },
+      "geometry": {
+        "default": "geometry.display_grabado"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#af2547",
+        "overlay_color": "#8d7eb6"
+      }
+    }
+  }
+}

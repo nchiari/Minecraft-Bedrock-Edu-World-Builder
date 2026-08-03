@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "HBR BP",
+    "description": "HBR BP",
+    "uuid": "f5684476-0d60-4257-b546-0620016245a4",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "HBR BP",
+      "version": [1, 0, 0],
+      "uuid": "cd75cd49-a781-4b8d-90fe-c2dc094bdeaa",
+      "type": "data"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "434e46f6-aa38-4a53-b3a6-28504887c586",
+      "version": [1, 0, 0]
+    }
+  ]
+}

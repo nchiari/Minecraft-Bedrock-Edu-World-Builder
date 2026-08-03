@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_esopo",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_esopo"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_esopo"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#4c6396",
+				"overlay_color": "#461e5e"
+			}
+		}
+	}
+}

@@ -1,0 +1,389 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:projectile",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "hit": "controller.animation.projectile.paint"
+      },
+      "scripts": {
+        "animate": ["hit"]
+      }
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "hit": {
+        "minecraft:is_baby": {}
+      },
+      "light_variant": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": false
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 0.6,
+          "gravity": 0.02,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "red_variant": {
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "yellow_variant": {
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "blue_variant": {
+        "minecraft:variant": {
+          "value": 5
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "green_variant": {
+        "minecraft:variant": {
+          "value": 6
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "orange_variant": {
+        "minecraft:variant": {
+          "value": 7
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "purple_variant": {
+        "minecraft:variant": {
+          "value": 8
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 1.5,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "ink_variant": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 0.7,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      },
+      "block_variant": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 0.9,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        },
+        "minecraft:timer": {
+          "time": 0.3,
+          "looping": false,
+          "time_down_event": {
+            "event": "projectile:block_scriptevent",
+            "target": "self"
+          }
+        }
+      },
+      "memory_variant": {
+        "minecraft:variant": {
+          "value": 9
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 0,
+              "knockback": true
+            },
+            "stick_in_ground": {},
+            "definition_event": {
+              "event_trigger": {
+                "event": "projectile:hit",
+                "target": "self"
+              }
+            }
+          },
+          "power": 0.7,
+          "gravity": 0.01,
+          "uncertainty_base": 0.01,
+          "uncertainty_multiplier": 0,
+          "anchor": 2,
+          "angle_offset": 0.0,
+          "offset": [0, -0.3, 0]
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["brush_projectile"]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:timer": {
+        "time": 5,
+        "looping": false,
+        "time_down_event": {
+          "event": "let:despawn",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "projectile:hit": {
+        "add": {
+          "component_groups": ["hit"]
+        }
+      },
+      "projectile:light": {
+        "add": {
+          "component_groups": ["light_variant"]
+        }
+      },
+      "projectile:block_scriptevent": {
+        "queue_command": {
+          "command": "scriptevent let:blockTimer"
+        }
+      },
+      "projectile:red": {
+        "add": {
+          "component_groups": ["red_variant"]
+        }
+      },
+      "projectile:yellow": {
+        "add": {
+          "component_groups": ["yellow_variant"]
+        }
+      },
+      "projectile:blue": {
+        "add": {
+          "component_groups": ["blue_variant"]
+        }
+      },
+      "projectile:green": {
+        "add": {
+          "component_groups": ["green_variant"]
+        }
+      },
+      "projectile:orange": {
+        "add": {
+          "component_groups": ["orange_variant"]
+        }
+      },
+      "projectile:purple": {
+        "add": {
+          "component_groups": ["purple_variant"]
+        }
+      },
+      "projectile:ink": {
+        "add": {
+          "component_groups": ["ink_variant"]
+        }
+      },
+      "projectile:block": {
+        "add": {
+          "component_groups": ["block_variant"]
+        }
+      },
+      "projectile:memory": {
+        "add": {
+          "component_groups": ["memory_variant"]
+        }
+      }
+    }
+  }
+}

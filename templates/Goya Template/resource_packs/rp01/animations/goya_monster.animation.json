@@ -1,0 +1,208 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.goya_monster.base_pose": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": ["-query.target_x_rotation", 0, 0],
+					"position": [0, -20, 0]
+				},
+				"wing0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wingtip0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wingtip1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"tail": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				},
+				"tailtip": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				}
+			}
+		},
+		"animation.goya_monster.move": {
+			"loop": true,
+			"animation_length": 2.417,
+			"start_delay": "math.random(0, 2.417)",
+			"bones": {
+				"tail": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				},
+				"tailtip": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				},
+				"wing0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wingtip0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wingtip1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				}
+			},
+			"sound_effects": {
+				"1.4": {
+					"effect": "flap"
+				}
+			}
+		},
+		"animation.goya_monster.run": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.75,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [32.5, 0, 0],
+						"0.5": {
+							"pre": [34.05446, 6.36431, 13.10759],
+							"post": [34.05446, 6.36431, 13.10759],
+							"lerp_mode": "catmullrom"
+						},
+						"1.0833": {
+							"post": [23.91199, 57.72524, 20.55024],
+							"lerp_mode": "catmullrom"
+						},
+						"1.5833": {
+							"post": [-1.25085, 81.99051, -6.23562],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0833": {
+							"post": [-19.04192, 78.48717, -21.76492],
+							"lerp_mode": "catmullrom"
+						},
+						"2.75": [-358.33496, 86.99683, -355.83877]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.625": {
+							"pre": [0, -64, -64],
+							"post": [0, -64, -64],
+							"lerp_mode": "catmullrom"
+						},
+						"1.2083": {
+							"post": [-88, -138, -119],
+							"lerp_mode": "catmullrom"
+						},
+						"1.6667": {
+							"post": [-197.34, -188.44, -143.75],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0833": {
+							"post": [-300.17, -205.71, -152.85],
+							"lerp_mode": "catmullrom"
+						},
+						"2.75": [-427, -203, -155]
+					}
+				},
+				"wing0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"tail": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				}
+			}
+		},
+		"animation.goya_monster.chase": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 3,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.125": {
+							"post": [0, 180, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, 180, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.6667": {
+							"post": [0, 90, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.0833": {
+							"post": [0, 90, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.25": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.5833": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"2.75": [0, 180, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5833": [0, 0, 96],
+						"2.1667": [-396, 0, 96],
+						"2.75": [-396, 0, -114]
+					}
+				},
+				"wing0": {
+					"rotation": [0, 0, "16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"wing1": {
+					"rotation": [0, 0, "-16.0 * Math.cos(300 * query.anim_time)"]
+				},
+				"tail": {
+					"rotation": ["-5.0 * Math.cos(600 * query.anim_time) - 5.0", 0, 0]
+				}
+			}
+		},
+		"animation.goya_monster.dead": {
+			"loop": true,
+			"animation_length": 1.5,
+			"bones": {
+				"body": {
+					"position": [0, -27.25, 0]
+				},
+				"wing0": {
+					"rotation": {
+						"0.0": [0, 0, 15],
+						"0.75": [0, 0, 12.5],
+						"1.5": [0, 0, 15]
+					}
+				},
+				"wing1": {
+					"rotation": {
+						"0.0": [0, 0, -15],
+						"0.75": [0, 0, -12.5],
+						"1.5": [0, 0, -15]
+					}
+				},
+				"head": {
+					"rotation": [-14.87739, 1.93597, 7.24721]
+				},
+				"tail": {
+					"rotation": {
+						"0.0": [-25, 0, 0],
+						"0.75": [-22.5, 0, 0],
+						"1.5": [-25, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

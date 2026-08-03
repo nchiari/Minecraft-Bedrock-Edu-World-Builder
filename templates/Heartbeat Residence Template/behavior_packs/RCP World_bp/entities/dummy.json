@@ -1,0 +1,356 @@
+{
+  "format_version": "1.19.50",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "pix:dummy",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "dummy:rcp": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:check": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:charge": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:breath": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "dummy:dea_timer": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      },
+      "scripts": {
+        "animate": ["dummy_dea", "dummy_charge"]
+      },
+      "animations": {
+        "dummy_dea": "controller.animation.dummy_dea",
+        "dummy_charge": "controller.animation.dummy_charge"
+      }
+    },
+    "component_groups": {
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "timer_rcp": {
+        "minecraft:timer": {
+          "time": 0.25,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "timer_anim": {
+        "minecraft:timer": {
+          "time": 0.375,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "timer_charge": {
+        "minecraft:timer": {
+          "time": 0.375,
+          "time_down_event": {
+            "event": "timer_dea",
+            "target": "self"
+          }
+        }
+      },
+      "timer_dea": {
+        "minecraft:timer": {
+          "time": 10,
+          "time_down_event": {
+            "event": "dummy:off",
+            "target": "self"
+          }
+        }
+      },
+      "npc_component": {
+        "minecraft:npc": {}
+      }
+    },
+    "components": {
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": ["dummy"]
+      },
+      "minecraft:nameable": {
+        "allow_name_tag_renaming": true,
+        "always_show": false
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 0.5,
+            "pivot": [0, 0.25, 0]
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 0.5
+      },
+      "minecraft:physics": {},
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:scale": {
+        "value": 1.35
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:manos_rcp"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:rcp",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "rcp"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:comprobar"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:check",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "check"
+            }
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:respiracion"
+                  },
+                  {
+                    "test": "bool_property",
+                    "operator": "==",
+                    "subject": "self",
+                    "domain": "dummy:breath",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "breath"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:dea_item_off"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 0
+                  }
+                ]
+              },
+              "event": "dea_apply"
+            }
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:dea_item_on"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 1
+                  },
+                  {
+                    "test": "bool_property",
+                    "subject": "self",
+                    "domain": "dummy:dea_timer",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              },
+              "event": "charge"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "rcp": {
+        "set_property": {
+          "dummy:rcp": true
+        },
+        "add": {
+          "component_groups": ["timer_rcp"]
+        }
+      },
+      "check": {
+        "set_property": {
+          "dummy:check": true
+        },
+        "add": {
+          "component_groups": ["timer_anim"]
+        }
+      },
+      "breath": {
+        "set_property": {
+          "dummy:breath": true
+        },
+        "add": {
+          "component_groups": ["timer_anim"]
+        }
+      },
+      "charge": {
+        "set_property": {
+          "dummy:charge": true,
+          "dummy:dea_timer": true
+        },
+        "add": {
+          "component_groups": ["timer_charge"]
+        }
+      },
+      "dummy:off": {
+        "set_property": {
+          "dummy:rcp": false,
+          "dummy:check": false,
+          "dummy:charge": false,
+          "dummy:breath": false,
+          "dummy:dea_timer": false
+        },
+        "remove": {
+          "component_groups": ["timer_rcp", "timer_anim"]
+        }
+      },
+      "dea_apply": {
+        "add": {
+          "component_groups": ["skin_1"]
+        },
+        "remove": {
+          "component_groups": ["skin_0"]
+        }
+      },
+      "dummy_reset": {
+        "remove": {
+          "component_groups": ["skin_1", "npc_component"]
+        },
+        "add": {
+          "component_groups": ["skin_0"]
+        },
+        "set_property": {
+          "dummy:rcp": false,
+          "dummy:check": false,
+          "dummy:charge": false,
+          "dummy:breath": false,
+          "dummy:dea_timer": false
+        }
+      },
+      "npc_component_on": {
+        "add": {
+          "component_groups": ["npc_component"]
+        }
+      },
+      "npc_component_off": {
+        "remove": {
+          "component_groups": ["npc_component"]
+        }
+      },
+      "timer_dea": {
+        "remove": {
+          "component_groups": ["timer_charge"]
+        },
+        "add": {
+          "component_groups": ["timer_dea"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_luisa",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_luisa"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_luisa"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#2666fe",
+				"overlay_color": "#69328a"
+			}
+		}
+	}
+}

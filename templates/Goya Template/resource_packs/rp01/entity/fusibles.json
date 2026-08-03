@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:fusibles",
+      "materials": {
+        "default": "entity_emissive_alpha"
+      },
+      "textures": {
+        "panel_on": "textures/entity/panel_on",
+        "panel_off": "textures/entity/panel_off"
+      },
+      "geometry": {
+        "default": "geometry.fusibles"
+      },
+      "render_controllers": ["controller.render.fusibles"],
+      "spawn_egg": {
+        "base_color": "#2c7aa0",
+        "overlay_color": "#29e7a6"
+      }
+    }
+  }
+}

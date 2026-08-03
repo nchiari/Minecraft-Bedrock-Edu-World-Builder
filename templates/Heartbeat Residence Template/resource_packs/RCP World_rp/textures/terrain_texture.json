@@ -1,0 +1,41 @@
+{
+  "resource_pack_name": "RCP RP",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "ambulancia_slab_es": {
+      "textures": "textures/blocks/es/ambulancia_slab_es.png"
+    },
+    "ambulancia_slab_en": {
+      "textures": "textures/blocks/en/ambulancia_slab_en.png"
+    },
+    "concrete_white": {
+      "textures": "textures/blocks/concrete_white.png"
+    },
+    "ambulancia_rayas_es": {
+      "textures": "textures/blocks/es/ambulancia_rayas_es.png"
+    },
+    "ambulancia_rayas_en": {
+      "textures": "textures/blocks/en/ambulancia_rayas_en.png"
+    },
+    "ambulancia_1_es": {
+      "textures": "textures/blocks/es/ambulancia_1_es.png"
+    },
+    "ambulancia_1_en": {
+      "textures": "textures/blocks/en/ambulancia_1_en.png"
+    },
+    "ambulancia_2_es": {
+      "textures": "textures/blocks/es/ambulancia_2_es.png"
+    },
+    "ambulancia_2_en": {
+      "textures": "textures/blocks/en/ambulancia_2_en.png"
+    },
+    "bus_azul_top": {
+      "textures": "textures/blocks/en/bus_azul_top.png"
+    },
+    "bus_azul_bottom": {
+      "textures": "textures/blocks/en/bus_azul_bottom.png"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "resource_pack_name": "RCP RP",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "dea.item": {
+      "textures": "textures/items/dea"
+    },
+    "dea.icon": {
+      "textures": "textures/items/dea_icon"
+    },
+    "manos_rcp.icon": {
+      "textures": "textures/items/manos_rcp_icon"
+    },
+    "manos_heimlich.icon": {
+      "textures": "textures/items/manos_heimlich_icon"
+    },
+    "manos_palmadas.icon": {
+      "textures": "textures/items/manos_palmadas_icon"
+    },
+    "phone.icon": {
+      "textures": "textures/items/phone_icon"
+    },
+    "dea_item_on.icon": {
+      "textures": "textures/items/dea_item_on_icon"
+    },
+    "dea_item_off.icon": {
+      "textures": "textures/items/dea_item_off_icon"
+    },
+    "comprobar.icon": {
+      "textures": "textures/items/comprobar_icon"
+    },
+    "respiracion.icon": {
+      "textures": "textures/items/respiracion_icon"
+    },
+    "toser.icon": {
+      "textures": "textures/items/toser_icon"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.human": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.skin_0",
+            "Texture.skin_1",
+            "Texture.skin_2",
+            "Texture.skin_3",
+            "Texture.skin_4",
+            "Texture.skin_5",
+            "Texture.skin_6",
+            "Texture.skin_7",
+            "Texture.skin_8",
+            "Texture.skin_9",
+            "Texture.skin_10",
+            "Texture.skin_11",
+            "Texture.skin_12",
+            "Texture.skin_13",
+            "Texture.skin_14",
+            "Texture.skin_15",
+            "Texture.skin_16",
+            "Texture.skin_17",
+            "Texture.skin_18",
+            "Texture.skin_19",
+            "Texture.skin_20",
+            "Texture.skin_21",
+            "Texture.skin_22",
+            "Texture.skin_23",
+            "Texture.skin_24",
+            "Texture.skin_25",
+            "Texture.skin_26",
+            "Texture.skin_27",
+            "Texture.skin_28",
+            "Texture.skin_29",
+            "Texture.skin_30",
+            "Texture.skin_31",
+            "Texture.skin_32",
+            "Texture.skin_33",
+            "Texture.skin_34",
+            "Texture.skin_35",
+            "Texture.skin_36",
+            "Texture.skin_37",
+            "Texture.skin_38"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.variant]"]
+    },
+    "controller.render.human_2": {
+      "arrays": {
+        "textures": {
+          "Array.skins": ["Texture.skin_0", "Texture.skin_1"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.variant]"]
+    },
+    "controller.render.human_3": {
+      "arrays": {
+        "textures": {
+          "Array.skins": ["Texture.skin_0", "Texture.skin_1", "Texture.skin_2"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.variant]"]
+    }
+  }
+}

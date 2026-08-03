@@ -1,0 +1,75 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:cama_goya",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "cama_goya": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "cama_goya_2": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["items_goya"]
+      },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 0.1,
+            "height": 0.1,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "cama_goya": {
+        "add": {
+          "component_groups": ["cama_goya"]
+        }
+      },
+      "cama_goya_2": {
+        "add": {
+          "component_groups": ["cama_goya_2"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:monster_bat",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "monster:run": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "monster:chase": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        },
+        "monster:dead": {
+          "client_sync": true,
+          "type": "bool",
+          "default": false
+        }
+      },
+      "scripts": {
+        "animate": ["run", "chase"]
+      },
+      "animations": {
+        "run": "controller.animation.monster_bat",
+        "chase": "controller.animation.monster_bat"
+      }
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "skin_0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "skin_1": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "skin_2": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "attack_on": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "reselect_targets": false,
+          "within_radius": 20.0,
+          "entity_types": [
+            {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "max_dist": 10
+            }
+          ]
+        },
+        "minecraft:behavior.swoop_attack": {
+          "damage_reach": 0.1,
+          "delay_range": [5, 10],
+          "priority": 2,
+          "speed_multiplier": 10
+        }
+      },
+      "move": {
+        "minecraft:behavior.random_hover": {
+          "priority": 0,
+          "xz_dist": 8,
+          "y_dist": 8,
+          "y_offset": -1,
+          "interval": 1,
+          "hover_height": [5, 5]
+        },
+        "minecraft:game_event_movement_tracking": {
+          "emit_flap": true
+        }
+      },
+      "marker": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 0,
+          "must_see": false,
+          "set_persistent": true,
+          "reselect_targets": false,
+          "must_reach": false,
+          "within_radius": 128.0,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "==",
+                "value": "dummy_marker"
+              },
+              "max_dist": 128.0,
+              "must_see": false,
+              "priority": 1
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": { "require_complete_path": false, "melee_fov": 360 }
+      },
+      "look_at": {
+        "minecraft:behavior.look_at_player": {
+          "look_distance": 8,
+          "target_distance": 8,
+          "look_time": [0.1, 0.1],
+          "priority": 2,
+          "probability": 1
+        }
+      },
+      "run_timer": {
+        "minecraft:timer": {
+          "time": 2.75,
+          "time_down_event": {
+            "event": "run_off",
+            "target": "self"
+          }
+        }
+      },
+      "chase_timer": {
+        "minecraft:timer": {
+          "time": 2.75,
+          "time_down_event": {
+            "event": "chase_off",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["monster_bat"]
+      },
+      "minecraft:health": {
+        "value": 999,
+        "max": 999
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:movement": {
+        "value": 0.375
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 2,
+            "height": 1.5
+          }
+        ]
+      },
+      "minecraft:can_fly": {},
+      "minecraft:behavior.float": {
+        "priority": 3
+      },
+      "minecraft:flying_speed": {
+        "value": 0.4
+      },
+      "minecraft:navigation.fly": {
+        "can_path_over_water": true,
+        "can_sink": false,
+        "can_pass_doors": false,
+        "can_path_from_air": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "avoid_sun": false
+      },
+      "minecraft:movement.hover": {},
+      "minecraft:jump.static": {},
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "skin_0": {
+        "add": {
+          "component_groups": ["skin_0"]
+        }
+      },
+      "skin_1": {
+        "add": {
+          "component_groups": ["skin_1"]
+        }
+      },
+      "skin_2": {
+        "queue_command": {
+          "command": ["particle let:sparks_round_2 ~~~"]
+        },
+        "add": {
+          "component_groups": ["skin_2"]
+        }
+      },
+      "attack_on": {
+        "add": {
+          "component_groups": ["attack_on"]
+        }
+      },
+      "attack_off": {
+        "remove": {
+          "component_groups": ["attack_on"]
+        }
+      },
+      "move_on": {
+        "add": {
+          "component_groups": ["move"]
+        }
+      },
+      "move_off": {
+        "remove": {
+          "component_groups": ["move"]
+        }
+      },
+      "marker_off": {
+        "remove": {
+          "component_groups": ["marker"]
+        }
+      },
+      "marker_on": {
+        "add": {
+          "component_groups": ["marker", "look_at"]
+        }
+      },
+      "look_on": {
+        "add": {
+          "component_groups": ["look_at"]
+        }
+      },
+      "look_off": {
+        "remove": {
+          "component_groups": ["look_at"]
+        }
+      },
+      "run_on": {
+        "set_property": {
+          "monster:run": true
+        },
+        "add": {
+          "component_groups": ["run_timer"]
+        }
+      },
+      "run_off": {
+        "set_property": {
+          "monster:run": false
+        },
+        "remove": {
+          "component_groups": ["run_timer"]
+        }
+      },
+      "chase_on": {
+        "set_property": {
+          "monster:chase": true
+        },
+        "add": {
+          "component_groups": ["chase_timer"]
+        }
+      },
+      "chase_off": {
+        "set_property": {
+          "monster:chase": false
+        },
+        "remove": {
+          "component_groups": ["chase_timer"]
+        }
+      },
+      "dead_on": {
+        "set_property": {
+          "monster:dead": true
+        }
+      },
+      "dead_off": {
+        "set_property": {
+          "monster:dead": false
+        }
+      },
+      "monster_off": {
+        "queue_command": {
+          "command": [
+            "particle let:sparks_round_2 ~~1~",
+            "particle let:sparks_round_2 ~~~",
+            "particle let:sparks_round_2 ~~-1~",
+            "particle let:sparks_round_2 ~~1~",
+            "particle let:sparks_round_2 ~~~",
+            "particle let:sparks_round_2 ~~-1~",
+            "event entity @s let:despawn",
+            "dialogue change @e[tag=goya] goya_24_6 @a",
+            "event entity @e[tag=goya] chat_on"
+          ]
+        }
+      }
+    }
+  }
+}

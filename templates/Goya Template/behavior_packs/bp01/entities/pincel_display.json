@@ -1,0 +1,148 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:pincel_display",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "pincel_on": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "pincel_sparkles": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "pincel_off": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["pincel_display"]
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.6,
+            "height": 2,
+            "pivot": [0, 0, 0]
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "!=",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:pincel_base"
+                  },
+                  {
+                    "test": "is_variant",
+                    "operator": "==",
+                    "subject": "self",
+                    "value": 1
+                  }
+                ]
+              },
+              "event": "pincel:off"
+            }
+          },
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "has_equipment",
+                    "operator": "==",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "let:pincel_base"
+                  },
+                  {
+                    "test": "is_variant",
+                    "operator": "==",
+                    "subject": "self",
+                    "value": 2
+                  }
+                ]
+              },
+              "event": "pincel:on"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "pincel:on": {
+        "add": {
+          "component_groups": ["pincel_on"]
+        }
+      },
+      "pincel:sparkles": {
+        "add": {
+          "component_groups": ["pincel_sparkles"]
+        }
+      },
+      "pincel:off": {
+        "add": {
+          "component_groups": ["pincel_off"]
+        },
+        "remove": {
+          "component_groups": ["pincel_sparkles"]
+        },
+        "queue_command": {
+          "command": ["function museo/aparicion_goya"]
+        }
+      },
+      "pincel:off_test": {
+        "add": {
+          "component_groups": ["pincel_off"]
+        },
+        "remove": {
+          "component_groups": ["pincel_sparkles"]
+        }
+      }
+    }
+  }
+}

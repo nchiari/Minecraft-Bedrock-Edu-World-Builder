@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "HBR RP",
+    "description": "HBR RP",
+    "uuid": "434e46f6-aa38-4a53-b3a6-28504887c586",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 90]
+  },
+  "modules": [
+    {
+      "description": "HBR RP",
+      "type": "resources",
+      "uuid": "084ab2ec-6c8d-4813-a1f1-63c7c36c9d81",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "f5684476-0d60-4257-b546-0620016245a4",
+      "version": [1, 0, 0]
+    }
+  ]
+}

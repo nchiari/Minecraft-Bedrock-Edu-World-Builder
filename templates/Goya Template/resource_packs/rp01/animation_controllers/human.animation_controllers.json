@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.human": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": ["idle", "chat"],
+          "transitions": [{ "walk": "query.ground_speed" }]
+        },
+        "walk": {
+          "animations": ["walk"],
+          "transitions": [{ "idle": "!query.ground_speed" }]
+        }
+      }
+    }
+  }
+}

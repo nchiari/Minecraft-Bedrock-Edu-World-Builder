@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_2_mayo",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_2_mayo"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_2_mayo"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#d714c2",
+				"overlay_color": "#b3621e"
+			}
+		}
+	}
+}

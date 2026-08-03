@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.manos.hold_first_person": {
+			"loop": true,
+			"bones": {
+				"steve_head": {
+					"rotation": [27, -39, -159],
+					"position": [-6, 5.5, 3.4]
+				},
+				"manos": {
+					"rotation": [-360, -45, -487.5],
+					"position": [-17, 34, -11]
+				}
+			}
+		},
+		"animation.manos.hold_third_person": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": [84.88382, -34.79124, -92.59874],
+					"position": [0, 7, -4]
+				},
+				"manos": {
+					"rotation": [95.70125, -16.75508, -101.22513],
+					"position": [16, 18, -16]
+				}
+			}
+		}
+	}
+}

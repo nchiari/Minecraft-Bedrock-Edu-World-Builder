@@ -1,0 +1,71 @@
+{
+  "aire_acondicionado_pared": {
+    "sound": "stone"
+  },
+  "carretilla": {
+    "sound": "stone"
+  },
+  "reloj_de_pared": {
+    "sound": "stone"
+  },
+  "luz_calle_pared": {
+    "sound": "stone"
+  },
+  "luz_calle": {
+    "sound": "stone"
+  },
+  "banco_plaza": {
+    "sound": "stone"
+  },
+  "planta_amarilla": {
+    "sound": "stone"
+  },
+  "luz_techo": {
+    "sound": "metal"
+  },
+  "barril_de_trafico": {
+    "sound": "stone"
+  },
+  "maceta_flores_azules": {
+    "sound": "stone"
+  },
+  "maceta_flores_amarillas": {
+    "sound": "stone"
+  },
+  "maceta_flores_rojas": {
+    "sound": "stone"
+  },
+  "maceta_flores_negras": {
+    "sound": "stone"
+  },
+  "maceta_colgante_roja": {
+    "sound": "stone"
+  },
+  "maceta_colgante_morada": {
+    "sound": "stone"
+  },
+  "piedras_decorativas": {
+    "sound": "stone"
+  },
+  "alcantarilla": {
+    "sound": "stone"
+  },
+  "caja": {
+    "sound": "stone"
+  },
+  "contenedor": {
+    "sound": "stone"
+  },
+  "valla_de_seguridad": {
+    "sound": "stone"
+  },
+  "banco": {
+    "sound": "stone"
+  },
+  "tiesto_de_hojas_anchas": {
+    "sound": "stone"
+  },
+  "tiesto_de_hojas_largas": {
+    "sound": "stone"
+  }
+}

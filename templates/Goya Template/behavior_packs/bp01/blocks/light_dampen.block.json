@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:block": {
+    "description": {
+      "identifier": "let:light_dampen",
+      "menu_category": {
+        "category": "construction"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": false,
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:geometry": "geometry.light_dampen",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "light_dampen",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:map_color": "#edf9ff",
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0
+    }
+  }
+}

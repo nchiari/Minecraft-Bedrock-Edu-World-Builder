@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:apostoles",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/apostoles"
+      },
+      "geometry": {
+        "default": "geometry.apostoles"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#429fba",
+        "overlay_color": "#a0eb53"
+      }
+    }
+  }
+}

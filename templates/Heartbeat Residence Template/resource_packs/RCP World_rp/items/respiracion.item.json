@@ -1,0 +1,12 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "let:respiracion"
+    },
+    "components": {
+      "minecraft:icon": "respiracion.icon",
+      "minecraft:render_offsets": "apple"
+    }
+  }
+}

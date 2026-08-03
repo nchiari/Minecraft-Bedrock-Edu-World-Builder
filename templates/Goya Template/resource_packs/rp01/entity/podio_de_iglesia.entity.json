@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:podio_de_iglesia",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/podio_de_iglesia"
+			},
+			"geometry": {
+				"default": "geometry.podio_de_iglesia"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#c387e4",
+				"overlay_color": "#3784cf"
+			}
+		}
+	}
+}

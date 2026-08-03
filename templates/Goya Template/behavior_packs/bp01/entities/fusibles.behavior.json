@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:fusibles",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "panel_on": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "panel_off": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["fusibles"]
+      },
+      "minecraft:physics": { "has_gravity": false },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1,
+            "height": 1,
+            "pivot": [0, 1, 0]
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_variant",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": 1
+                  }
+                ]
+              },
+              "event": "lights_on"
+            }
+          }
+        ]
+      }
+    },
+    "events": {
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "panel_on": {
+        "add": {
+          "component_groups": ["panel_on"]
+        }
+      },
+      "panel_off": {
+        "add": {
+          "component_groups": ["panel_off"]
+        }
+      },
+      "lights_on": {
+        "add": {
+          "component_groups": ["panel_on"]
+        },
+        "queue_command": {
+          "command": ["function museo/lights_on"]
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 Ejemplos/
 examples/
 /.tmp-test/
+/.playwright-cli/
 /Minecraft Compilator.code-workspace

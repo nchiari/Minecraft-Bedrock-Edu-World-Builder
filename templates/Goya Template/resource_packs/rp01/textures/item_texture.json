@@ -1,0 +1,69 @@
+{
+  "resource_pack_name": "Goya",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "remote": {
+      "textures": ["textures/items/remote"]
+    },
+    "brush": {
+      "textures": ["textures/items/brush"]
+    },
+    "brush_placer": {
+      "textures": ["textures/items/brush"]
+    },
+    "item_projectile": {
+      "textures": ["textures/items/fireball"]
+    },
+    "paint_red": {
+      "textures": ["textures/items/paint_red"]
+    },
+    "pincel_base": {
+      "textures": ["textures/items/pincel_base"]
+    },
+    "pincel_block": {
+      "textures": ["textures/items/pincel_block"]
+    },
+    "pincel_ink": {
+      "textures": ["textures/items/pincel_ink"]
+    },
+    "pincel_light": {
+      "textures": ["textures/items/pincel_light"]
+    },
+    "pincel_red": {
+      "textures": ["textures/items/pincel_red"]
+    },
+    "pincel_yellow": {
+      "textures": ["textures/items/pincel_yellow"]
+    },
+    "pincel_blue": {
+      "textures": ["textures/items/pincel_blue"]
+    },
+    "pincel_green": {
+      "textures": ["textures/items/pincel_green"]
+    },
+    "pincel_orange": {
+      "textures": ["textures/items/pincel_orange"]
+    },
+    "pincel_purple": {
+      "textures": ["textures/items/pincel_purple"]
+    },
+    "pincel_memory": {
+      "textures": ["textures/items/pincel_memory"]
+    },
+    "pincel_picker": {
+      "textures": ["textures/items/pincel_picker"]
+    },
+    "uvas": {
+      "textures": ["textures/items/uvas"]
+    },
+    "arpa": {
+      "textures": ["textures/items/arpa"]
+    },
+    "pergamino": {
+      "textures": ["textures/items/pergamino"]
+    },
+    "paleta": {
+      "textures": ["textures/items/paleta"]
+    }
+  }
+}

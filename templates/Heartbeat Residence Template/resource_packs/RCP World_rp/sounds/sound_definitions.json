@@ -1,0 +1,65 @@
+{
+  "format_version": "1.18.0",
+  "sound_definitions": {
+    "race": {
+      "category": "music",
+      "sounds": ["sounds/race"]
+    },
+    "8bitbg": {
+      "category": "music",
+      "sounds": ["sounds/8bitbg"]
+    },
+    "rcpbg": {
+      "category": "music",
+      "sounds": ["sounds/rcpbg"]
+    },
+    "tada": {
+      "category": "music",
+      "sounds": ["sounds/tada"]
+    },
+    "cheers": {
+      "category": "music",
+      "sounds": ["sounds/cheers"]
+    },
+    "beep": {
+      "category": "music",
+      "sounds": ["sounds/beep"]
+    },
+    "go": {
+      "category": "music",
+      "sounds": ["sounds/go"]
+    },
+    "cough": {
+      "category": "hostile",
+      "sounds": ["sounds/cough"]
+    },
+    "choke": {
+      "category": "music",
+      "sounds": ["sounds/choke"]
+    },
+    "spit": {
+      "category": "hostile",
+      "sounds": ["sounds/spit"]
+    },
+    "check": {
+      "category": "hostile",
+      "sounds": ["sounds/check"]
+    },
+    "breath": {
+      "category": "hostile",
+      "sounds": ["sounds/breath"]
+    },
+    "wrong": {
+      "category": "music",
+      "sounds": ["sounds/wrong"]
+    },
+    "metronomo": {
+      "category": "music",
+      "sounds": ["sounds/metronomo"]
+    },
+    "palmadas": {
+      "category": "music",
+      "sounds": ["sounds/palmadas"]
+    }
+  }
+}

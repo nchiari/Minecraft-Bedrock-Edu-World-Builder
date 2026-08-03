@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:lampara_de_arana",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/lampara_de_arana"
+      },
+      "geometry": {
+        "default": "geometry.lampara_de_arana"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#6df39a",
+        "overlay_color": "#7499c4"
+      }
+    }
+  }
+}

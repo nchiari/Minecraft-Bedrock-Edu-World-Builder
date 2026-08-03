@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Let RP",
+    "description": "Let RP",
+    "uuid": "3b5215e7-456a-4afe-b242-b76bf697a66b",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Let RP",
+      "type": "resources",
+      "uuid": "61291f91-194a-4e84-a409-282f6dd0709e",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "32f807fd-f321-4c63-8962-908b19df03cd",
+      "version": [1, 0, 0]
+    }
+  ]
+}

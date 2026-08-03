@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Goya BP",
+    "name": "Goya BP",
+    "uuid": "f3f4db03-4bb2-4a8a-aa9d-cd1f8968a0aa",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Goya BP",
+      "type": "data",
+      "uuid": "4805ba9f-e736-4e68-8782-e16e61c36e59",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Script",
+      "type": "script",
+      "uuid": "faf7c99d-ad56-4e7a-92a1-193f3353c2ad",
+      "version": [1, 0, 0],
+      "language": "javascript",
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c25c8d76-fc22-4369-a9fb-1d7e836a306c",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.11.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.1.0"
+    }
+  ]
+}

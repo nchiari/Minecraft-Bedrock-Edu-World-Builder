@@ -1,0 +1,103 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:ink_marker",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "timer_off": {
+        "minecraft:timer": {
+          "time": 1,
+          "looping": false,
+          "time_down_event": {
+            "event": "let:despawn",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["ink_marker"]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:entity_sensor": {
+        "subsensors": [
+          {
+            "range": 2,
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "monster_bat"
+                },
+                {
+                  "test": "bool_property",
+                  "domain": "monster:dead",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": true
+                }
+              ]
+            },
+            "event": "bat_recovery"
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["timer_off"]
+        }
+      },
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "bat_recovery": {
+        "queue_command": {
+          "command": [
+            "event entity @e[tag=bat] skin_2",
+            "event entity @e[tag=bat] dead_off",
+            "function pincel_base",
+            "dialogue change @e[tag=goya] goya_24_5 @a",
+            "event entity @e[tag=goya] chat_on",
+            "scoreboard players set var tooltips 100"
+          ]
+        },
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      }
+    }
+  }
+}

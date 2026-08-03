@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Goya RP",
+    "name": "Goya RP",
+    "uuid": "c25c8d76-fc22-4369-a9fb-1d7e836a306c",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Goya RP",
+      "type": "resources",
+      "uuid": "2b4f1244-84f7-465c-a963-5fa81acff02c",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "f3f4db03-4bb2-4a8a-aa9d-cd1f8968a0aa",
+      "version": [1, 0, 0]
+    }
+  ]
+}

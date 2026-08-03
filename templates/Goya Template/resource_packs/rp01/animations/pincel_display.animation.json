@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.pincel_display.sparkles": {
+      "loop": true,
+      "animation_length": 0.5,
+      "particle_effects": {
+        "0.1": {
+          "effect": "sparkles",
+          "locator": "effect"
+        }
+      }
+    }
+  }
+}

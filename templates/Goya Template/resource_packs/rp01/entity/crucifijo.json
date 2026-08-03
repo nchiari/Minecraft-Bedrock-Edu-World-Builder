@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:crucifijo",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/crucifijo"
+      },
+      "geometry": {
+        "default": "geometry.crucifijo"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#b29b49",
+        "overlay_color": "#db9e25"
+      }
+    }
+  }
+}

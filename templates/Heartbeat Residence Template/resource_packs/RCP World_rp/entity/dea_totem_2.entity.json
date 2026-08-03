@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:dea_totem_2",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "skin_0": "textures/entity/dea_totem_off_2",
+        "skin_1": "textures/entity/dea_totem_on_2"
+      },
+      "geometry": {
+        "default": "geometry.dea_totem_2"
+      },
+      "render_controllers": ["controller.render.dea_totem_2"],
+      "spawn_egg": {
+        "base_color": "#10530a",
+        "overlay_color": "#ffffff"
+      }
+    }
+  }
+}

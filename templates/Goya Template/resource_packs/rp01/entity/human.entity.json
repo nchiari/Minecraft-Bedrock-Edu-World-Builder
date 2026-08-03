@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "pix:human",
+      "materials": {
+        "default": "alphatest"
+      },
+      "textures": {
+        "skin_0": "textures/entity/human/guia_1",
+        "skin_1": "textures/entity/human/guia_2",
+        "skin_2": "textures/entity/human/guia_3",
+        "skin_3": "textures/entity/human/obrera",
+        "skin_4": "textures/entity/human/obrero",
+        "skin_5": "textures/entity/human/alumno_1",
+        "skin_6": "textures/entity/human/alumno_2",
+        "skin_7": "textures/entity/human/alumno_3",
+        "skin_8": "textures/entity/human/alumno_4",
+        "skin_9": "textures/entity/human/skin_9",
+        "skin_10": "textures/entity/human/skin_10",
+        "skin_11": "textures/entity/human/skin_11",
+        "skin_12": "textures/entity/human/skin_12",
+        "skin_13": "textures/entity/human/skin_13",
+        "skin_14": "textures/entity/human/skin_14",
+        "skin_15": "textures/entity/human/skin_15",
+        "skin_16": "textures/entity/human/skin_16",
+        "skin_17": "textures/entity/human/skin_17",
+        "skin_18": "textures/entity/human/skin_18",
+        "skin_19": "textures/entity/human/skin_19",
+        "skin_20": "textures/entity/human/skin_20",
+        "skin_21": "textures/entity/human/skin_21",
+        "skin_22": "textures/entity/human/skin_22",
+        "skin_23": "textures/entity/human/skin_23",
+        "skin_24": "textures/entity/human/skin_24",
+        "skin_25": "textures/entity/human/skin_25",
+        "skin_26": "textures/entity/human/skin_26",
+        "skin_27": "textures/entity/human/skin_27",
+        "skin_28": "textures/entity/human/skin_28",
+        "skin_29": "textures/entity/human/skin_29",
+        "skin_30": "textures/entity/human/skin_30",
+        "skin_31": "textures/entity/human/skin_31",
+        "skin_32": "textures/entity/human/skin_32",
+        "skin_33": "textures/entity/human/skin_33",
+        "skin_34": "textures/entity/human/skin_34",
+        "skin_35": "textures/entity/human/skin_35",
+        "skin_36": "textures/entity/human/skin_36",
+        "skin_37": "textures/entity/human/skin_37",
+        "skin_38": "textures/entity/human/skin_38",
+        "chat_off": "textures/entity/human/chat_off",
+        "chat_on": "textures/entity/human/chat_on"
+      },
+      "geometry": {
+        "default": "geometry.human"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "walk": "animation.human.walk",
+        "idle": "animation.human.idle",
+        "chat": "animation.human.chat",
+        "controller": "controller.animation.human"
+      },
+      "render_controllers": ["controller.render.human", "controller.render.chat"],
+      "spawn_egg": {
+        "base_color": "#ff1f1f",
+        "overlay_color": "#1f1fff"
+      }
+    }
+  }
+}

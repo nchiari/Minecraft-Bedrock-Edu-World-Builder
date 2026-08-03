@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.sick_emoji": {
+      "arrays": {
+        "textures": { "Array.skins": ["Texture.sick_emoji0", "Texture.sick_emoji1", "Texture.sick_emoji2", "Texture.sick_emoji3"] }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skins[query.mark_variant]"]
+    }
+  }
+}

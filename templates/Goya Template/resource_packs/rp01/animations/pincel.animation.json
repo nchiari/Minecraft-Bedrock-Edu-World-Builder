@@ -1,0 +1,161 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.pincel.hold_first_person": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": [71.93695, 5.45333, -57.24319],
+					"position": [0.5, 5, 2]
+				},
+				"effects": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 172.5, 0]
+					}
+				}
+			}
+		},
+		"animation.pincel.hold_third_person": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": [-1.44291, -6.04392, 0.49048],
+					"position": [-0.5, 1, -2]
+				},
+				"effects": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 172.5, 0]
+					}
+				}
+			}
+		},
+		"animation.pincel.swing_fp": {
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"0.0": [71.93695, 5.45333, -57.24319],
+						"0.0833": [86.76896, 9.62503, -30.66668],
+						"0.1667": {
+							"pre": [54.23923, -23.99291, -112.79704],
+							"post": [54.23923, -23.99291, -112.79704],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [54.23923, -23.99291, -112.79704],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": [71.93695, 5.45333, -57.24319]
+					},
+					"position": {
+						"0.0": [0.5, 5, 2],
+						"0.0833": [-0.5, 5, 2],
+						"0.1667": {
+							"pre": [0.5, 5, 2],
+							"post": [0.5, 5, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"0.2917": {
+							"post": [0.5, 5, 2],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": [0.5, 5, 2]
+					}
+				},
+				"effects": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 172.5, 0]
+					}
+				}
+			}
+		},
+		"animation.pincel.swing_tp": {
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"0.0": [-1.44291, -6.04392, 0.49048],
+						"0.0833": {
+							"pre": [-1.85323, 18.94835, -0.25853],
+							"post": [-1.85323, 18.94835, -0.25853],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [-1.42678, -43.53564, 1.29351],
+							"lerp_mode": "catmullrom"
+						},
+						"0.4167": [-1.44291, -6.04392, 0.49048]
+					},
+					"position": [-0.5, 1, -2]
+				},
+				"effects": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 172.5, 0]
+					}
+				}
+			}
+		},
+		"animation.pincel.hold_first_person2": {
+			"loop": true,
+			"animation_length": 0.5,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": [48.75239, -52.89522, -37.69226],
+					"position": [0, 3, 3.5]
+				},
+				"effects": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 75, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": [0, 172.5, 0]
+					}
+				}
+			}
+		}
+	}
+}

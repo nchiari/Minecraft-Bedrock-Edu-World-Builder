@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:cuadro_autorretrato",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/cuadro_autorretrato"
+      },
+      "geometry": {
+        "default": "geometry.cuadro_autorretrato"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#7cf357",
+        "overlay_color": "#a33f63"
+      }
+    }
+  }
+}

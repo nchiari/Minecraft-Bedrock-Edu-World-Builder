@@ -1,0 +1,66 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.dummy_2",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 8,
+				"visible_bounds_offset": [0, 3, 0]
+			},
+			"bones": [
+				{
+					"name": "sick",
+					"pivot": [0, 19, -4],
+					"cubes": [
+						{"origin": [-3, 16, -4], "size": [6, 6, 0], "uv": [1, 58]}
+					]
+				},
+				{
+					"name": "bone",
+					"pivot": [0, 1, -4],
+					"locators": {
+						"heart": {
+							"offset": [0, 9, -11],
+							"rotation": [0, 0, 0],
+							"ignore_inherited_scale": true
+						},
+						"cough": {
+							"offset": [0, 10, -13],
+							"rotation": [0, 0, 0],
+							"ignore_inherited_scale": true
+						},
+						"palmadas": {
+							"offset": [0, 1, -1],
+							"rotation": [0, 0, 0],
+							"ignore_inherited_scale": true
+						}
+					}
+				},
+				{
+					"name": "upper",
+					"parent": "bone",
+					"pivot": [0, 19, -4]
+				},
+				{
+					"name": "body",
+					"parent": "upper",
+					"pivot": [0, 7, -4],
+					"cubes": [
+						{"origin": [-6, -5, -7], "size": [12, 12, 6], "uv": [14, 30]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "upper",
+					"pivot": [0, 11, -4],
+					"cubes": [
+						{"origin": [-4, 7, -8], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

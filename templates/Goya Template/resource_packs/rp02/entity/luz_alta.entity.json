@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:luz_alta",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/luz_alta"
+      },
+      "geometry": {
+        "default": "geometry.luz_alta"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#9cb0d1",
+        "overlay_color": "#def552"
+      }
+    }
+  }
+}

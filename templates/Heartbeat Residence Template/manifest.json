@@ -1,0 +1,19 @@
+{
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "lock_template_options": false,
+    "base_game_version": [1, 21, 90],
+    "version": [1, 0, 0],
+    "uuid": "261c3a3d-61da-43fb-8559-16399596766f"
+  },
+  "metadata": { "authors": ["Letcraft Educación", "Nico Chiari"]},
+  "modules": [
+    {
+      "version": [1, 0, 0],
+      "type": "world_template",
+      "uuid": "9ff8895c-765f-4dbc-8af4-c5dde84d99d8"
+    }
+  ],
+  "format_version": 2
+}

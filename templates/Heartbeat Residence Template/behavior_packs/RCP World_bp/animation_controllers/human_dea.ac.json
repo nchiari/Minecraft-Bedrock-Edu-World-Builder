@@ -1,0 +1,77 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.human_dea": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dea_apply": "q.variant == 28"
+            },
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "dummy_check": "q.property('dummy:check')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            }
+          ]
+        },
+        "rcp": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:rcp') && q.all_animations_finished"
+            }
+          ],
+          "on_entry": ["/setblock 13 68 356 redstone_block"],
+          "on_exit": ["/setblock 13 68 356 air"]
+        },
+        "dea_apply": {
+          "transitions": [
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "dummy_check": "q.property('dummy:check')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            },
+            {
+              "dea": "q.property('dummy:charge')"
+            }
+          ],
+          "on_entry": [
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=0..}] run clear @p let:dea_item_off",
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=2..}] run clear @p let:dea_item_on",
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=0},tag=rcp] run give @p let:dea_item_on",
+            "/execute as @p[hasitem={item=let:dea_item_on,quantity=0},tag=rcp_help] run give @p let:dea_item_on"
+          ]
+        },
+        "dummy_check": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:check') && q.all_animations_finished"
+            }
+          ]
+        },
+        "breath": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:breath') && q.all_animations_finished"
+            }
+          ]
+        },
+        "dea": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:charge') && q.all_animations_finished"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

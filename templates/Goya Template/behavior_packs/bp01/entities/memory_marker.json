@@ -1,0 +1,197 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "let:memory_marker",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "let_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "timer_off": {
+        "minecraft:timer": {
+          "time": 1,
+          "looping": false,
+          "time_down_event": {
+            "event": "let:despawn",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["memory_marker"]
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:entity_sensor": {
+        "subsensors": [
+          {
+            "range": 2,
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "goya"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "memoria_estatua"
+                }
+              ]
+            },
+            "event": "memoria_estatua"
+          },
+          {
+            "range": 2,
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "goya"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "memoria_leche"
+                }
+              ]
+            },
+            "event": "memoria_leche"
+          },
+          {
+            "range": 2,
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "goya"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "memoria_cofre"
+                }
+              ]
+            },
+            "event": "memoria_cofre"
+          },
+          {
+            "range": 2,
+            "cooldown": -1,
+            "minimum_count": 1,
+            "event_filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "goya"
+                },
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": "memoria_cama"
+                }
+              ]
+            },
+            "event": "memoria_cama"
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["timer_off"]
+        }
+      },
+      "let:despawn": {
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "memoria_estatua": {
+        "queue_command": {
+          "command": [
+            "dialogue change @e[tag=goya,tag=memoria_estatua] goya_estatua @a",
+            "setblock -61 -57 -611 redstone_block",
+            "event entity @e[tag=goya] chat_on"
+          ]
+        },
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "memoria_leche": {
+        "queue_command": {
+          "command": [
+            "dialogue change @e[tag=goya,tag=memoria_leche] goya_leche @a",
+            "setblock -61 -57 -624 redstone_block",
+            "event entity @e[tag=goya] chat_on"
+          ]
+        },
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "memoria_cofre": {
+        "queue_command": {
+          "command": [
+            "dialogue change @e[tag=goya,tag=memoria_cofre] goya_cofre @a",
+            "setblock -61 -47 -629 redstone_block",
+            "event entity @e[tag=goya] chat_on"
+          ]
+        },
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      },
+      "memoria_cama": {
+        "queue_command": {
+          "command": ["dialogue change @e[tag=goya,tag=memoria_cama] goya_cama @a", "setblock -46 -45 -613 redstone_block", "event entity @e[tag=goya] chat_on"]
+        },
+        "add": {
+          "component_groups": ["let_despawn"]
+        }
+      }
+    }
+  }
+}

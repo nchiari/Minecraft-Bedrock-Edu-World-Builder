@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_virgen",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_virgen"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_virgen"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#ab1c29",
+				"overlay_color": "#242808"
+			}
+		}
+	}
+}

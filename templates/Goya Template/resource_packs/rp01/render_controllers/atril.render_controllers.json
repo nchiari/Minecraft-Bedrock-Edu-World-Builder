@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.atril": {
+      "arrays": {
+        "textures": {
+          "Array.skin": ["Texture.pincel_off", "Texture.pincel_off", "Texture.pincel_on"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.skin[query.variant]"]
+    }
+  }
+}

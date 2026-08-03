@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:atril_goya",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "pincel_off": "textures/entity/atril_goya",
+        "pincel_on": "textures/entity/atril_goya_pincel"
+      },
+      "geometry": {
+        "default": "geometry.atril_goya"
+      },
+      "render_controllers": ["controller.render.atril"],
+      "spawn_egg": {
+        "base_color": "#d61645",
+        "overlay_color": "#c22e50"
+      },
+      "scripts": {
+        "animate": ["controller"]
+      },
+      "animations": {
+        "sparkles": "animation.pincel_display.sparkles",
+        "controller": "controller.animation.pincel_display"
+      },
+      "particle_effects": {
+        "sparkles": "let:sparks"
+      }
+    }
+  }
+}

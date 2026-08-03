@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:cuadro_menipo",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/cuadro_menipo"
+      },
+      "geometry": {
+        "default": "geometry.cuadro_menipo"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#aabcdc",
+        "overlay_color": "#98f05a"
+      }
+    }
+  }
+}

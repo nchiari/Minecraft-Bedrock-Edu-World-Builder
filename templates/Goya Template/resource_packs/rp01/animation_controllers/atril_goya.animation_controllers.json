@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.atril": {
+      "states": {
+        "default": {
+          "transitions": [{ "sparkles": "query.variant == 1" }]
+        },
+        "sparkles": {
+          "animations": ["sparkles"],
+          "transitions": [{ "default": "query.variant == 0" }, { "pincel": "query.variant == 2" }]
+        },
+        "pincel": {
+          "transitions": [{ "default": "query.variant == 0" }]
+        }
+      }
+    }
+  }
+}

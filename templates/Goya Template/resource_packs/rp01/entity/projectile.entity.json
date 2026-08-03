@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "light": "textures/entity/projectiles/light_projectile",
+        "ink": "textures/entity/projectiles/ink_projectile",
+        "block": "textures/entity/projectiles/block_projectile",
+        "red": "textures/entity/projectiles/red_projectile",
+        "yellow": "textures/entity/projectiles/yellow_projectile",
+        "blue": "textures/entity/projectiles/blue_projectile",
+        "green": "textures/entity/projectiles/green_projectile",
+        "orange": "textures/entity/projectiles/orange_projectile",
+        "purple": "textures/entity/projectiles/purple_projectile",
+        "memory": "textures/entity/projectiles/memory_projectile"
+      },
+      "geometry": {
+        "default": "geometry.pintura"
+      },
+      "render_controllers": ["controller.render.projectiles"],
+      "spawn_egg": {
+        "base_color": "#481d60",
+        "overlay_color": "#966534"
+      },
+      "animations": {
+        "default": "animation.actor.billboard",
+        "projectile": "animation.projectile.rotation"
+      },
+      "scripts": {
+        "animate": ["default", "projectile"]
+      }
+    }
+  }
+}

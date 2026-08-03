@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy_charge": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dea": "q.property('dummy:charge')"
+            }
+          ]
+        },
+        "dea": {
+          "transitions": [
+            {
+              "default": "!q.property('dummy:charge') && q.all_animations_finished"
+            }
+          ],
+          "on_entry": ["/scoreboard players add var rcp_dea 1"]
+        }
+      }
+    }
+  }
+}

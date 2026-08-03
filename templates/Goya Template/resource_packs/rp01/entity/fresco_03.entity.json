@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:fresco_03",
+      "materials": {
+        "default": "hollow"
+      },
+      "textures": {
+        "default": "textures/entity/fresco_03"
+      },
+      "geometry": {
+        "default": "geometry.fresco_03"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#969285",
+        "overlay_color": "#370604"
+      }
+    }
+  }
+}

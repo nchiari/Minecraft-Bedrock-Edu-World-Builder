@@ -1,0 +1,42 @@
+{
+  "format_version": "1.20.20",
+  "sound_definitions": {
+    "flap": {
+      "category": "hostile",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        "sounds/goya_monster/flap1",
+        "sounds/goya_monster/flap2",
+        "sounds/goya_monster/flap3",
+        "sounds/goya_monster/flap4",
+        "sounds/goya_monster/flap5",
+        "sounds/goya_monster/flap6"
+      ]
+    },
+    "hurt": {
+      "category": "hostile",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": ["sounds/goya_monster/hurt1", "sounds/goya_monster/hurt2", "sounds/goya_monster/hurt3"]
+    },
+    "idle": {
+      "category": "hostile",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": [
+        "sounds/goya_monster/idle1",
+        "sounds/goya_monster/idle2",
+        "sounds/goya_monster/idle3",
+        "sounds/goya_monster/idle4",
+        "sounds/goya_monster/idle5"
+      ]
+    },
+    "swoop": {
+      "category": "hostile",
+      "max_distance": null,
+      "min_distance": null,
+      "sounds": ["sounds/goya_monster/swoop1", "sounds/goya_monster/swoop2", "sounds/goya_monster/swoop3", "sounds/goya_monster/swoop4"]
+    }
+  }
+}

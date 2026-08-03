@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "let:cuadro_loyola",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cuadro_loyola"
+			},
+			"geometry": {
+				"default": "geometry.cuadro_loyola"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#790a01",
+				"overlay_color": "#b9b3c4"
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "let:pilarica",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/entity/pilarica"
+      },
+      "geometry": {
+        "default": "geometry.pilarica"
+      },
+      "render_controllers": ["controller.render.zombie"],
+      "spawn_egg": {
+        "base_color": "#473f21",
+        "overlay_color": "#aea085"
+      }
+    }
+  }
+}

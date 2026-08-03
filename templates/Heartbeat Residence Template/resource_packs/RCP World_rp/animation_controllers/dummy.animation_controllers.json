@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "rcp": "q.property('dummy:rcp')"
+            },
+            {
+              "check": "q.property('dummy:check')"
+            },
+            {
+              "charge": "q.property('dummy:charge')"
+            },
+            {
+              "breath": "q.property('dummy:breath')"
+            }
+          ]
+        },
+        "rcp": {
+          "animations": ["rcp"],
+          "sound_effects": [{ "effect": "rcp" }],
+          "transitions": [{ "default": "!q.property('dummy:rcp') && q.all_animations_finished" }]
+        },
+        "check": {
+          "animations": ["check"],
+          "sound_effects": [{ "effect": "check" }],
+          "transitions": [{ "default": "!q.property('dummy:check') && q.all_animations_finished" }]
+        },
+        "charge": {
+          "animations": ["charge"],
+          "sound_effects": [{ "effect": "charge" }],
+          "transitions": [{ "default": "!q.property('dummy:charge') && q.all_animations_finished" }]
+        },
+        "breath": {
+          "animations": ["breath"],
+          "sound_effects": [{ "effect": "breath" }],
+          "transitions": [{ "default": "!q.property('dummy:breath') && q.all_animations_finished" }]
+        }
+      }
+    }
+  }
+}

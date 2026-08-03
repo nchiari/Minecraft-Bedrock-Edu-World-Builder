@@ -1,0 +1,2889 @@
+{
+  "format_version": "1.17.100",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "guia_sandra_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_sandra" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_sandra_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s guia_sandra_1 @a", "/dialogue open @s @initiator guia_sandra_1"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_sandra_1",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_sandra" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_sandra_1", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[tag=guia,tag=!sandra] chat_on",
+              "/dialogue change @s guia_sandra_1_b @a",
+              "/scoreboard players set var tooltips 1",
+              "/replaceitem entity @p slot.hotbar 6 camera 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}",
+              "/replaceitem entity @p slot.hotbar 7 portfolio 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}",
+              "/replaceitem entity @p slot.hotbar 8 writable_book 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_sandra_1_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_sandra" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_sandra_1_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_joaquin",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_joaquin" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_joaquin", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mas_informacion" }] },
+            "url": "https://museogoya.fundacionibercaja.es/visita-virtual.php"
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_luis",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_luis" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_luis", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mas_informacion" }] },
+            "url": "https://museogoya.fundacionibercaja.es/el-edificio.php"
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_roberto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_roberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_roberto", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mas_informacion" }] },
+            "url": "https://museogoya.fundacionibercaja.es/48-destacados.php"
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_monica",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_monica" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_monica", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mas_informacion" }] },
+            "url": "https://museogoya.fundacionibercaja.es/grabados.php"
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nicolas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.lucia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_03",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.beatriz" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_03", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_04",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_04", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.raquel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_06",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alicia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_06", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_07",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.eduardo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_07", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_08",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alfonso" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_08", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_09",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.cecilia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_09", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_10",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jero" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_10", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "mecanico_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.mecanico_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_pablo_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_pablo_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.que_es_eso" }] },
+            "commands": ["/dialogue change @s guia_pablo_1 @a", "/dialogue open @s @initiator guia_pablo_1"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_pablo_1",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_pablo_1", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.hecho" }] },
+            "commands": ["/dialogue change @s guia_pablo_2 @a", "/dialogue open @s @initiator guia_pablo_2"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_pablo_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_pablo_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.continuar" }] },
+            "commands": [
+              "/scoreboard players set var apagon_countdown 28",
+              "/setblock -643 -14 -162 redstone_block",
+              "/function museo/lights_off",
+              "/inputpermission set @a movement disabled",
+              "/camerashake add @a 0.5 1 positional"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_pablo_3",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_pablo_3", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/summon let:dummy_marker -643 -3 -193",
+              "/summon let:dummy_marker -643 -3 -193",
+              "/summon let:dummy_marker -651 -3 -193",
+              "/event entity @s marker_on",
+              "/event entity @s chat_off",
+              "/inputpermission set @p movement disabled",
+              "/dialogue change @s apagon_guias @a"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_guias",
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_guias", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players set var tooltips 7", "/setblock -662 -3 -175 redstone_block"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_roberto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_roberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_roberto", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @e[tag=guia] chat_off", "/scoreboard players set var tooltips 7", "/setblock -662 -3 -175 redstone_block"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nicolas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.lucia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_03",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.beatriz" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_03", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_04",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_04", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.raquel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_06",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alicia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_06", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_07",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.eduardo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_07", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_08",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alfonso" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_08", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_09",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.cecilia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_09", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_10",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jero" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_10", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "apagon_visitantes_11",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.apagon_visitantes_11", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_quieto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_quieto", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.sigueme" }] },
+            "commands": ["/event entity @s follow"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_seguir",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_seguir", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.espera" }] },
+            "commands": ["/event entity @s stay"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_00",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_00", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue change @s goya_01 @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.quien_eres" }] },
+            "commands": ["/dialogue change @s goya_01_b @a", "/dialogue open @s @initiator goya_01_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.museo" }] },
+            "commands": ["/dialogue change @s goya_02 @a", "/dialogue open @s @initiator goya_02"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.te_explico" }] },
+            "commands": ["/dialogue change @s goya_03 @a", "/dialogue open @s @initiator goya_03"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_03",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_03", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.autorretrato" }] },
+            "commands": ["/dialogue change @s goya_05 @a", "/dialogue open @s @initiator goya_05"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.pues" }] },
+            "commands": ["/dialogue change @s goya_06 @a", "/dialogue open @s @initiator goya_06"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_06",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_06", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.que" }] },
+            "commands": ["/dialogue change @s goya_07 @a", "/dialogue open @s @initiator goya_07"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_07",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_07", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/dialogue change @s goya_08_b @a",
+              "/scoreboard players set var tooltips 3",
+              "/function museo/personajes"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_08_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_08_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "felix_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.felix_de_azara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.felix_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var personajesInit 1"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "luisa_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria_luisa_de_parma" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.luisa_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var personajesInit 1"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "nina_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nina_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var personajesInit 1"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_09",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_09", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.exacto" }] },
+            "commands": ["/dialogue change @s goya_09_b @a", "/dialogue open @s @initiator goya_09_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_09_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_09_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.ayudo" }] },
+            "commands": ["/dialogue change @s goya_10 @a", "/dialogue open @s @initiator goya_10"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_10",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_10", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.claro" }] },
+            "commands": ["/dialogue change @s goya_11 @a", "/dialogue open @s @initiator goya_11"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_11",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_11", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_12 @a", "/dialogue open @s @initiator goya_12"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_12",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_12", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": [
+              "/function clear_pinceles",
+              "/replaceitem entity @p slot.weapon.mainhand 0 let:pincel_light  1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}",
+              "/dialogue change @s goya_13 @a",
+              "/dialogue open @s @initiator goya_13"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_13",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_13", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.veamos" }] },
+            "commands": ["/event entity @e[tag=goya] goya_light_idle", "/scoreboard players set var tooltips 4"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_14",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_14", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_15 @a", "/dialogue open @s @initiator goya_15"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_15",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_15", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/dialogue change @s goya_15_b @a",
+              "/event entity @s chat_off",
+              "/function museo/personajes_2",
+              "/scoreboard players set var tooltips 5"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_15_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_15_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "felix_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.felix_de_azara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.felix_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.sigue_la_luz" }] },
+            "commands": [
+              "/event entity @s chase:on",
+              "/event entity @s chat_off",
+              "/event entity @e[tag=luisa] chase:off",
+              "/event entity @e[tag=nina] chase:off",
+              "/event entity @e[tag=luisa] chat_on",
+              "/event entity @e[tag=nina] chat_on",
+              "/setblock -666 -3 -192 air",
+              "/setblock -657 -3 -186 air",
+              "/setblock -657 -3 -211 redstone_block"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.espera" }] },
+            "commands": [
+              "/event entity @s chase:off",
+              "/event entity @s chat_on",
+              "/setblock -657 -3 -211 air",
+              "/setblock -666 -3 -192 air",
+              "/setblock -657 -3 -186 air"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vuelve_al_inicio" }] },
+            "commands": ["/tp @s -633 -3 -198"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "luisa_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria_luisa_de_parma" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.luisa_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.sigue_la_luz" }] },
+            "commands": [
+              "/event entity @s chase:on",
+              "/event entity @s chat_off",
+              "/event entity @e[tag=felix] chase:off",
+              "/event entity @e[tag=nina] chase:off",
+              "/event entity @e[tag=felix] chat_on",
+              "/event entity @e[tag=nina] chat_on",
+              "/setblock -657 -3 -211 air",
+              "/setblock -657 -3 -186 air",
+              "/setblock -666 -3 -192 redstone_block"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.espera" }] },
+            "commands": [
+              "/event entity @s chase:off",
+              "/event entity @s chat_on",
+              "/setblock -666 -3 -192 air",
+              "/setblock -657 -3 -211 air",
+              "/setblock -657 -3 -186 air"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vuelve_al_inicio" }] },
+            "commands": ["/tp @s -635 -3 -198"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "nina_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nina_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.sigue_la_luz" }] },
+            "commands": [
+              "/event entity @s chase:on",
+              "/event entity @s chat_off",
+              "/event entity @e[tag=luisa] chase:off",
+              "/event entity @e[tag=felix] chase:off",
+              "/event entity @e[tag=luisa] chat_on",
+              "/event entity @e[tag=felix] chat_on",
+              "/setblock -666 -3 -192 air",
+              "/setblock -657 -3 -211 air",
+              "/setblock -657 -3 -186 redstone_block"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.espera" }] },
+            "commands": [
+              "/event entity @s chase:off",
+              "/event entity @s chat_on",
+              "/setblock -657 -3 -186 air",
+              "/setblock -666 -3 -192 air",
+              "/setblock -657 -3 -211 air"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vuelve_al_inicio" }] },
+            "commands": ["/tp @s -637 -3 -198"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "felix_cuadro",
+        "text": { "rawtext": [{ "translate": "dialogue.felix_cuadro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "luisa_cuadro",
+        "text": { "rawtext": [{ "translate": "dialogue.luisa_cuadro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "nina_cuadro",
+        "text": { "rawtext": [{ "translate": "dialogue.nina_cuadro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "felix_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.felix_de_azara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.felix_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"completado.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/scoreboard players add var personajesEnd 1",
+              "/dialogue change @e[tag=luisa] luisa_02 @a",
+              "/dialogue change @e[tag=nina] nina_02 @a",
+              "/particle let:sparks_round_2 ~~1~",
+              "/scoreboard players set var tooltips 5",
+              "/event entity @s let:despawn"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "luisa_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria_luisa_de_parma" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.luisa_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"completado.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/scoreboard players add var personajesEnd 1",
+              "/dialogue change @e[tag=felix] felix_02 @a",
+              "/dialogue change @e[tag=nina] nina_02 @a",
+              "/particle let:sparks_round_2 ~~1~",
+              "/scoreboard players set var tooltips 5",
+              "/event entity @s let:despawn"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "nina_05",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nina_05", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"completado.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/scoreboard players add var personajesEnd 1",
+              "/dialogue change @e[tag=luisa] luisa_02 @a",
+              "/dialogue change @e[tag=felix] felix_02 @a",
+              "/particle let:sparks_round_2 ~~1~",
+              "/scoreboard players set var tooltips 5",
+              "/event entity @s let:despawn"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_16",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_16", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[tag=guia] chat_on",
+              "/event entity @e[tag=mecanico] chat_on",
+              "/event entity @s follow",
+              "/dialogue change @s goya_16_a @a",
+              "/setblock -662 -3 -175 redstone_block",
+              "/fill -639 -3 -196 -643 -3 -196 air",
+              "/scoreboard players set var tooltips 6"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_16_a",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_16_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vale" }] },
+            "commands": ["/event entity @s follow"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mecanico_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.mecanico_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/replaceitem entity @p slot.weapon.mainhand 0 let:pincel_base 1 0 {\"minecraft:item_lock\":{ \"mode\": \"lock_in_slot\" }}",
+              "/event entity @s chat_off",
+              "/scoreboard players set var tooltips 71"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "mecanico_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.mecanico_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/setblock -661 -3 -168 redstone_block", "/scoreboard players set var tooltips 8"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_17",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_17", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/scoreboard players set var tooltips 9",
+              "/tag @p add chase",
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/setblock -662 -3 -163 redstone_block",
+              "/setblock -632 -3 -159 redstone_block"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_pablo_4",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_pablo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_pablo_4", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_sandra_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_sandra" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_sandra_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_joaquin_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_joaquin" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_joaquin_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_luis_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_luis" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_luis_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_roberto_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_roberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_roberto_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "guia_monica_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.guia_monica" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.guia_monica_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nicolas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_08_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alfonso" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_08_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_09_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.cecilia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_09_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_10_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jero" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_10_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_02_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.lucia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_02_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_03_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.beatriz" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_03_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_04_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.maria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_04_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_05_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.raquel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_05_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_06_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alicia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_06_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "visitante_07_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.eduardo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.visitante_07_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_18",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_18", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vamos" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/fill -632 -1 -171 -630 -1 -171 air",
+              "/fill -662 -1 -171 -660 -1 -171 air",
+              "/scoreboard players set var tooltips 10"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_19",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_19", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/event entity @e[tag=pedestrian] chat_on",
+              "/scoreboard players set var tooltips 11"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "jose",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jose" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jose", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s jose_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "jose_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jose" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jose_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "isabel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.isabel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.isabel", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s isabel_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "isabel_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.isabel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.isabel_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "sara",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.sara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sara", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s sara_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sara_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.sara" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sara_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "manuel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.manuel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.manuel", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s manuel_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "manuel_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.manuel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.manuel_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "remedios",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.remedios" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.remedios", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s remedios_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "remedios_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.remedios" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.remedios_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "alejandro",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alejandro" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alejandro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/scoreboard players add var genteZaragoza 1", "/dialogue change @s alejandro_b @a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "alejandro_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alejandro" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alejandro_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_19_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_19_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_19_c @a", "/dialogue open @s @initiator goya_19_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_19_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_19_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.como" }] },
+            "commands": ["/dialogue change @s goya_20 @a", "/dialogue open @s @initiator goya_20"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_20",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_20", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.mmm" }] },
+            "commands": [
+              "/function zaragoza/pinceles/picker",
+              "/dialogue change @s goya_20_b @a",
+              "/scoreboard players set var tooltips 100",
+              "/dialogue open @s @initiator goya_20_b"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_20_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_20_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/setblock -242 -59 -190 redstone_block",
+              "/setblock -244 -59 -182 redstone_block",
+              "/scoreboard players set var tooltips 12"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_21",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_21", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/setblock -266 -57 -207 redstone_block",
+              "/setblock -266 -57 -199 redstone_block",
+              "/scoreboard players set var tooltips 13"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_22",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_22", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/setblock -238 -59 -190 redstone_block",
+              "/setblock -242 -59 -190 air",
+              "/scoreboard players set var tooltips 14"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_23",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_23", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/function zaragoza/edificios_start",
+              "/scoreboard players set var tooltips 15",
+              "/dialogue change @s goya_23_c @a"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_23_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_23_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "andrea",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.andrea" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.andrea", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "vicente",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.vicente" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.vicente", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "marcos",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.marcos" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.marcos", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "elena",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.elena" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.elena", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "luisa",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.luisa" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.luisa", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "mario",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.mario" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.mario", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "jaime",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.jaime" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.jaime", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "fernando",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.fernando" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.fernando", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "daniela",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.daniela" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.daniela", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "carlos",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.carlos" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.carlos", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "victoria",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.victoria" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.victoria", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "marta",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.marta" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.marta", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "borja",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.borja" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.borja", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "cristina",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.cristina" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.cristina", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "raul",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.raul" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.raul", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "gonzalo",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.gonzalo" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.gonzalo", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "mariano",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.mariano" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.mariano", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "antonia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.antonia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.antonia", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "emilio",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.emilio" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.emilio", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "leandro",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.leandro" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.leandro", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "patricia",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.patricia" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.patricia", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "lorena",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.lorena" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.lorena", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "carmen",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.carmen" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.carmen", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "alberto_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alberto_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/function zaragoza/pinceles/picker",
+              "/setblock -211 -60 -56 redstone_block",
+              "/scoreboard players set var tooltips 16"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_1",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_1", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_24_3 @a", "/dialogue open @s @initiator goya_24_3"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_3",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_3", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_24_4 @a", "/dialogue open @s @initiator goya_24_4"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_4",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_4", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s stay",
+              "/event entity @e[tag=bat] dead_on",
+              "/setblock -217 -60 -50 redstone_block",
+              "/setblock -203 -60 -52 redstone_block",
+              "/scoreboard players set var tooltips 161"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_5",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_5", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @e[tag=bat] monster_off",
+              "/setblock -217 -60 -50 air",
+              "/setblock -203 -60 -52 air",
+              "/scoreboard players set var tooltips 100"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_6",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_6", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue change @e[tag=alberto] alberto_a @a", "/dialogue open @e[tag=alberto] @p alberto_a"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "alberto_a",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alberto_a", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue change @e[tag=goya] goya_24_7 @a", "/dialogue open @e[tag=goya] @p goya_24_7"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_7",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_7", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/dialogue change @e[family=human,tag=alberto] alberto @a",
+              "/event entity @e[family=human,tag=alberto] chat_on",
+              "/scoreboard players set var tooltips 163"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "alberto",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alberto", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[tag=goya] chat_on",
+              "/dialogue change @e[tag=goya] goya_24 @a",
+              "/scoreboard players set var tooltips 100",
+              "/dialogue change @s alberto_b @a",
+              "/dialogue open @e[tag=goya] @p goya_24"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "alberto_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.alberto" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.alberto_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/setblock -226 -60 -58 redstone_block",
+              "/fill -224 -56 -58 -224 -58 -60 air",
+              "/scoreboard players set var tooltips 17"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[tag=zacarias] chat_on",
+              "/scoreboard players set var tooltips 18",
+              "/dialogue change @s goya_24_c @a",
+              "/dialogue change @e[tag=zacarias] sacerdote_01 @a"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_24_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_24_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "sacerdote_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.padre_zacarias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sacerdote_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "sacerdote_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.padre_zacarias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sacerdote_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[tag=goya] chat_on",
+              "/dialogue change @e[tag=goya] goya_25 @a",
+              "/scoreboard players set var tooltips 100",
+              "/dialogue change @s sacerdote_01_b @a",
+              "/dialogue open @e[tag=goya] @p goya_25"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.frescos" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/pinturas/"
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.basilica" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/#templo"
+          }
+        ]
+      },
+      {
+        "scene_tag": "sacerdote_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.padre_zacarias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sacerdote_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.frescos" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/pinturas/"
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.basilica" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/#templo"
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_25",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_25", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/function basilica/pincel_nubes", "/dialogue change @s goya_26 @a", "/dialogue open @s @p goya_26"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_26",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_26", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s goya_nubes_idle",
+              "/dialogue change @s goya_26_b @a",
+              "/scoreboard players set var tooltips 20"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_26_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_26_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_26_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_26_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s stay",
+              "/event entity @e[tag=angel_ezequiel] chat_on",
+              "/dialogue change @e[tag=angel_ezequiel] angel_ezequiel_01 @a",
+              "/dialogue change @s goya_26_e @a",
+              "/scoreboard players set var tooltips 19"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_26_e",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_26_e", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.yo_ayudo" }] },
+            "commands": ["/dialogue change @s angel_ezequiel_01_b @a", "/dialogue open @s @initiator angel_ezequiel_01_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.como" }] },
+            "commands": ["/dialogue change @s angel_ezequiel_03 @a", "/dialogue open @s @initiator angel_ezequiel_03"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_03",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_03", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @e[family=angel] chat_on",
+              "/setblock -740 -58 -178 redstone_block",
+              "/setblock -779 -58 -140 redstone_block",
+              "/setblock -737 -57 -122 redstone_block",
+              "/event entity @e[family=item_angel] sparks_on",
+              "/event entity @s chat_off",
+              "/dialogue change @s angel_ezequiel_03_b @a",
+              "/dialogue change @e[tag=goya] goya_26_e @a",
+              "/scoreboard players set var tooltips 21",
+              "/dialogue change @e[tag=angel_musico] angel_musico_01 @a",
+              "/dialogue change @e[tag=angel_explorador] angel_explorador_01 @a",
+              "/dialogue change @e[tag=angel_gloton] angel_gloton_01 @a"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_03_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_03_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.ayuda" }] },
+            "commands": ["/dialogue open @s @initiator angel_ezequiel_03_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_03_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_03_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_idle",
+        "text": { "rawtext": [{ "translate": "dialogue.angel_idle", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_musico_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_musico" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_musico_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -720 -42 -123 facing -698 -43 -123"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_musico_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_musico" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_musico_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -720 -42 -123 facing -698 -43 -123"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.dar_objeto" }] },
+            "commands": [
+              "/clear @a let:arpa",
+              "/event entity @s chat_off",
+              "/dialogue change @s angel_musico_02 @a",
+              "/dialogue open @s @initiator angel_musico_02"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_explorador_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_explorador" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_explorador_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -735 -45 -179 facing -735 -43 -153"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_explorador_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_explorador" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_explorador_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -735 -45 -179 facing -735 -43 -153"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.dar_objeto" }] },
+            "commands": [
+              "/clear @a let:pergamino",
+              "/event entity @s chat_off",
+              "/dialogue change @s angel_explorador_02 @a",
+              "/dialogue open @s @initiator angel_explorador_02"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_gloton_01",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_gloton" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_gloton_01", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -779 -40 -137 facing -781 -44 -166"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_gloton_01_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_gloton" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_gloton_01_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.subir_a_la_nube" }] },
+            "commands": ["/tp @p -779 -40 -137 facing -781 -44 -166"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.dar_objeto" }] },
+            "commands": [
+              "/clear @a let:uvas",
+              "/event entity @s chat_off",
+              "/dialogue change @s angel_gloton_02 @a",
+              "/dialogue open @s @initiator angel_gloton_02"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_musico_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_musico" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_musico_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/setblock -737 -57 -122 air",
+              "/scoreboard players remove var angelesTracker 1",
+              "/particle let:sparks_round_2 ~~1~",
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"objeto_devuelto.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/event entity @s let:despawn",
+              "/scoreboard players add var angeles 1"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_explorador_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_explorador" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_explorador_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/setblock -740 -58 -178 air",
+              "/scoreboard players remove var angelesTracker 1",
+              "/particle let:sparks_round_2 ~~1~",
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"objeto_devuelto.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/event entity @s let:despawn",
+              "/scoreboard players add var angeles 1"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_gloton_02",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_gloton" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_gloton_02", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/setblock -779 -58 -140 air",
+              "/scoreboard players remove var angelesTracker 1",
+              "/particle let:sparks_round_2 ~~1~",
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"objeto_devuelto.title\",\"with\":{\"rawtext\":[{\"text\":\"\\n\"}]}}]}",
+              "/event entity @s let:despawn",
+              "/scoreboard players add var angeles 1"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "angel_ezequiel_04",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.angel_ezequiel" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.angel_ezequiel_04", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/particle let:sparks_round_2 ~~1~",
+              "/function pincel_base",
+              "/dialogue change @e[tag=goya] goya_27 @a",
+              "/event entity @e[tag=goya] chat_on",
+              "/dialogue change @e[tag=zacarias] sacerdote_03 @a",
+              "/event entity @s let:despawn",
+              "/scoreboard players set var tooltips 100",
+              "/clear @a let:clouds"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "sacerdote_03",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.padre_zacarias" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.sacerdote_03", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.frescos" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/pinturas/"
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.basilica" }] },
+            "url": "https://www.catedralbasilicadelpilar.es/#templo"
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_27",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_27", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.continuar" }] },
+            "commands": ["/dialogue change @s goya_27_b @a", "/dialogue open @s @initiator goya_27_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_27_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_27_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.fuendetodos" }] },
+            "commands": ["/dialogue change @s goya_27_c @a", "/dialogue open @s @initiator goya_27_c"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_27_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_27_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vamos" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/setblock -773 -58 -197 redstone_block",
+              "/scoreboard players set var tooltips 22"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_28",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_28", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_28_b @a", "/dialogue open @s @initiator goya_28_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_28_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_28_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/event entity @e[family=human,r=50] chat_on",
+              "/dialogue change @e[tag=camila] camila_0 @a",
+              "/dialogue change @e[tag=nancy] nancy_0 @a",
+              "/dialogue change @e[tag=tomas] tomas_0 @a",
+              "/dialogue change @s goya_28_c @a",
+              "/scoreboard players set var tooltips 23"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_28_c",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_28_c", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "camila",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.camila" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.camila", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "camila_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.camila" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.camila_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/dialogue change @s camila_b @a",
+              "/event entity @s chat_off",
+              "/scoreboard players add var fuendetodos 1",
+              "/dialogue open @e[tag=goya] @initiator goya_fuendetodos"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "camila_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.camila" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.camila_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue open @e[tag=goya] @initiator goya_fuendetodos"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_fuendetodos",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_fuendetodos", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "tomas",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.tomas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.tomas", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.firmas" }] },
+            "url": "https://lasfirmasdegoya.com/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "tomas_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.tomas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.tomas_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/dialogue change @s tomas_b @a",
+              "/event entity @s chat_off",
+              "/scoreboard players add var fuendetodos 1",
+              "/dialogue open @e[tag=goya] @initiator goya_firmas"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.firmas" }] },
+            "url": "https://lasfirmasdegoya.com/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "tomas_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.tomas" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.tomas_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue open @e[tag=goya] @initiator goya_firmas"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.firmas" }] },
+            "url": "https://lasfirmasdegoya.com/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_firmas",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_firmas", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "nancy",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nancy" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nancy", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.casa" }] },
+            "url": "https://fundacionfuendetodosgoya.org/casa-natal-goya/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "nancy_0",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nancy" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nancy_0", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/dialogue change @s nancy_b @a",
+              "/event entity @s chat_off",
+              "/scoreboard players add var fuendetodos 1",
+              "/dialogue open @e[tag=goya] @initiator goya_casa"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.casa" }] },
+            "url": "https://fundacionfuendetodosgoya.org/casa-natal-goya/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "nancy_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.nancy" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.nancy_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/dialogue open @e[tag=goya] @initiator goya_casa"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.casa" }] },
+            "url": "https://fundacionfuendetodosgoya.org/casa-natal-goya/"
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_casa",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_casa", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_29",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_29", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_30 @a", "/dialogue open @s @initiator goya_30"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_30",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_30", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_31 @a", "/dialogue open @s @initiator goya_31"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_31",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_31", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/function fuendetodos/pincel_memorias",
+              "/dialogue change @s goya_32 @a",
+              "/event entity @s chat_on",
+              "/dialogue open @s @initiator goya_32",
+              "/scoreboard players set var tooltips 100"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_32",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_32", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_33 @a", "/dialogue open @s @initiator goya_33"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_33",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_33", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/tag @p add estatuilla",
+              "/event entity @s chat_off",
+              "/setblock -57 -53 -617 let:estatua_block",
+              "/setblock -56 -57 -615 redstone_block",
+              "/dialogue change @s goya_35_b @a",
+              "/scoreboard players set var tooltips 25"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_35_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_35_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/tag @p add estatuilla", "/setblock -57 -53 -617 let:estatua_block", "/setblock -56 -57 -615 redstone_block"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_36",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_36", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/tag @s add memoria_estatua", "/scoreboard players set var tooltips 26"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_estatua",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_estatua", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": [
+              "/tag @s remove memoria_estatua",
+              "/function fuendetodos/pincel_memorias",
+              "/setblock -57 -53 -617 air",
+              "/setblock -56 -57 -615 air",
+              "/dialogue change @s goya_38 @a",
+              "/dialogue open @s @initiator goya_38"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_38",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_38", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/dialogue change @s goya_memorias @a",
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/function fuendetodos/memorias/memorias_start",
+              "/scoreboard players set var tooltips 27"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_memorias",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_memorias", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s follow", "/event entity @s chat_off"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_memorias_on",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_memorias_on", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s stay"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_leche",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_leche", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/scoreboard players add var memorias 1",
+              "scoreboard players remove var memoriasTracker 1",
+              "/function fuendetodos/memorias/memorias_reset",
+              "/fill -63 -55 -628 -63 -54 -628 air",
+              "/setblock -60 -57 -628 air",
+              "/event entity @s follow",
+              "/scoreboard players set var tooltips 27"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_cofre",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_cofre", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/scoreboard players add var memorias 1",
+              "scoreboard players remove var memoriasTracker 1",
+              "/function fuendetodos/memorias/memorias_reset",
+              "/setblock -63 -47 -627 let:cofre_antiguo",
+              "/setblock -66 -47 -629 air",
+              "/event entity @s follow",
+              "/scoreboard players set var tooltips 27"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_cama",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_cama", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/scoreboard players add var memorias 1",
+              "/scoreboard players remove var memoriasTracker 1",
+              "/function fuendetodos/memorias/memorias_reset",
+              "/fill -50 -46 -611 -49 -46 -614 air",
+              "/setblock -52 -46 -608 air",
+              "/event entity @s follow",
+              "/scoreboard players set var tooltips 27"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_39",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_39", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_40 @a", "/dialogue open @s @initiator goya_40"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_40",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_40", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_41 @a", "/dialogue open @s @initiator goya_41"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_41",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_41", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_42 @a", "/dialogue open @s @initiator goya_42"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_42",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_42", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vamos" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/setblock -49 -57 -624 redstone_block",
+              "/scoreboard players set var tooltips 28"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_43",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_43", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/function fuendetodos/pincel_ending", "/dialogue change @s goya_43_b @a", "/dialogue open @s @initiator goya_43_b"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_43_b",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_43_b", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": ["/event entity @s chat_off", "/tag @a add ending", "/setblock -53 -58 -631 redstone_block", "/scoreboard players set var tooltips 281"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_44",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_44", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.vamos" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @s follow",
+              "/setblock -45 -57 -625 redstone_block",
+              "/scoreboard players set var tooltips 29"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_45",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_45", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_46 @a", "/dialogue open @s @initiator goya_46"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_46",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_46", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/event entity @e[family=atril] waiting_on",
+              "/event entity @e[family=atril] atril_sparkles",
+              "/scoreboard players set var tooltips 30"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_47",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_47", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.yo" }] },
+            "commands": ["/dialogue change @s goya_48 @a", "/dialogue open @s @initiator goya_48"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_48",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_48", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": ["/dialogue change @s goya_49 @a", "/dialogue open @s @initiator goya_49"]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_49",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_49", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.cerrar" }] },
+            "commands": [
+              "/event entity @s chat_off",
+              "/function nubes_off",
+              "/event entity @e[family=atril] construccion_on",
+              "/setblock -39 -57 -623 redstone_block",
+              "/dialogue change @s goya_final @a",
+              "/scoreboard players set var tooltips 31"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_final",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_final", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.volver" }] },
+            "commands": ["/event entity @s stay", "/tp @a 7 -57 -251 facing 11 -57 -249"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.quedarme" }] }
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_construccion",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_construccion", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.siguiente" }] },
+            "commands": [
+              "/gamemode c @a",
+              "/function nubes_off",
+              "/event entity @s chat_off",
+              "/event entity @e[family=atril] construccion_off",
+              "/event entity @e[tag=pedestrian] chat_off",
+              "/scoreboard players set var tooltips 101",
+              "/dialogue change @s goya_construccion_2 @a",
+              "/dialogue open @s @initiator goya_construccion_2"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "goya_construccion_2",
+        "npc_name": { "rawtext": [{ "translate": "dialogue.npc_name.goya" }] },
+        "text": { "rawtext": [{ "translate": "dialogue.goya_construccion_2", "with": ["\n"] }] },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.patrimonio_zgz" }] },
+            "url": "https://www.zaragoza.es/sede/portal/cultura/patrimonio/top-monumentos/"
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.museo" }] },
+            "commands": ["/tp @initiator -642 -14 -186 facing -642 -14 -182", "/tp @e[tag=goya] -645 -14 -186", "/event entity @e[tag=goya] follow"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.zaragoza" }] },
+            "commands": ["/tp @initiator -269 -57 -177 facing -265 -57 -179", "/tp @e[tag=goya] -267 -57 -180", "/event entity @e[tag=goya] follow"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.basilica" }] },
+            "commands": [
+              "/tp @initiator -777 -56 -197 facing -778 -56 -193",
+              "/fill -741 -55 -122 -738 -55 -124 air",
+              "/fill -717 -45 -127 -724 -43 -121 air",
+              "/tp @e[tag=goya] -779 -56 -196",
+              "/event entity @e[tag=goya] follow"
+            ]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.fuendetodos" }] },
+            "commands": ["/tp @initiator 24 -57 -603 facing 27 -57 -609", "/tp @e[tag=goya] 23 -57 -607", "/event entity @e[tag=goya] follow"]
+          },
+          {
+            "name": { "rawtext": [{ "translate": "dialogue.button.casa_goya" }] },
+            "commands": ["/tp @initiator -60 -54 -612 facing -60 -54 -615", "/tp @e[tag=goya] -60 -54 -615", "/event entity @e[tag=goya] follow"]
+          }
+        ]
+      }
+    ]
+  }
+}

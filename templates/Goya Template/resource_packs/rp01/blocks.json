@@ -1,0 +1,53 @@
+{
+  "cortinas_bottom": {
+    "sound": "cloth"
+  },
+  "cortinas_top": {
+    "sound": "cloth"
+  },
+  "cuerda_museo": {
+    "sound": "cloth"
+  },
+  "poste_museo": {
+    "sound": "metal"
+  },
+  "display_grabados_2": {
+    "sound": "glass"
+  },
+  "display_grabados": {
+    "sound": "glass"
+  },
+  "display_grabados_3": {
+    "sound": "glass"
+  },
+  "display_grabados_4": {
+    "sound": "glass"
+  },
+  "light_dampen": {
+    "sound": "glass"
+  },
+  "light_source": {
+    "sound": "glass"
+  },
+  "cama_block": {
+    "sound": "cloth"
+  },
+  "leche_block": {
+    "sound": "metal"
+  },
+  "caja_block": {
+    "sound": "wood"
+  },
+  "estatua_block": {
+    "sound": "wood"
+  },
+  "clouds": {
+    "sound": "cloth"
+  },
+  "clouds_angels": {
+    "sound": "cloth"
+  },
+  "ink": {
+    "sound": "stone"
+  }
+}

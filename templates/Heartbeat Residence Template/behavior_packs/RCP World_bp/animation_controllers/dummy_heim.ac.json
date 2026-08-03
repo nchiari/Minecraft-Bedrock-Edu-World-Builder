@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy_heim": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dummy_sick": "q.variant == 1 || q.variant == 2 || q.variant == 3"
+            }
+          ],
+          "on_entry": ["/tag @s remove sick"]
+        },
+        "dummy_sick": {
+          "transitions": [
+            {
+              "dummy_point": "q.property('dummy:hits') == 3"
+            },
+            {
+              "default": "q.variant == 0"
+            }
+          ],
+          "on_entry": ["/tag @s add sick"]
+        },
+        "dummy_point": {
+          "transitions": [
+            {
+              "default": "q.property('dummy:hits') == 0"
+            }
+          ],
+          "on_entry": ["/scoreboard players add @p heimlich 3"]
+        }
+      }
+    }
+  }
+}

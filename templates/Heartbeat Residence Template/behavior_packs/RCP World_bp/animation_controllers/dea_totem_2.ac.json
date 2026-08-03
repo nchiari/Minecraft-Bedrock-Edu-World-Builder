@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dea_totem_2": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "dea_totem_2": "q.variant == 1"
+            }
+          ]
+        },
+        "dea_totem_2": {
+          "on_entry": ["/function deas"]
+        }
+      }
+    }
+  }
+}
