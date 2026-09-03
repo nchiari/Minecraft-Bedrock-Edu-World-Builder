@@ -15,6 +15,7 @@ const state = {
   packFiles: [],
   packFolderSelections: [],
   cleanExistingPacks: true,
+  regeneratePackUuids: true,
   busy: false,
   generatedBlob: null,
   generatedName: "",
@@ -32,6 +33,7 @@ const nodes = {
   packsPickerText: document.getElementById("packs-picker-text"),
   packsFolderPickerText: document.getElementById("packs-folder-picker-text"),
   cleanExistingPacks: document.getElementById("clean-existing-packs"),
+  regeneratePackUuids: document.getElementById("regenerate-pack-uuids"),
   worldInfo: document.getElementById("world-file-info"),
   packsInfo: document.getElementById("packs-file-info"),
   packsFolderInfo: document.getElementById("packs-folder-info"),
@@ -138,6 +140,12 @@ function bindEvents() {
 
   nodes.cleanExistingPacks.addEventListener("change", () => {
     state.cleanExistingPacks = nodes.cleanExistingPacks.checked;
+    clearGeneratedOutput();
+    updateStatusForInputs();
+  });
+
+  nodes.regeneratePackUuids.addEventListener("change", () => {
+    state.regeneratePackUuids = nodes.regeneratePackUuids.checked;
     clearGeneratedOutput();
     updateStatusForInputs();
   });
@@ -383,6 +391,7 @@ function updateActionState() {
   nodes.compileBtn.disabled = state.busy || !hasInputs;
   nodes.resetBtn.disabled = state.busy;
   nodes.cleanExistingPacks.disabled = state.busy;
+  nodes.regeneratePackUuids.disabled = state.busy;
   nodes.worldPickerBtn.disabled = state.busy;
   nodes.packsPickerBtn.disabled = state.busy;
   nodes.packsFolderPickerBtn.disabled = state.busy;
@@ -439,11 +448,13 @@ function resetForm() {
   state.packFiles = [];
   state.packFolderSelections = [];
   state.cleanExistingPacks = true;
+  state.regeneratePackUuids = true;
   clearGeneratedOutput();
   nodes.worldInput.value = "";
   nodes.packsInput.value = "";
   nodes.packsFolderInput.value = "";
   nodes.cleanExistingPacks.checked = true;
+  nodes.regeneratePackUuids.checked = true;
   clearLog();
   setStatus("idle", "status.idle");
   refreshSelectedFiles();
@@ -481,12 +492,14 @@ async function compileWorld() {
       appendLog(t("log.skipDuplicate", { name: skip.displayName }), "warn");
     }
 
-    const depResult = applyDependencyFixes(included);
-    for (const packName of depResult.updatedPackNames) {
-      appendLog(t("log.depsUpdated", { name: packName }));
-    }
-    for (const sourceFile of depResult.ambiguousSourceFiles) {
-      appendLog(t("log.ambiguousDeps", { file: sourceFile }), "warn");
+    if (!state.regeneratePackUuids) {
+      const depResult = applyDependencyFixes(included);
+      for (const packName of depResult.updatedPackNames) {
+        appendLog(t("log.depsUpdated", { name: packName }));
+      }
+      for (const sourceFile of depResult.ambiguousSourceFiles) {
+        appendLog(t("log.ambiguousDeps", { file: sourceFile }), "warn");
+      }
     }
 
     const placed = placePacksInWorld(worldZip, worldState, included);
@@ -495,6 +508,11 @@ async function compileWorld() {
     }
     for (const warning of worldState.folderWarnings) {
       appendLog(t("log.folderConflict", { requested: warning.requested, assigned: warning.assigned }), "warn");
+    }
+
+    if (state.regeneratePackUuids) {
+      appendLog(t("log.regeneratePackUuids"));
+      await regenerateWorldPackUuids(worldZip, worldState);
     }
 
     appendLog(t("log.writeWorldRefs"));
@@ -1288,6 +1306,74 @@ function getNextGeneratedFolder(isBehavior, worldState, usedFolders) {
   worldState.nextRp += 1;
   usedFolders.add(name);
   return name;
+}
+
+async function regenerateWorldPackUuids(worldZip, worldState) {
+  const manifests = [];
+  const headerUuids = new Map();
+  const uuidKey = (value) => typeof value === "string" ? value.trim().toLowerCase() : "";
+
+  // Build the complete map first, including retained packs and separate uploads.
+  for (const file of Object.values(worldZip.files)) {
+    if (file.dir || !/^(behavior_packs|resource_packs)\/[^/]+\/manifest\.json$/i.test(file.name)) {
+      continue;
+    }
+    let manifest;
+    try {
+      manifest = JSON.parse(await file.async("string"));
+    } catch {
+      throw new Error(t("error.packManifestInvalid", { label: file.name }));
+    }
+    const oldUuid = uuidKey(manifest?.header?.uuid);
+    if (!oldUuid) {
+      throw new Error(t("error.packNoHeader", { label: file.name }));
+    }
+    if (!headerUuids.has(oldUuid)) {
+      headerUuids.set(oldUuid, createPackUuid());
+    }
+    manifests.push({ path: file.name, manifest, oldUuid });
+  }
+
+  for (const { path, manifest, oldUuid } of manifests) {
+    manifest.header.uuid = headerUuids.get(oldUuid);
+    for (const module of Array.isArray(manifest.modules) ? manifest.modules : []) {
+      if (uuidKey(module?.uuid)) {
+        module.uuid = createPackUuid();
+      }
+    }
+    for (const dependency of Array.isArray(manifest.dependencies) ? manifest.dependencies : []) {
+      // External packs and module_name dependencies retain their identity/version.
+      const replacement = headerUuids.get(uuidKey(dependency?.uuid));
+      if (replacement && !dependency.module_name) {
+        dependency.uuid = replacement;
+      }
+    }
+    worldZip.file(path, `${JSON.stringify(manifest, null, 2)}\n`);
+  }
+
+  for (const ref of [...worldState.behaviorRefs, ...worldState.resourceRefs]) {
+    const replacement = headerUuids.get(uuidKey(ref?.pack_id));
+    if (replacement) {
+      ref.pack_id = replacement;
+    }
+  }
+  worldState.embeddedUuids = new Set(headerUuids.values());
+  worldState.referencedUuids = new Set(
+    [...worldState.behaviorRefs, ...worldState.resourceRefs]
+      .map((ref) => uuidKey(ref?.pack_id)).filter(Boolean)
+  );
+}
+
+function createPackUuid() {
+  if (typeof globalThis.crypto?.randomUUID === "function") {
+    return globalThis.crypto.randomUUID();
+  }
+  const bytes = new Uint8Array(16);
+  globalThis.crypto.getRandomValues(bytes);
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0"));
+  return `${hex.slice(0, 4).join("")}-${hex.slice(4, 6).join("")}-${hex.slice(6, 8).join("")}-${hex.slice(8, 10).join("")}-${hex.slice(10).join("")}`;
 }
 
 function writeWorldReferenceFiles(worldZip, worldState) {
