@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js";
+import { I18N } from "./i18n.js?v=20260903-1";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
 import { initExperimentsTool } from "./experiments.js";

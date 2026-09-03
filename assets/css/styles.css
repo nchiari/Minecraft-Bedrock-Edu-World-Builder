@@ -635,17 +635,21 @@ body {
 
 .option-box {
   margin-top: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-soft);
+  background: rgba(42, 41, 50, 0.72);
+  padding: 0.78rem;
 }
 
 .check-option {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line-soft);
-  background: rgba(42, 41, 50, 0.72);
-  padding: 0.78rem;
   cursor: pointer;
+}
+
+.check-option + .check-option {
+  margin-top: 0.9rem;
 }
 
 .check-option input {
