@@ -55,6 +55,14 @@
         <small data-i18n="tools.inspectorDescription"></small>
       </span>
     </button>
+
+    <button id="experiments-tool-btn" class="tool-choice" type="button" data-tool="experiments" aria-controls="experiments-workspace" aria-pressed="false">
+      <span class="tool-choice-icon" aria-hidden="true">⚗</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.experimentsTitle"></strong>
+        <small data-i18n="tools.experimentsDescription"></small>
+      </span>
+    </button>
   </nav>
 
   <main>
@@ -226,6 +234,47 @@
           </div>
           <div id="inspector-overview" class="inspector-overview" hidden></div>
           <div id="inspector-results" class="inspector-results" hidden></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="experiments-workspace" class="tool-workspace" aria-labelledby="experiments-tool-btn" hidden>
+      <div class="container layout experiments-layout">
+        <section class="panel tool-form-panel" aria-labelledby="experiments-title">
+          <h2 id="experiments-title" data-i18n="experiments.title"></h2>
+          <p class="tool-intro" data-i18n="experiments.intro"></p>
+
+          <div class="field">
+            <label for="experiments-world-input" data-i18n="experiments.worldLabel"></label>
+            <div class="file-picker">
+              <input id="experiments-world-input" class="file-native" type="file" accept=".mcworld,.zip,application/zip,application/octet-stream">
+              <button id="experiments-world-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseWorld"></button>
+              <span id="experiments-world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
+            </div>
+            <p class="field-help" data-i18n="experiments.worldHelp"></p>
+            <p id="experiments-world-info" class="field-file" hidden></p>
+          </div>
+
+          <div class="experiments-warning">
+            <h3 data-i18n="experiments.warningTitle"></h3>
+            <p data-i18n="experiments.warningBody"></p>
+          </div>
+
+          <div id="experiments-actions" class="actions" hidden>
+            <button id="experiments-save-btn" type="button" class="btn btn-primary" data-i18n="experiments.save" disabled></button>
+            <button id="experiments-reset-btn" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
+          </div>
+        </section>
+
+        <section class="panel panel-status experiments-results-panel" aria-labelledby="experiments-results-title">
+          <h2 id="experiments-results-title" data-i18n="experiments.resultsTitle"></h2>
+          <p id="experiments-status-summary" class="status-summary" role="status" aria-live="polite"></p>
+          <div id="experiments-download-box" class="download-box" hidden>
+            <p class="download-note" data-i18n="experiments.downloadReady"></p>
+            <button id="experiments-download-btn" type="button" class="btn btn-primary" data-i18n="experiments.download"></button>
+          </div>
+          <div id="experiments-summary" class="experiments-summary" hidden></div>
+          <div id="experiments-list" class="experiments-list" hidden></div>
         </section>
       </div>
     </section>

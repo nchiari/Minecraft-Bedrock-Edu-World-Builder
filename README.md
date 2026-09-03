@@ -2,11 +2,12 @@
 
 Live app: https://nchiari.github.io/Minecraft-Bedrock-Edu-World-Builder/
 
-This browser-based app provides three tools for Minecraft Bedrock and Education:
+This browser-based app provides four tools for Minecraft Bedrock and Education:
 
 - A tool for adding `.mcpack` / `.mcaddon` files or pack folders to a world and creating a new `.mcworld`.
 - A world template creator that converts a `.mcworld` into a localized `.mctemplate`.
 - A world inspector that finds pack, manifest, reference, dependency, cleanup, and version compatibility issues and can export a repaired `.mcworld`.
+- An experiments editor that reads the Bedrock `level.dat`, enables or disables experiment flags, and exports a new `.mcworld`.
 
 ## Add Packs to a World
 
@@ -48,6 +49,8 @@ The inspector can remove unsupported pack files and dot-prefixed or empty folder
 - The add-packs tool can either replace or preserve existing embedded packs.
 - Duplicate packs (same UUID) are skipped.
 - The template creator removes unsupported files and dot-prefixed folders only from embedded behavior and resource packs. Folders left without valid files are omitted, and complete folder removals are reported once instead of listing every contained file.
+- The experiments editor targets the experiment catalog in Minecraft 1.26.30, preserves unknown flags for forward compatibility, and exposes legacy flags only when they already exist in the selected world.
+- Disabling experiments is unsupported by Minecraft and may damage experimental content. Keep the original world as a backup.
 
 ## File Size Limits
 

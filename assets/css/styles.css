@@ -153,7 +153,7 @@ body {
 
 .tool-selector {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--workspace-gap);
   margin-bottom: 1rem;
 }
@@ -232,6 +232,10 @@ body {
   gap: var(--workspace-gap);
   align-items: start;
   padding-bottom: 1.2rem;
+}
+
+.layout > .panel {
+  min-width: 0;
 }
 
 .template-layout {
@@ -520,6 +524,102 @@ body {
   border: 1px solid var(--line-soft);
   background: rgba(42, 41, 50, 0.72);
   padding: 0.8rem;
+}
+
+.experiments-warning {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 196, 92, 0.35);
+  border-radius: var(--radius-md);
+  background: rgba(255, 196, 92, 0.08);
+}
+
+.experiments-warning h3,
+.experiments-warning p {
+  margin: 0;
+}
+
+.experiments-warning h3 {
+  color: #ffd487;
+  font-size: 0.95rem;
+}
+
+.experiments-warning p {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.experiments-summary {
+  margin: 0.85rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.experiments-summary[hidden],
+.experiments-list[hidden],
+#experiments-actions[hidden] {
+  display: none;
+}
+
+.experiments-group + .experiments-group {
+  margin-top: 1rem;
+}
+
+.experiments-group h3 {
+  margin: 0 0 0.55rem;
+  color: var(--accent-main-strong);
+  font-size: 0.95rem;
+}
+
+.experiment-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.7rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+}
+
+.experiment-option + .experiment-option {
+  margin-top: 0.5rem;
+}
+
+.experiment-option input {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.18rem;
+  accent-color: var(--accent-main);
+}
+
+.experiment-option strong,
+.experiment-option small,
+.experiment-option code {
+  display: block;
+}
+
+.experiment-option > span {
+  min-width: 0;
+}
+
+.experiment-option strong {
+  font-size: 0.92rem;
+}
+
+.experiment-option small {
+  margin-top: 0.18rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.experiment-option code {
+  margin-top: 0.28rem;
+  color: #aeb7ff;
+  font-size: 0.76rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .inspector-explainer h3 {

@@ -1,6 +1,7 @@
 import { I18N } from "./i18n.js";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
+import { initExperimentsTool } from "./experiments.js";
 
 const MB = 1024 * 1024;
 const LIMITS = {
@@ -62,11 +63,13 @@ const nodes = {
   toolButtons: Array.from(document.querySelectorAll(".tool-choice")),
   compilerWorkspace: document.getElementById("compiler-workspace"),
   templateWorkspace: document.getElementById("template-workspace"),
-  inspectorWorkspace: document.getElementById("inspector-workspace")
+  inspectorWorkspace: document.getElementById("inspector-workspace"),
+  experimentsWorkspace: document.getElementById("experiments-workspace")
 };
 
 let templateTool = null;
 let inspectorTool = null;
+let experimentsTool = null;
 let lastFocusedBeforeModal = null;
 
 init();
@@ -84,6 +87,11 @@ function init() {
     maxWorldBytes: LIMITS.maxWorldBytes
   });
   inspectorTool = initWorldInspector({
+    t,
+    formatBytes,
+    maxWorldBytes: LIMITS.maxWorldBytes
+  });
+  experimentsTool = initExperimentsTool({
     t,
     formatBytes,
     maxWorldBytes: LIMITS.maxWorldBytes
@@ -199,7 +207,7 @@ function bindEvents() {
 
   for (const button of nodes.toolButtons) {
     button.addEventListener("click", () => {
-      const tool = ["compiler", "template", "inspector"].includes(button.dataset.tool)
+      const tool = ["compiler", "template", "inspector", "experiments"].includes(button.dataset.tool)
         ? button.dataset.tool
         : "compiler";
       selectTool(tool);
@@ -234,6 +242,9 @@ function detectInitialTool() {
   if (window.location.hash === "#world-inspector") {
     return "inspector";
   }
+  if (window.location.hash === "#experiments-editor") {
+    return "experiments";
+  }
   return "compiler";
 }
 
@@ -243,7 +254,9 @@ function selectTool(tool) {
 
   const hash = tool === "template"
     ? "#template-creator"
-    : tool === "inspector" ? "#world-inspector" : "#pack-compiler";
+    : tool === "inspector"
+      ? "#world-inspector"
+      : tool === "experiments" ? "#experiments-editor" : "#pack-compiler";
   if (window.location.hash !== hash) {
     window.history.pushState(null, "", hash);
   }
@@ -252,11 +265,15 @@ function selectTool(tool) {
 function applyActiveTool() {
   const showTemplate = state.activeTool === "template";
   const showInspector = state.activeTool === "inspector";
-  nodes.compilerWorkspace.hidden = showTemplate || showInspector;
+  const showExperiments = state.activeTool === "experiments";
+  nodes.compilerWorkspace.hidden = showTemplate || showInspector || showExperiments;
   nodes.templateWorkspace.hidden = !showTemplate;
   nodes.inspectorWorkspace.hidden = !showInspector;
+  nodes.experimentsWorkspace.hidden = !showExperiments;
   nodes.heroSubtitle.textContent = t("app.subtitle");
-  const helpPrefix = showTemplate ? "templateHelp" : showInspector ? "inspectorHelp" : "help";
+  const helpPrefix = showTemplate
+    ? "templateHelp"
+    : showInspector ? "inspectorHelp" : showExperiments ? "experimentsHelp" : "help";
   nodes.howtoOpen.hidden = false;
   nodes.howtoOpen.textContent = t(`${helpPrefix}.open`);
   nodes.howtoTitle.textContent = t(`${helpPrefix}.title`);
@@ -328,6 +345,7 @@ function applyI18n() {
   }
   templateTool?.refreshLanguage();
   inspectorTool?.refreshLanguage();
+  experimentsTool?.refreshLanguage();
 }
 
 function refreshSelectedFiles() {
