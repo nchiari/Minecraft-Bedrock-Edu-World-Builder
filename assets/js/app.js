@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js?v=20260903-1";
+import { I18N } from "./i18n.js?v=20260919-1";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
 import { initExperimentsTool } from "./experiments.js";
@@ -27,17 +27,25 @@ const nodes = {
   worldInput: document.getElementById("world-input"),
   packsInput: document.getElementById("packs-input"),
   packsFolderInput: document.getElementById("packs-folder-input"),
+  behaviorFolderInput: document.getElementById("behavior-folder-input"),
+  resourceFolderInput: document.getElementById("resource-folder-input"),
   worldPickerBtn: document.getElementById("world-picker-btn"),
   packsPickerBtn: document.getElementById("packs-picker-btn"),
   packsFolderPickerBtn: document.getElementById("packs-folder-picker-btn"),
+  behaviorFolderPickerBtn: document.getElementById("behavior-folder-picker-btn"),
+  resourceFolderPickerBtn: document.getElementById("resource-folder-picker-btn"),
   worldPickerText: document.getElementById("world-picker-text"),
   packsPickerText: document.getElementById("packs-picker-text"),
   packsFolderPickerText: document.getElementById("packs-folder-picker-text"),
+  behaviorFolderPickerText: document.getElementById("behavior-folder-picker-text"),
+  resourceFolderPickerText: document.getElementById("resource-folder-picker-text"),
   cleanExistingPacks: document.getElementById("clean-existing-packs"),
   regeneratePackUuids: document.getElementById("regenerate-pack-uuids"),
   worldInfo: document.getElementById("world-file-info"),
   packsInfo: document.getElementById("packs-file-info"),
   packsFolderInfo: document.getElementById("packs-folder-info"),
+  behaviorFolderInfo: document.getElementById("behavior-folder-info"),
+  resourceFolderInfo: document.getElementById("resource-folder-info"),
   limitsCopy: document.getElementById("limits-copy"),
   compileBtn: document.getElementById("compile-btn"),
   resetBtn: document.getElementById("reset-btn"),
@@ -157,6 +165,9 @@ function bindEvents() {
     clearGeneratedOutput();
     updateStatusForInputs();
   });
+
+  bindTypedFolderPicker("behavior");
+  bindTypedFolderPicker("resource");
 
   nodes.compileBtn.addEventListener("click", () => {
     void compileWorld();
@@ -336,6 +347,12 @@ function applyI18n() {
   if (state.packFolderSelections.length === 0) {
     nodes.packsFolderPickerText.textContent = t("upload.noPackFoldersChosen");
   }
+  if (!getTypedFolderSelection("behavior")) {
+    nodes.behaviorFolderPickerText.textContent = t("upload.noBehaviorFolderChosen");
+  }
+  if (!getTypedFolderSelection("resource")) {
+    nodes.resourceFolderPickerText.textContent = t("upload.noResourceFolderChosen");
+  }
   if (state.generatedName) {
     nodes.downloadNote.textContent = t("status.downloadReady");
   }
@@ -346,6 +363,23 @@ function applyI18n() {
   templateTool?.refreshLanguage();
   inspectorTool?.refreshLanguage();
   experimentsTool?.refreshLanguage();
+}
+
+function bindTypedFolderPicker(type) {
+  const input = type === "behavior" ? nodes.behaviorFolderInput : nodes.resourceFolderInput;
+  const button = type === "behavior" ? nodes.behaviorFolderPickerBtn : nodes.resourceFolderPickerBtn;
+  button.addEventListener("click", () => input.click());
+  input.addEventListener("change", () => {
+    const files = input.files ? Array.from(input.files) : [];
+    if (files.length > 0) {
+      state.packFolderSelections = mergePackFolderSelection(state.packFolderSelections, files, type);
+    }
+    input.value = "";
+    clearGeneratedOutput();
+    refreshSelectedFiles();
+    updateActionState();
+    updateStatusForInputs();
+  });
 }
 
 function refreshSelectedFiles() {
@@ -378,11 +412,12 @@ function refreshSelectedFiles() {
     nodes.packsInfo.hidden = true;
   }
 
-  if (state.packFolderSelections.length > 0) {
+  const generalFolderSelections = state.packFolderSelections.filter((selection) => !selection.expectedType);
+  if (generalFolderSelections.length > 0) {
     nodes.packsFolderInfo.hidden = false;
-    const folderCount = state.packFolderSelections.length;
-    const fileCount = state.packFolderSelections.reduce((sum, selection) => sum + selection.files.length, 0);
-    const total = state.packFolderSelections.reduce(
+    const folderCount = generalFolderSelections.length;
+    const fileCount = generalFolderSelections.reduce((sum, selection) => sum + selection.files.length, 0);
+    const total = generalFolderSelections.reduce(
       (sum, selection) => sum + selection.files.reduce((fileSum, file) => fileSum + file.size, 0),
       0
     );
@@ -401,6 +436,32 @@ function refreshSelectedFiles() {
     nodes.packsFolderInfo.textContent = "";
     nodes.packsFolderInfo.hidden = true;
   }
+
+  refreshTypedFolderSelection("behavior");
+  refreshTypedFolderSelection("resource");
+}
+
+function getTypedFolderSelection(type) {
+  return state.packFolderSelections.find((selection) => selection.expectedType === type) || null;
+}
+
+function refreshTypedFolderSelection(type) {
+  const selection = getTypedFolderSelection(type);
+  const pickerText = type === "behavior" ? nodes.behaviorFolderPickerText : nodes.resourceFolderPickerText;
+  const info = type === "behavior" ? nodes.behaviorFolderInfo : nodes.resourceFolderInfo;
+  if (!selection) {
+    pickerText.textContent = t(type === "behavior" ? "upload.noBehaviorFolderChosen" : "upload.noResourceFolderChosen");
+    info.textContent = "";
+    info.hidden = true;
+    return;
+  }
+  const total = selection.files.reduce((sum, file) => sum + file.size, 0);
+  pickerText.textContent = selection.label;
+  info.textContent = t("status.typedPackFolderSelected", {
+    files: selection.files.length,
+    size: formatBytes(total)
+  });
+  info.hidden = false;
 }
 
 function updateActionState() {
@@ -413,6 +474,8 @@ function updateActionState() {
   nodes.worldPickerBtn.disabled = state.busy;
   nodes.packsPickerBtn.disabled = state.busy;
   nodes.packsFolderPickerBtn.disabled = state.busy;
+  nodes.behaviorFolderPickerBtn.disabled = state.busy;
+  nodes.resourceFolderPickerBtn.disabled = state.busy;
 }
 
 function setStatus(kind, key, vars = {}, directMessage = "") {
@@ -471,6 +534,8 @@ function resetForm() {
   nodes.worldInput.value = "";
   nodes.packsInput.value = "";
   nodes.packsFolderInput.value = "";
+  nodes.behaviorFolderInput.value = "";
+  nodes.resourceFolderInput.value = "";
   nodes.cleanExistingPacks.checked = true;
   nodes.regeneratePackUuids.checked = true;
   clearLog();
@@ -835,6 +900,18 @@ async function extractFromFolderSelection(selection, sourceId) {
     throw new Error(t("error.invalidPackAbort", {
       detail: t("error.packFolderNoValidPacks", { folder: selection.label })
     }));
+  }
+
+  if (selection.expectedType) {
+    const wrongType = parsedManifests.find(({ packType }) => packType !== selection.expectedType);
+    if (wrongType) {
+      throw new Error(t("error.invalidPackAbort", {
+        detail: t("error.packFolderWrongType", {
+          folder: selection.label,
+          expected: t(selection.expectedType === "behavior" ? "packType.behavior" : "packType.resource")
+        })
+      }));
+    }
   }
 
   const packs = [];
@@ -1468,7 +1545,7 @@ function mergePackFiles(existingFiles, newFiles) {
   return merged;
 }
 
-function mergePackFolderSelection(existingSelections, files) {
+function mergePackFolderSelection(existingSelections, files, expectedType = null) {
   const records = files.map((file) => ({
     path: normalizePackPath(file.webkitRelativePath || file.name),
     size: file.size,
@@ -1478,10 +1555,13 @@ function mergePackFolderSelection(existingSelections, files) {
   const totalSize = records.reduce((sum, record) => sum + record.size, 0);
   const latestChange = records.reduce((latest, record) => Math.max(latest, record.lastModified), 0);
   const id = `${label}:${records.length}:${totalSize}:${latestChange}:${records[0]?.path || ""}:${records.at(-1)?.path || ""}`;
-  if (existingSelections.some((selection) => selection.id === id)) {
-    return existingSelections;
-  }
-  return [...existingSelections, { id, label, files }];
+  const remaining = existingSelections.filter((selection) => {
+    if (selection.id === id) {
+      return false;
+    }
+    return !expectedType || selection.expectedType !== expectedType;
+  });
+  return [...remaining, { id, label, files, expectedType }];
 }
 
 function fileFingerprint(file) {

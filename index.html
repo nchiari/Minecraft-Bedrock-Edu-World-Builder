@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260903-1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260919-1">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -96,13 +96,40 @@
 
       <div class="field">
         <label for="packs-folder-input" data-i18n="upload.packFoldersLabel"></label>
-        <div class="file-picker">
-          <input id="packs-folder-input" class="file-native" type="file" webkitdirectory multiple>
-          <button id="packs-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.choosePackFolder"></button>
-          <span id="packs-folder-picker-text" class="file-picker-text" data-i18n="upload.noPackFoldersChosen"></span>
+        <div class="pack-folder-choices">
+          <div class="pack-folder-choice">
+            <span class="pack-folder-choice-label" data-i18n="upload.combinedPackFolderLabel"></span>
+            <div class="file-picker">
+              <input id="packs-folder-input" class="file-native" type="file" webkitdirectory multiple>
+              <button id="packs-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.choosePackFolder"></button>
+              <span id="packs-folder-picker-text" class="file-picker-text" data-i18n="upload.noPackFoldersChosen"></span>
+            </div>
+            <p id="packs-folder-info" class="field-file" hidden></p>
+          </div>
+
+          <div class="pack-folder-separator" data-i18n="upload.separatePackFoldersLabel"></div>
+
+          <div class="pack-folder-choice">
+            <label class="pack-folder-choice-label" for="behavior-folder-input" data-i18n="upload.behaviorFolderLabel"></label>
+            <div class="file-picker">
+              <input id="behavior-folder-input" class="file-native" type="file" webkitdirectory multiple>
+              <button id="behavior-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseBehaviorFolder"></button>
+              <span id="behavior-folder-picker-text" class="file-picker-text" data-i18n="upload.noBehaviorFolderChosen"></span>
+            </div>
+            <p id="behavior-folder-info" class="field-file" hidden></p>
+          </div>
+
+          <div class="pack-folder-choice">
+            <label class="pack-folder-choice-label" for="resource-folder-input" data-i18n="upload.resourceFolderLabel"></label>
+            <div class="file-picker">
+              <input id="resource-folder-input" class="file-native" type="file" webkitdirectory multiple>
+              <button id="resource-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseResourceFolder"></button>
+              <span id="resource-folder-picker-text" class="file-picker-text" data-i18n="upload.noResourceFolderChosen"></span>
+            </div>
+            <p id="resource-folder-info" class="field-file" hidden></p>
+          </div>
         </div>
         <p class="field-help" data-i18n="upload.packFoldersHelp"></p>
-        <p id="packs-folder-info" class="field-file" hidden></p>
       </div>
 
       <div class="limits-box">
@@ -306,6 +333,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20260903-1"></script>
+  <script type="module" src="assets/js/app.js?v=20260919-1"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ This browser-based app provides four tools for Minecraft Bedrock and Education:
 ## Add Packs to a World
 
 - Takes one base `.mcworld` file
-- Takes one or more `.mcpack` / `.mcaddon` files, pack folders, or a folder containing multiple packs
+- Takes one or more `.mcpack` / `.mcaddon` files, pack folders, or a folder containing multiple packs. Behavior Pack and Resource Pack folders can also be selected separately.
 - Merges valid packs into the world
 - Generates new header and module UUIDs for all packs in the resulting world by default, including retained packs, and updates matching pack dependencies and world references. Uncheck **Generate new pack UUIDs** to keep the existing UUID behavior. Script module dependencies, external pack dependencies, and versions remain unchanged when generating UUIDs.
 - Generates a new downloadable file: `*_compiled.mcworld`
@@ -20,7 +20,7 @@ This browser-based app provides four tools for Minecraft Bedrock and Education:
 ## How to Use
 
 1. Choose your `.mcworld` file.
-2. Choose your `.mcpack` / `.mcaddon` files, pack folders, or both.
+2. Choose your `.mcpack` / `.mcaddon` files, a general pack folder, separate BP/RP folders, or any combination of them.
 3. Click **Create .mcworld**.
 4. When processing finishes, click **Download .mcworld**.
 

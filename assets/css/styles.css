@@ -498,6 +498,38 @@ body {
   display: none;
 }
 
+.pack-folder-choices {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.pack-folder-choice-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.pack-folder-separator {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pack-folder-separator::before,
+.pack-folder-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-soft);
+}
+
 .limits-box {
   margin-top: 1rem;
   border-radius: var(--radius-md);
