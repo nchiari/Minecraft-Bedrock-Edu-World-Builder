@@ -530,6 +530,10 @@ body {
   background: var(--line-soft);
 }
 
+.upload-section-separator {
+  margin: 1.1rem 0 0.9rem;
+}
+
 .limits-box {
   margin-top: 1rem;
   border-radius: var(--radius-md);
