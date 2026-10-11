@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261011-1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261011-2">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -72,61 +72,65 @@
       <h2 id="compiler-title" data-i18n="compiler.title"></h2>
       <p class="tool-intro" data-i18n="compiler.intro"></p>
 
-      <div class="field">
-        <label for="world-input" data-i18n="upload.worldLabel"></label>
-        <div class="file-picker">
-          <input id="world-input" class="file-native" type="file" accept=".mcworld,application/octet-stream">
-          <button id="world-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseWorld"></button>
-          <span id="world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
-          <button id="world-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeWorld" hidden>×</button>
-        </div>
-        <p class="field-help" data-i18n="upload.worldHelp"></p>
-        <p id="world-file-info" class="field-file" hidden></p>
-      </div>
-
-      <div class="pack-folder-separator upload-section-separator" data-i18n="upload.packsSectionLabel"></div>
-
-      <div class="field">
-        <label for="packs-input" data-i18n="upload.packsLabel"></label>
-        <div class="file-picker">
-          <input id="packs-input" class="file-native" type="file" multiple accept=".mcpack,.mcaddon,application/octet-stream">
-          <button id="packs-picker-btn" type="button" class="btn btn-file" data-i18n="upload.choosePacks"></button>
-          <span id="packs-picker-text" class="file-picker-text" data-i18n="upload.noPacksChosen"></span>
-        </div>
-        <p class="field-help" data-i18n="upload.packsHelp"></p>
-        <p id="packs-file-info" class="field-file" hidden></p>
-        <ul id="packs-file-list" class="attached-files" aria-live="polite" hidden></ul>
-      </div>
-
-      <div class="pack-folder-separator upload-section-separator" data-i18n="upload.packFoldersSeparatorLabel"></div>
-
-      <div class="field">
-        <p class="pack-folder-choice-label" data-i18n="upload.packFoldersLabel"></p>
-        <div class="pack-folder-choices">
-          <div class="pack-folder-choice">
-            <label class="pack-folder-choice-label" for="behavior-folder-input" data-i18n="upload.behaviorFolderLabel"></label>
-            <div class="file-picker">
-              <input id="behavior-folder-input" class="file-native" type="file" webkitdirectory multiple>
-              <button id="behavior-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseBehaviorFolder"></button>
-              <span id="behavior-folder-picker-text" class="file-picker-text" data-i18n="upload.noBehaviorFolderChosen"></span>
-              <button id="behavior-folder-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeBehaviorFolder" hidden>×</button>
-            </div>
-            <p id="behavior-folder-info" class="field-file" hidden></p>
+      <section class="upload-group" aria-labelledby="world-upload-title">
+        <h3 id="world-upload-title" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="upload.worldSectionLabel"></span></h3>
+        <div class="field">
+          <label for="world-input" data-i18n="upload.worldLabel"></label>
+          <div class="file-picker">
+            <input id="world-input" class="file-native" type="file" accept=".mcworld,application/octet-stream">
+            <button id="world-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseWorld"></button>
+            <span id="world-picker-text" class="file-picker-text" data-i18n="upload.noWorldChosen"></span>
+            <button id="world-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeWorld" hidden>×</button>
           </div>
-
-          <div class="pack-folder-choice">
-            <label class="pack-folder-choice-label" for="resource-folder-input" data-i18n="upload.resourceFolderLabel"></label>
-            <div class="file-picker">
-              <input id="resource-folder-input" class="file-native" type="file" webkitdirectory multiple>
-              <button id="resource-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseResourceFolder"></button>
-              <span id="resource-folder-picker-text" class="file-picker-text" data-i18n="upload.noResourceFolderChosen"></span>
-              <button id="resource-folder-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeResourceFolder" hidden>×</button>
-            </div>
-            <p id="resource-folder-info" class="field-file" hidden></p>
-          </div>
+          <p class="field-help" data-i18n="upload.worldHelp"></p>
+          <p id="world-file-info" class="field-file" hidden></p>
         </div>
-        <p class="field-help" data-i18n="upload.packFoldersHelp"></p>
-      </div>
+      </section>
+
+      <section class="upload-group" aria-labelledby="packs-upload-title">
+        <h3 id="packs-upload-title" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="upload.packsSectionLabel"></span></h3>
+        <div class="field">
+          <label for="packs-input" data-i18n="upload.packsLabel"></label>
+          <div class="file-picker">
+            <input id="packs-input" class="file-native" type="file" multiple accept=".mcpack,.mcaddon,application/octet-stream">
+            <button id="packs-picker-btn" type="button" class="btn btn-file" data-i18n="upload.choosePacks"></button>
+            <span id="packs-picker-text" class="file-picker-text" data-i18n="upload.noPacksChosen"></span>
+          </div>
+          <p class="field-help" data-i18n="upload.packsHelp"></p>
+          <p id="packs-file-info" class="field-file" hidden></p>
+          <ul id="packs-file-list" class="attached-files" aria-live="polite" hidden></ul>
+        </div>
+
+        <div class="pack-folder-separator upload-section-separator" data-i18n="upload.packFoldersSeparatorLabel"></div>
+
+        <div class="field">
+          <p class="pack-folder-choice-label" data-i18n="upload.packFoldersLabel"></p>
+          <div class="pack-folder-choices">
+            <div class="pack-folder-choice">
+              <label class="pack-folder-choice-label" for="behavior-folder-input" data-i18n="upload.behaviorFolderLabel"></label>
+              <div class="file-picker">
+                <input id="behavior-folder-input" class="file-native" type="file" webkitdirectory multiple>
+                <button id="behavior-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseBehaviorFolder"></button>
+                <span id="behavior-folder-picker-text" class="file-picker-text" data-i18n="upload.noBehaviorFolderChosen"></span>
+                <button id="behavior-folder-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeBehaviorFolder" hidden>×</button>
+              </div>
+              <p id="behavior-folder-info" class="field-file" hidden></p>
+            </div>
+
+            <div class="pack-folder-choice">
+              <label class="pack-folder-choice-label" for="resource-folder-input" data-i18n="upload.resourceFolderLabel"></label>
+              <div class="file-picker">
+                <input id="resource-folder-input" class="file-native" type="file" webkitdirectory multiple>
+                <button id="resource-folder-picker-btn" type="button" class="btn btn-file" data-i18n="upload.chooseResourceFolder"></button>
+                <span id="resource-folder-picker-text" class="file-picker-text" data-i18n="upload.noResourceFolderChosen"></span>
+                <button id="resource-folder-remove-btn" type="button" class="file-remove" data-i18n-aria-label="upload.removeResourceFolder" hidden>×</button>
+              </div>
+              <p id="resource-folder-info" class="field-file" hidden></p>
+            </div>
+          </div>
+          <p class="field-help" data-i18n="upload.packFoldersHelp"></p>
+        </div>
+      </section>
 
       <div class="limits-box">
         <h3 data-i18n="limits.title"></h3>
@@ -329,6 +333,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20261011-1"></script>
+  <script type="module" src="assets/js/app.js?v=20261011-2"></script>
 </body>
 </html>
