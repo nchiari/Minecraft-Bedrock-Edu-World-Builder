@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js?v=20260919-2";
+import { I18N } from "./i18n.js?v=20261011-1";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
 import { initExperimentsTool } from "./experiments.js";
@@ -26,24 +26,21 @@ const state = {
 const nodes = {
   worldInput: document.getElementById("world-input"),
   packsInput: document.getElementById("packs-input"),
-  packsFolderInput: document.getElementById("packs-folder-input"),
   behaviorFolderInput: document.getElementById("behavior-folder-input"),
   resourceFolderInput: document.getElementById("resource-folder-input"),
   worldPickerBtn: document.getElementById("world-picker-btn"),
   packsPickerBtn: document.getElementById("packs-picker-btn"),
-  packsFolderPickerBtn: document.getElementById("packs-folder-picker-btn"),
   behaviorFolderPickerBtn: document.getElementById("behavior-folder-picker-btn"),
   resourceFolderPickerBtn: document.getElementById("resource-folder-picker-btn"),
   worldPickerText: document.getElementById("world-picker-text"),
   packsPickerText: document.getElementById("packs-picker-text"),
-  packsFolderPickerText: document.getElementById("packs-folder-picker-text"),
   behaviorFolderPickerText: document.getElementById("behavior-folder-picker-text"),
   resourceFolderPickerText: document.getElementById("resource-folder-picker-text"),
   cleanExistingPacks: document.getElementById("clean-existing-packs"),
   regeneratePackUuids: document.getElementById("regenerate-pack-uuids"),
   worldInfo: document.getElementById("world-file-info"),
   packsInfo: document.getElementById("packs-file-info"),
-  packsFolderInfo: document.getElementById("packs-folder-info"),
+  packsList: document.getElementById("packs-file-list"),
   behaviorFolderInfo: document.getElementById("behavior-folder-info"),
   resourceFolderInfo: document.getElementById("resource-folder-info"),
   limitsCopy: document.getElementById("limits-copy"),
@@ -138,22 +135,6 @@ function bindEvents() {
     updateStatusForInputs();
   });
 
-  nodes.packsFolderPickerBtn.addEventListener("click", () => {
-    nodes.packsFolderInput.click();
-  });
-
-  nodes.packsFolderInput.addEventListener("change", () => {
-    const files = nodes.packsFolderInput.files ? Array.from(nodes.packsFolderInput.files) : [];
-    if (files.length > 0) {
-      state.packFolderSelections = mergePackFolderSelection(state.packFolderSelections, files);
-    }
-    nodes.packsFolderInput.value = "";
-    clearGeneratedOutput();
-    refreshSelectedFiles();
-    updateActionState();
-    updateStatusForInputs();
-  });
-
   nodes.cleanExistingPacks.addEventListener("change", () => {
     state.cleanExistingPacks = nodes.cleanExistingPacks.checked;
     clearGeneratedOutput();
@@ -166,6 +147,16 @@ function bindEvents() {
     updateStatusForInputs();
   });
 
+  bindRemoveButton("world-remove-btn", () => {
+    state.worldFile = null;
+    nodes.worldInput.value = "";
+  }, nodes.worldPickerBtn);
+  for (const type of ["behavior", "resource"]) {
+    bindRemoveButton(`${type}-folder-remove-btn`, () => {
+      state.packFolderSelections = state.packFolderSelections.filter((item) => item.expectedType !== type);
+      (type === "behavior" ? nodes.behaviorFolderInput : nodes.resourceFolderInput).value = "";
+    }, type === "behavior" ? nodes.behaviorFolderPickerBtn : nodes.resourceFolderPickerBtn);
+  }
   bindTypedFolderPicker("behavior");
   bindTypedFolderPicker("resource");
 
@@ -344,9 +335,6 @@ function applyI18n() {
   if (state.packFiles.length === 0) {
     nodes.packsPickerText.textContent = t("upload.noPacksChosen");
   }
-  if (state.packFolderSelections.length === 0) {
-    nodes.packsFolderPickerText.textContent = t("upload.noPackFoldersChosen");
-  }
   if (!getTypedFolderSelection("behavior")) {
     nodes.behaviorFolderPickerText.textContent = t("upload.noBehaviorFolderChosen");
   }
@@ -382,7 +370,46 @@ function bindTypedFolderPicker(type) {
   });
 }
 
+function bindRemoveButton(id, remove, focusTarget) {
+  document.getElementById(id).addEventListener("click", () => {
+    if (state.busy) return;
+    remove();
+    clearGeneratedOutput();
+    refreshSelectedFiles();
+    updateActionState();
+    updateStatusForInputs();
+    focusTarget.focus();
+  });
+}
+
 function refreshSelectedFiles() {
+  document.getElementById("world-remove-btn").hidden = !state.worldFile;
+  nodes.packsPickerBtn.textContent = t(state.packFiles.length ? "upload.addMorePacks" : "upload.choosePacks");
+  nodes.packsList.replaceChildren();
+  for (const file of state.packFiles) {
+    const row = document.createElement("li");
+    row.className = "attached-file";
+    const name = document.createElement("span");
+    name.textContent = `${file.name} · ${formatBytes(file.size)}`;
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "file-remove";
+    remove.textContent = "×";
+    remove.setAttribute("aria-label", t("upload.removePack", { name: file.name }));
+    row.append(name, remove);
+    nodes.packsList.append(row);
+    remove.disabled = state.busy;
+    remove.addEventListener("click", () => {
+      if (state.busy) return;
+      state.packFiles = state.packFiles.filter((item) => item !== file);
+      clearGeneratedOutput();
+      refreshSelectedFiles();
+      updateActionState();
+      updateStatusForInputs();
+      nodes.packsPickerBtn.focus();
+    });
+  }
+  nodes.packsList.hidden = state.packFiles.length === 0;
   if (state.worldFile) {
     nodes.worldInfo.hidden = false;
     nodes.worldPickerText.textContent = state.worldFile.name;
@@ -412,31 +439,6 @@ function refreshSelectedFiles() {
     nodes.packsInfo.hidden = true;
   }
 
-  const generalFolderSelections = state.packFolderSelections.filter((selection) => !selection.expectedType);
-  if (generalFolderSelections.length > 0) {
-    nodes.packsFolderInfo.hidden = false;
-    const folderCount = generalFolderSelections.length;
-    const fileCount = generalFolderSelections.reduce((sum, selection) => sum + selection.files.length, 0);
-    const total = generalFolderSelections.reduce(
-      (sum, selection) => sum + selection.files.reduce((fileSum, file) => fileSum + file.size, 0),
-      0
-    );
-    nodes.packsFolderPickerText.textContent = t(
-      folderCount === 1 ? "upload.packFolderChosenInline" : "upload.packFoldersChosenInline",
-      { count: folderCount }
-    );
-    const folderStatusKey = folderCount === 1 ? "status.packFolderSelected" : "status.packFoldersSelected";
-    nodes.packsFolderInfo.textContent = t(folderStatusKey, {
-      folders: folderCount,
-      files: fileCount,
-      size: formatBytes(total)
-    });
-  } else {
-    nodes.packsFolderPickerText.textContent = t("upload.noPackFoldersChosen");
-    nodes.packsFolderInfo.textContent = "";
-    nodes.packsFolderInfo.hidden = true;
-  }
-
   refreshTypedFolderSelection("behavior");
   refreshTypedFolderSelection("resource");
 }
@@ -447,6 +449,7 @@ function getTypedFolderSelection(type) {
 
 function refreshTypedFolderSelection(type) {
   const selection = getTypedFolderSelection(type);
+  document.getElementById(`${type}-folder-remove-btn`).hidden = !selection;
   const pickerText = type === "behavior" ? nodes.behaviorFolderPickerText : nodes.resourceFolderPickerText;
   const info = type === "behavior" ? nodes.behaviorFolderInfo : nodes.resourceFolderInfo;
   if (!selection) {
@@ -467,13 +470,15 @@ function refreshTypedFolderSelection(type) {
 function updateActionState() {
   const hasPackSources = state.packFiles.length > 0 || state.packFolderSelections.length > 0;
   const hasInputs = Boolean(state.worldFile) && hasPackSources;
+  for (const button of nodes.compilerWorkspace.querySelectorAll(".file-remove")) {
+    button.disabled = state.busy;
+  }
   nodes.compileBtn.disabled = state.busy || !hasInputs;
   nodes.resetBtn.disabled = state.busy;
   nodes.cleanExistingPacks.disabled = state.busy;
   nodes.regeneratePackUuids.disabled = state.busy;
   nodes.worldPickerBtn.disabled = state.busy;
   nodes.packsPickerBtn.disabled = state.busy;
-  nodes.packsFolderPickerBtn.disabled = state.busy;
   nodes.behaviorFolderPickerBtn.disabled = state.busy;
   nodes.resourceFolderPickerBtn.disabled = state.busy;
 }
@@ -524,24 +529,27 @@ function updateProgressLog(percent) {
   item.textContent = t("log.progress", { percent });
 }
 
-function resetForm() {
+function clearUploadedInputs() {
   state.worldFile = null;
   state.packFiles = [];
   state.packFolderSelections = [];
   state.cleanExistingPacks = true;
   state.regeneratePackUuids = true;
-  clearGeneratedOutput();
   nodes.worldInput.value = "";
   nodes.packsInput.value = "";
-  nodes.packsFolderInput.value = "";
   nodes.behaviorFolderInput.value = "";
   nodes.resourceFolderInput.value = "";
   nodes.cleanExistingPacks.checked = true;
   nodes.regeneratePackUuids.checked = true;
-  clearLog();
-  setStatus("idle", "status.idle");
   refreshSelectedFiles();
   updateActionState();
+}
+
+function resetForm() {
+  clearUploadedInputs();
+  clearGeneratedOutput();
+  clearLog();
+  setStatus("idle", "status.idle");
 }
 
 async function compileWorld() {
@@ -555,6 +563,7 @@ async function compileWorld() {
     clearGeneratedOutput();
     clearLog();
     setStatus("processing", "status.processing");
+    nodes.statusSummary.scrollIntoView({ block: "start" });
     appendLog(t("log.start"));
     validateInputs();
 
@@ -622,12 +631,15 @@ async function compileWorld() {
       throw new Error(t("error.emptyGeneratedWorld"));
     }
 
+    clearUploadedInputs();
     state.generatedBlob = blob;
     state.generatedName = outputName;
     nodes.downloadNote.textContent = t("status.downloadReady");
     nodes.downloadBox.hidden = false;
     appendLog(t("log.finished", { name: outputName }), "ok");
     setStatus("success", "success.simple");
+    nodes.downloadBox.scrollIntoView({ block: "start" });
+    nodes.downloadBtn.focus({ preventScroll: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     setStatus("error", "", {}, message);

@@ -1129,3 +1129,23 @@ label.inspector-issue-control {
     transform: translateY(-10px) rotate(calc(var(--shape-rot) + 2deg));
   }
 }
+
+/* Compiler attachments stay individually removable by keyboard and pointer. */
+.file-remove {
+  flex: 0 0 auto;
+  margin-left: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #b42318;
+  border-radius: 8px;
+  background: #fff1f0;
+  color: #b42318;
+  font: 700 1.5rem/1 sans-serif;
+  cursor: pointer;
+}
+.file-remove[hidden], .attached-files[hidden] { display: none; }
+.file-remove:disabled { opacity: 0.5; cursor: wait; }
+.file-remove:focus-visible { outline: 3px solid var(--accent-main); outline-offset: 2px; }
+.attached-files { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+.attached-file { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.4rem; }
+.attached-file span { min-width: 0; overflow-wrap: anywhere; }
