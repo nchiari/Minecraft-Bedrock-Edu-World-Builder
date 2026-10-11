@@ -938,6 +938,11 @@ body {
   font-size: 0.93rem;
 }
 
+.modal-note-warning {
+  color: #ffd487;
+  font-weight: 600;
+}
+
 .footer a {
   color: var(--accent-main-strong);
   text-decoration: none;

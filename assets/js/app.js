@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js?v=20261011-2";
+import { I18N } from "./i18n.js?v=20261011-4";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
 import { initExperimentsTool } from "./experiments.js";
@@ -284,6 +284,8 @@ function applyActiveTool() {
     step.textContent = t(`${helpPrefix}.step${index + 1}`);
   });
   nodes.howtoNote.textContent = t(`${helpPrefix}.note`);
+  nodes.howtoNote.classList.toggle("experiments-warning", showExperiments);
+  nodes.howtoNote.classList.toggle("modal-note-warning", showExperiments);
 
   for (const button of nodes.toolButtons) {
     const isActive = button.dataset.tool === state.activeTool;
