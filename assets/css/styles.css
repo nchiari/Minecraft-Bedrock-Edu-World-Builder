@@ -153,12 +153,14 @@ body {
 
 .tool-selector {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: var(--workspace-gap);
   margin-bottom: 1rem;
 }
 
 .tool-choice {
+  grid-column: span 2;
   min-width: 0;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -174,6 +176,14 @@ body {
   cursor: pointer;
   transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
   min-height: 4.35rem;
+}
+
+.tool-choice:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.tool-choice:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .tool-choice:hover {
@@ -1122,12 +1132,27 @@ label.inspector-issue-control {
   font-size: 0.86rem;
 }
 
+@media (min-width: 681px) and (max-width: 920px) {
+  .tool-selector {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .tool-selector .tool-choice {
+    grid-column: span 2;
+  }
+
+  .tool-selector .tool-choice:last-child {
+    grid-column: 2 / span 2;
+  }
+}
+
 @media (max-width: 680px) {
   .tool-selector {
     grid-template-columns: 1fr;
   }
 
-  .tool-choice {
+  .tool-selector .tool-choice {
+    grid-column: auto;
     grid-template-columns: auto minmax(0, 1fr);
   }
 
