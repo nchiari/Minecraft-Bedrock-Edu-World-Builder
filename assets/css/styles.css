@@ -297,7 +297,7 @@ body {
   margin-top: 1.2rem;
 }
 
-.template-localization-heading h3 {
+.template-localization-heading h4 {
   margin: 0;
   font-size: 1rem;
 }
@@ -450,11 +450,20 @@ body {
   background: rgba(84, 100, 255, 0.06);
 }
 
-.upload-group + .upload-group {
+.upload-group + .upload-group,
+.upload-group-secondary {
   margin-top: 1.5rem;
   border-color: rgba(105, 212, 164, 0.4);
   border-left-color: var(--ok);
   background: rgba(105, 212, 164, 0.04);
+}
+
+.panel-status > .upload-group {
+  margin-top: 0;
+}
+
+.upload-group > .option-box {
+  margin-top: 0;
 }
 
 .upload-group-title {
@@ -478,7 +487,8 @@ body {
   font-weight: 700;
 }
 
-.upload-group + .upload-group .upload-step {
+.upload-group + .upload-group .upload-step,
+.upload-group-secondary .upload-step {
   background: var(--ok);
 }
 

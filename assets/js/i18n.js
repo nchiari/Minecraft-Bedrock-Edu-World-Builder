@@ -1,5 +1,11 @@
 export const I18N = {
   es: {
+    "steps.mergeFiles": "Packs para combinar",
+    "steps.chooseWorld": "Seleccionar mundo",
+
+    "steps.mergeOptions": "Opciones de combinación",
+    "steps.templateDetails": "Información de la plantilla",
+
     "tools.mergerTitle": "Combinar add-ons",
     "tools.mergerDescription": "Reúne varios packs en un solo .mcaddon.",
     "merger.intro": "Combina archivos .mcpack y .mcaddon en una descarga. Cada pack conserva su contenido y se importa por separado en Minecraft.",
@@ -348,6 +354,12 @@ export const I18N = {
     "footer.feedback": "Enviar feedback"
   },
   en: {
+    "steps.mergeFiles": "Packs to merge",
+    "steps.chooseWorld": "Choose a world",
+
+    "steps.mergeOptions": "Merge options",
+    "steps.templateDetails": "Template details",
+
     "tools.mergerTitle": "Merge add-ons",
     "tools.mergerDescription": "Bundle several packs into one .mcaddon.",
     "merger.intro": "Combine .mcpack and .mcaddon files into one download. Each pack keeps its contents and is imported separately in Minecraft.",

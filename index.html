@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261020-2">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261020-3">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -79,6 +79,8 @@
         <section class="panel tool-form-panel" aria-labelledby="merger-title">
           <h2 id="merger-title" data-i18n="tools.mergerTitle"></h2>
           <p class="tool-intro" data-i18n="merger.intro"></p>
+          <section class="upload-group" aria-labelledby="merger-input-step">
+            <h3 id="merger-input-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="steps.mergeFiles"></span></h3>
           <div class="field">
             <label for="merger-input" data-i18n="upload.packsLabel"></label>
             <div class="file-picker">
@@ -89,12 +91,16 @@
             <p class="field-help" data-i18n="merger.help"></p>
             <ul id="merger-list" class="attached-files" aria-live="polite" hidden></ul>
           </div>
+          </section>
+          <section class="upload-group upload-group-secondary" aria-labelledby="merger-options-step">
+            <h3 id="merger-options-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="steps.mergeOptions"></span></h3>
           <div class="option-box">
             <label class="check-option" for="merger-regenerate">
               <input id="merger-regenerate" type="checkbox" checked>
               <span><strong data-i18n="merger.regenerate"></strong><small data-i18n="merger.regenerateHelp"></small></span>
             </label>
           </div>
+          </section>
           <div class="actions">
             <button id="merger-create" type="button" class="btn btn-primary" data-i18n="merger.create" disabled></button>
             <button id="merger-reset" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
@@ -223,6 +229,8 @@
           <h2 id="template-title" data-i18n="template.title"></h2>
           <p class="tool-intro" data-i18n="template.intro"></p>
 
+          <section class="upload-group" aria-labelledby="template-input-step">
+            <h3 id="template-input-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="steps.chooseWorld"></span></h3>
           <div class="field template-world-field">
             <label for="template-world-input" data-i18n="template.worldLabel"></label>
             <div class="file-picker">
@@ -233,8 +241,10 @@
             <p class="field-help" data-i18n="template.worldHelp"></p>
             <p id="template-world-info" class="field-file" hidden></p>
           </div>
+          </section>
 
-          <div id="template-metadata" hidden>
+          <section id="template-metadata" class="upload-group upload-group-secondary" aria-labelledby="template-metadata-step" hidden>
+            <h3 id="template-metadata-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="steps.templateDetails"></span></h3>
             <div class="field">
               <label for="template-authors" data-i18n="template.authorsLabel"></label>
               <input id="template-authors" class="text-input" type="text" autocomplete="off" data-i18n-placeholder="template.authorsPlaceholder">
@@ -242,7 +252,7 @@
             </div>
 
             <div class="template-localization-heading">
-              <h3 data-i18n="template.localizationTitle"></h3>
+              <h4 class="pack-folder-separator upload-section-separator" data-i18n="template.localizationTitle"></h4>
               <p data-i18n="template.localizationHelp"></p>
             </div>
             <div id="template-language-fields" class="template-language-list"></div>
@@ -251,7 +261,7 @@
               <button id="template-create-btn" type="button" class="btn btn-primary" data-i18n="template.create" disabled></button>
               <button id="template-reset-btn" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
             </div>
-          </div>
+          </section>
         </section>
 
         <section class="panel template-analysis-panel panel-status" aria-labelledby="template-analysis-title">
@@ -272,6 +282,8 @@
           <h2 id="inspector-title" data-i18n="inspector.title"></h2>
           <p class="tool-intro" data-i18n="inspector.intro"></p>
 
+          <section class="upload-group" aria-labelledby="inspector-input-step">
+            <h3 id="inspector-input-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="steps.chooseWorld"></span></h3>
           <div class="field">
             <label for="inspector-world-input" data-i18n="inspector.worldLabel"></label>
             <div class="file-picker">
@@ -282,6 +294,7 @@
             <p class="field-help" data-i18n="inspector.worldHelp"></p>
             <p id="inspector-world-info" class="field-file" hidden></p>
           </div>
+          </section>
 
           <div class="inspector-explainer">
             <h3 data-i18n="inspector.explainerTitle"></h3>
@@ -295,7 +308,8 @@
         </section>
 
         <section class="panel panel-status inspector-results-panel" aria-labelledby="inspector-results-title">
-          <h2 id="inspector-results-title" data-i18n="inspector.resultsTitle"></h2>
+          <section class="upload-group upload-group-secondary" aria-labelledby="inspector-results-title">
+            <h2 id="inspector-results-title" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="inspector.resultsTitle"></span></h2>
           <p id="inspector-status-summary" class="status-summary" role="status" aria-live="polite"></p>
           <div id="inspector-download-box" class="download-box" hidden>
             <p class="download-note" data-i18n="inspector.downloadReady"></p>
@@ -303,6 +317,7 @@
           </div>
           <div id="inspector-overview" class="inspector-overview" hidden></div>
           <div id="inspector-results" class="inspector-results" hidden></div>
+          </section>
         </section>
       </div>
     </section>
@@ -313,6 +328,8 @@
           <h2 id="experiments-title" data-i18n="experiments.title"></h2>
           <p class="tool-intro" data-i18n="experiments.intro"></p>
 
+          <section class="upload-group" aria-labelledby="experiments-input-step">
+            <h3 id="experiments-input-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="steps.chooseWorld"></span></h3>
           <div class="field">
             <label for="experiments-world-input" data-i18n="experiments.worldLabel"></label>
             <div class="file-picker">
@@ -323,6 +340,7 @@
             <p class="field-help" data-i18n="experiments.worldHelp"></p>
             <p id="experiments-world-info" class="field-file" hidden></p>
           </div>
+          </section>
 
           <div class="experiments-warning">
             <h3 data-i18n="experiments.warningTitle"></h3>
@@ -336,7 +354,8 @@
         </section>
 
         <section class="panel panel-status experiments-results-panel" aria-labelledby="experiments-results-title">
-          <h2 id="experiments-results-title" data-i18n="experiments.resultsTitle"></h2>
+          <section class="upload-group upload-group-secondary" aria-labelledby="experiments-results-title">
+            <h2 id="experiments-results-title" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="experiments.resultsTitle"></span></h2>
           <p id="experiments-status-summary" class="status-summary" role="status" aria-live="polite"></p>
           <div id="experiments-download-box" class="download-box" hidden>
             <p class="download-note" data-i18n="experiments.downloadReady"></p>
@@ -344,6 +363,7 @@
           </div>
           <div id="experiments-summary" class="experiments-summary" hidden></div>
           <div id="experiments-list" class="experiments-list" hidden></div>
+          </section>
         </section>
       </div>
     </section>
@@ -378,6 +398,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20261020-2"></script>
+  <script type="module" src="assets/js/app.js?v=20261020-3"></script>
 </body>
 </html>
