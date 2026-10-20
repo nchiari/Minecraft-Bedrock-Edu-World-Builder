@@ -1,6 +1,7 @@
-import { I18N } from "./i18n.js?v=20261011-4";
+import { I18N } from "./i18n.js?v=20261020-1";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
+import { initMergerTool } from "./merger.js?v=20261020-1";
 import { initExperimentsTool } from "./experiments.js";
 
 const MB = 1024 * 1024;
@@ -75,6 +76,7 @@ const nodes = {
 let templateTool = null;
 let inspectorTool = null;
 let experimentsTool = null;
+let mergerTool = null;
 let lastFocusedBeforeModal = null;
 
 init();
@@ -101,6 +103,7 @@ function init() {
     formatBytes,
     maxWorldBytes: LIMITS.maxWorldBytes
   });
+  mergerTool = initMergerTool({ t, formatBytes, maxPacksBytes: LIMITS.maxPacksBytes, extractPacks, createUuid: createPackUuid, downloadBlob });
   applyI18n();
   applyActiveTool();
   refreshSelectedFiles();
@@ -209,7 +212,7 @@ function bindEvents() {
 
   for (const button of nodes.toolButtons) {
     button.addEventListener("click", () => {
-      const tool = ["compiler", "template", "inspector", "experiments"].includes(button.dataset.tool)
+      const tool = ["compiler", "template", "inspector", "experiments", "merger"].includes(button.dataset.tool)
         ? button.dataset.tool
         : "compiler";
       selectTool(tool);
@@ -238,6 +241,7 @@ function detectInitialLang() {
 }
 
 function detectInitialTool() {
+  if (window.location.hash === "#addon-merger") return "merger";
   if (window.location.hash === "#template-creator") {
     return "template";
   }
@@ -258,7 +262,7 @@ function selectTool(tool) {
     ? "#template-creator"
     : tool === "inspector"
       ? "#world-inspector"
-      : tool === "experiments" ? "#experiments-editor" : "#pack-compiler";
+      : tool === "experiments" ? "#experiments-editor" : tool === "merger" ? "#addon-merger" : "#pack-compiler";
   if (window.location.hash !== hash) {
     window.history.pushState(null, "", hash);
   }
@@ -268,14 +272,16 @@ function applyActiveTool() {
   const showTemplate = state.activeTool === "template";
   const showInspector = state.activeTool === "inspector";
   const showExperiments = state.activeTool === "experiments";
-  nodes.compilerWorkspace.hidden = showTemplate || showInspector || showExperiments;
+  const showMerger = state.activeTool === "merger";
+  document.getElementById("merger-workspace").hidden = !showMerger;
+  nodes.compilerWorkspace.hidden = showTemplate || showInspector || showExperiments || showMerger;
   nodes.templateWorkspace.hidden = !showTemplate;
   nodes.inspectorWorkspace.hidden = !showInspector;
   nodes.experimentsWorkspace.hidden = !showExperiments;
   nodes.heroSubtitle.textContent = t("app.subtitle");
   const helpPrefix = showTemplate
     ? "templateHelp"
-    : showInspector ? "inspectorHelp" : showExperiments ? "experimentsHelp" : "help";
+    : showMerger ? "mergerHelp" : showInspector ? "inspectorHelp" : showExperiments ? "experimentsHelp" : "help";
   nodes.howtoOpen.hidden = false;
   nodes.howtoOpen.textContent = t(`${helpPrefix}.open`);
   nodes.howtoTitle.textContent = t(`${helpPrefix}.title`);
@@ -353,6 +359,7 @@ function applyI18n() {
   templateTool?.refreshLanguage();
   inspectorTool?.refreshLanguage();
   experimentsTool?.refreshLanguage();
+  mergerTool?.refreshLanguage();
 }
 
 function bindTypedFolderPicker(type) {

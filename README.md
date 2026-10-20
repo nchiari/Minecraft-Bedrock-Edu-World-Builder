@@ -2,12 +2,21 @@
 
 Live app: https://nchiari.github.io/Minecraft-Bedrock-Edu-World-Builder/
 
-This browser-based app provides four tools for Minecraft Bedrock and Education:
+This browser-based app provides five tools for Minecraft Bedrock and Education:
 
 - A tool for adding `.mcpack` / `.mcaddon` files or pack folders to a world and creating a new `.mcworld`.
 - A world template creator that converts a `.mcworld` into a localized `.mctemplate`.
 - A world inspector that finds pack, manifest, reference, dependency, cleanup, and version compatibility issues and can export a repaired `.mcworld`.
 - An experiments editor that reads the Bedrock `level.dat`, enables or disables experiment flags, and exports a new `.mcworld`.
+- An add-on merger that bundles `.mcpack` / `.mcaddon` files into one `.mcaddon`, with optional UUID regeneration enabled by default.
+
+## Merge Add-ons
+
+Open **Merge add-ons** (`#addon-merger`) and add one or more `.mcpack` / `.mcaddon` files, up to 100 MB total. Files can be added repeatedly and removed individually. Create and download `*_merged.mcaddon`, containing separate `.mcpack` archives. Both nested `.mcpack` archives and packs stored directly in `.mcaddon` folders are supported.
+
+**Generate new UUIDs for all packs** is enabled by default. It regenerates every included pack header and module UUID and updates dependencies between included packs. Versions, Script API dependencies, external pack dependencies, and other pack files remain unchanged. Uncheck it to preserve original manifests and UUIDs. Identical duplicate packs are skipped; different contents with the same UUID stop the operation so you can remove the unwanted input. Invalid packs stop the whole operation.
+
+Packs remain independent: bundling does not resolve content conflicts or guarantee that add-ons work together. Import the archive into Minecraft, then activate the packs in your world. Successful creation clears inputs and resets the option while retaining the download and pack summary. Failed attempts retain inputs and any previous download.
 
 ## Add Packs to a World
 

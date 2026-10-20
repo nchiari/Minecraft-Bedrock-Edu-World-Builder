@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261011-4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261020-1">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -63,9 +63,53 @@
         <small data-i18n="tools.experimentsDescription"></small>
       </span>
     </button>
+    <button id="merger-tool-btn" class="tool-choice" type="button" data-tool="merger" aria-controls="merger-workspace" aria-pressed="false">
+      <span class="tool-choice-icon" aria-hidden="true">⊕</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.mergerTitle"></strong>
+        <small data-i18n="tools.mergerDescription"></small>
+      </span>
+    </button>
   </nav>
 
   <main>
+    <section id="merger-workspace" class="tool-workspace" aria-labelledby="merger-tool-btn" hidden>
+      <div class="container layout">
+        <section class="panel tool-form-panel" aria-labelledby="merger-title">
+          <h2 id="merger-title" data-i18n="tools.mergerTitle"></h2>
+          <p class="tool-intro" data-i18n="merger.intro"></p>
+          <div class="field">
+            <label for="merger-input" data-i18n="upload.packsLabel"></label>
+            <div class="file-picker">
+              <input id="merger-input" class="file-native" type="file" multiple accept=".mcpack,.mcaddon">
+              <button id="merger-picker" type="button" class="btn btn-file" data-i18n="upload.choosePacks"></button>
+              <span id="merger-picker-text" class="file-picker-text"></span>
+            </div>
+            <p class="field-help" data-i18n="merger.help"></p>
+            <ul id="merger-list" class="attached-files" aria-live="polite" hidden></ul>
+          </div>
+          <div class="option-box">
+            <label class="check-option" for="merger-regenerate">
+              <input id="merger-regenerate" type="checkbox" checked>
+              <span><strong data-i18n="merger.regenerate"></strong><small data-i18n="merger.regenerateHelp"></small></span>
+            </label>
+          </div>
+          <div class="actions">
+            <button id="merger-create" type="button" class="btn btn-primary" data-i18n="merger.create" disabled></button>
+            <button id="merger-reset" type="button" class="btn btn-ghost" data-i18n="actions.reset"></button>
+          </div>
+        </section>
+        <section class="panel panel-status" aria-labelledby="merger-status-title">
+          <h2 id="merger-status-title" data-i18n="status.title"></h2>
+          <p id="merger-status" class="status-summary" role="status" aria-live="polite"></p>
+          <div id="merger-download-box" class="download-box" hidden>
+            <p class="download-note" data-i18n="merger.downloadReady"></p>
+            <button id="merger-download" type="button" class="btn btn-primary" data-i18n="merger.download"></button>
+          </div>
+          <ul id="merger-results" class="status-log" hidden></ul>
+        </section>
+      </div>
+    </section>
     <section id="compiler-workspace" class="tool-workspace" aria-labelledby="compiler-tool-btn">
       <div class="container layout">
         <section class="panel panel-input tool-form-panel" aria-labelledby="compiler-title">
@@ -333,6 +377,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20261011-4"></script>
+  <script type="module" src="assets/js/app.js?v=20261020-1"></script>
 </body>
 </html>
