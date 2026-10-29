@@ -178,14 +178,6 @@ body {
   min-height: 4.35rem;
 }
 
-.tool-choice:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.tool-choice:nth-child(5) {
-  grid-column: 4 / span 2;
-}
-
 .tool-choice:hover {
   transform: translateY(-1px);
   border-color: rgba(124, 136, 255, 0.55);
@@ -1150,10 +1142,6 @@ label.inspector-issue-control {
   .tool-selector .tool-choice {
     grid-column: span 2;
   }
-
-  .tool-selector .tool-choice:last-child {
-    grid-column: 2 / span 2;
-  }
 }
 
 @media (max-width: 680px) {
@@ -1231,3 +1219,42 @@ label.inspector-issue-control {
 .attached-files { list-style: none; padding: 0; margin: 0.6rem 0 0; }
 .attached-file { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.4rem; }
 .attached-file span { min-width: 0; overflow-wrap: anywhere; }
+
+/* Text generator uses the same numbered groups and controls as the world tools. */
+.texts-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.texts-fields .field {
+  min-width: 0;
+  margin-top: 0;
+}
+
+.texts-fields .text-input {
+  min-width: 0;
+}
+
+.texts-output {
+  font-family: Consolas, monospace;
+  font-weight: 400;
+}
+
+.texts-lang-section {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.texts-lang-section > label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .texts-fields {
+    grid-template-columns: 1fr;
+  }
+}

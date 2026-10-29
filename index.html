@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261020-3">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261029-1">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -71,9 +71,86 @@
         <small data-i18n="tools.experimentsDescription"></small>
       </span>
     </button>
+    <button id="texts-tool-btn" class="tool-choice" type="button" data-tool="texts" aria-controls="texts-workspace" aria-pressed="false">
+      <span class="tool-choice-icon" aria-hidden="true">Aa</span>
+      <span class="tool-choice-copy">
+        <strong data-i18n="tools.textsTitle"></strong>
+        <small data-i18n="tools.textsDescription"></small>
+      </span>
+    </button>
   </nav>
 
   <main>
+    <section id="texts-workspace" class="tool-workspace" aria-labelledby="texts-tool-btn" hidden>
+      <div class="container layout">
+        <section class="panel tool-form-panel" aria-labelledby="texts-title">
+          <h2 id="texts-title" data-i18n="tools.textsTitle"></h2>
+          <p class="tool-intro" data-i18n="texts.intro"></p>
+          <section class="upload-group" aria-labelledby="texts-format-step">
+            <h3 id="texts-format-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">1</span><span data-i18n="texts.formatStep"></span></h3>
+            <div class="texts-fields">
+              <div class="field">
+                <label for="texts-type" data-i18n="texts.typeLabel"></label>
+                <select id="texts-type" class="text-input">
+                  <option value="rawtext" data-i18n="texts.rawtext"></option>
+                  <option value="tellraw" data-i18n="texts.tellraw"></option>
+                  <option value="titleraw" data-i18n="texts.titleraw"></option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="texts-mode" data-i18n="texts.modeLabel"></label>
+                <select id="texts-mode" class="text-input">
+                  <option value="direct" data-i18n="texts.direct"></option>
+                  <option value="localized" data-i18n="texts.localized"></option>
+                </select>
+              </div>
+              <div id="texts-target-field" class="field" hidden>
+                <label for="texts-target" data-i18n="texts.targetLabel"></label>
+                <input id="texts-target" class="text-input" type="text" value="@a" autocomplete="off" spellcheck="false" aria-describedby="texts-target-help">
+                <p id="texts-target-help" class="field-help" data-i18n="texts.targetHelp"></p>
+              </div>
+              <div id="texts-display-field" class="field" hidden>
+                <label for="texts-display" data-i18n="texts.displayLabel"></label>
+                <select id="texts-display" class="text-input">
+                  <option value="title" data-i18n="texts.title"></option>
+                  <option value="subtitle" data-i18n="texts.subtitle"></option>
+                  <option value="actionbar" data-i18n="texts.actionbar"></option>
+                </select>
+              </div>
+            </div>
+          </section>
+          <section class="upload-group upload-group-secondary" aria-labelledby="texts-content-step">
+            <h3 id="texts-content-step" class="upload-group-title"><span class="upload-step" aria-hidden="true">2</span><span data-i18n="texts.contentStep"></span></h3>
+            <div id="texts-key-field" class="field" hidden>
+              <label for="texts-key" data-i18n="texts.keyLabel"></label>
+              <input id="texts-key" class="text-input" type="text" autocomplete="off" spellcheck="false" data-i18n-placeholder="texts.keyPlaceholder" aria-describedby="texts-key-help">
+              <p id="texts-key-help" class="field-help" data-i18n="texts.keyHelp"></p>
+            </div>
+            <div class="field">
+              <label id="texts-text-label" for="texts-text" data-i18n="texts.textLabel"></label>
+              <textarea id="texts-text" class="text-area" rows="6" data-i18n-placeholder="texts.textPlaceholder" aria-describedby="texts-text-help"></textarea>
+              <p id="texts-text-help" class="field-help" data-i18n="texts.textHelp"></p>
+            </div>
+          </section>
+          <div class="actions"><button id="texts-reset" class="btn btn-ghost" type="button" data-i18n="actions.reset"></button></div>
+        </section>
+        <section class="panel panel-status" aria-labelledby="texts-result-title">
+          <h2 id="texts-result-title" data-i18n="texts.resultTitle"></h2>
+          <p id="texts-status" class="status-summary" role="status" aria-live="polite"></p>
+          <div class="field">
+            <label for="texts-output" data-i18n="texts.outputLabel"></label>
+            <textarea id="texts-output" class="text-area texts-output" rows="6" readonly spellcheck="false"></textarea>
+            <div class="actions"><button id="texts-copy" class="btn btn-primary" type="button" data-i18n="texts.copy" disabled></button></div>
+          </div>
+          <div id="texts-lang-section" class="texts-lang-section" hidden>
+            <label for="texts-lang-output" data-i18n="texts.langLabel"></label>
+            <textarea id="texts-lang-output" class="text-area texts-output" rows="4" readonly spellcheck="false" aria-describedby="texts-lang-help"></textarea>
+            <p id="texts-lang-help" class="field-help" data-i18n="texts.langHelp"></p>
+            <div class="actions"><button id="texts-copy-lang" class="btn btn-primary" type="button" data-i18n="texts.copyLang" disabled></button></div>
+          </div>
+        </section>
+      </div>
+    </section>
     <section id="merger-workspace" class="tool-workspace" aria-labelledby="merger-tool-btn" hidden>
       <div class="container layout">
         <section class="panel tool-form-panel" aria-labelledby="merger-title">
@@ -398,6 +475,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20261020-3"></script>
+  <script type="module" src="assets/js/app.js?v=20261029-1"></script>
 </body>
 </html>

@@ -2,13 +2,22 @@
 
 Live app: https://nchiari.github.io/Minecraft-Bedrock-Edu-World-Builder/
 
-This browser-based app provides five tools for Minecraft Bedrock and Education:
+This browser-based app provides six tools for Minecraft Bedrock and Education:
 
 - A tool for adding `.mcpack` / `.mcaddon` files or pack folders to a world and creating a new `.mcworld`.
 - A world template creator that converts a `.mcworld` into a localized `.mctemplate`.
 - A world inspector that finds pack, manifest, reference, dependency, cleanup, and version compatibility issues and can export a repaired `.mcworld`.
 - An experiments editor that reads the Bedrock `level.dat`, enables or disables experiment flags, and exports a new `.mcworld`.
 - An add-on merger that bundles `.mcpack` / `.mcaddon` files into one `.mcaddon`, with optional UUID regeneration enabled by default.
+- A text generator for `rawtext`, `/tellraw`, `/titleraw` and localized `.lang` lines.
+
+## Generate Texts and Commands
+
+Open **Generate texts and commands** (`#localized-texts`). Choose `rawtext` JSON for a compatible dialogue field, `/tellraw` for chat, or `/titleraw` with `title`, `subtitle`, or `actionbar`. Commands accept a custom selector (default `@a`). Choose direct text or localized text, then write your message. Results update immediately; copy the JSON/command and, in localized mode, the `.lang` line separately.
+
+Localized mode requires a nonempty key containing ASCII letters, digits, dots, underscores, hyphens or colons, such as `dialogue.welcome`. Paste the generated line into the resource pack's `texts/<language>.lang` file for each supported language, retaining the key and translating its value. Line breaks become `%1` in `.lang` and the JSON supplies a newline substitution. Formatting codes, quotes and backslashes are preserved through JSON serialization. Empty text or an invalid key disables copying and clears the generated output. This tool prepares localization; it does not translate text, create packs or modify worlds.
+
+The interface uses the shared ES/EN language preference without changing your content, preserves inputs when switching tools, and includes reset and manual copy support if clipboard access fails. Adapted from [Minecraft-Localized-Texts](https://github.com/nchiari/Minecraft-Localized-Texts), source revision `d1679f5f6c58a23d1bee89a6889b3bc71c9f4f8a`.
 
 ## Merge Add-ons
 
