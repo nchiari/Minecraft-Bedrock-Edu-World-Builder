@@ -484,6 +484,16 @@ body {
   background: var(--ok);
 }
 
+.upload-group.upload-group-tertiary {
+  border-color: rgba(255, 194, 116, 0.4);
+  border-left-color: #ffc274;
+  background: rgba(255, 194, 116, 0.04);
+}
+
+.upload-group.upload-group-tertiary .upload-step {
+  background: #ffc274;
+}
+
 .field + .field {
   margin-top: 0.9rem;
 }
