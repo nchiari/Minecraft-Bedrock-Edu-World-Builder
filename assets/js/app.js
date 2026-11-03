@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js?v=20261103-3";
+import { I18N } from "./i18n.js?v=20261103-4";
 import { convertWorldIcon, validateWorldIconFile, WorldIconError } from "./world-icon.js?v=20261103-3";
 import { initLocalizedTextsTool } from "./localized-texts.js?v=20261029-1";
 import { initTemplateTool } from "./template.js";
