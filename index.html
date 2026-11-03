@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261029-1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261103-1">
 </head>
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
@@ -260,6 +260,21 @@
         </div>
       </section>
 
+      <section class="upload-group" aria-labelledby="world-icon-upload-title">
+        <h3 id="world-icon-upload-title" class="upload-group-title"><span class="upload-step" aria-hidden="true">3</span><span data-i18n="worldIcon.sectionLabel"></span></h3>
+        <div class="field">
+          <label for="world-icon-input" data-i18n="worldIcon.label"></label>
+          <div class="file-picker">
+            <input id="world-icon-input" class="file-native" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" aria-describedby="world-icon-help">
+            <button id="world-icon-picker-btn" type="button" class="btn btn-file" data-i18n="worldIcon.choose"></button>
+            <span id="world-icon-picker-text" class="file-picker-text"></span>
+            <button id="world-icon-remove-btn" type="button" class="file-remove" data-i18n-aria-label="worldIcon.remove" hidden>×</button>
+          </div>
+          <p id="world-icon-help" class="field-help" data-i18n="worldIcon.help"></p>
+          <p id="world-icon-info" class="field-file" aria-live="polite" hidden></p>
+        </div>
+      </section>
+
       <div class="limits-box">
         <h3 data-i18n="limits.title"></h3>
         <p id="limits-copy"></p>
@@ -475,6 +490,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-  <script type="module" src="assets/js/app.js?v=20261029-1"></script>
+  <script type="module" src="assets/js/app.js?v=20261103-1"></script>
 </body>
 </html>

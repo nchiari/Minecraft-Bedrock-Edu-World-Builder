@@ -34,13 +34,17 @@ Packs remain independent: bundling does not resolve content conflicts or guarant
 - Merges valid packs into the world
 - Generates new header and module UUIDs for all packs in the resulting world by default, including retained packs, and updates matching pack dependencies and world references. Uncheck **Generate new pack UUIDs** to keep the existing UUID behavior. Script module dependencies, external pack dependencies, and versions remain unchanged when generating UUIDs.
 - Generates a new downloadable file: `*_compiled.mcworld`
+- Optionally replaces the world image with an uploaded `.png`, `.jpg` or `.jpeg`. The browser converts the actual image data to JPEG and saves it at the archive root as exactly `world_icon.jpeg` (including the **e**), replacing existing root `world_icon.png`, `.jpg` or `.jpeg` variants regardless of letter case. Embedded pack images are not changed. Without a selected image, the existing world image is preserved.
+
+The optional image supports up to **10 MB** and **16 million pixels**. Dimensions are preserved without cropping or resizing; transparent PNG areas become white because JPEG does not support transparency. Invalid or unreadable images stop export and keep the selected inputs for retry. Use the image's **×** to keep the original world image instead.
 
 ## How to Use
 
 1. Choose your `.mcworld` file.
 2. Choose your `.mcpack` / `.mcaddon` files, separate BP/RP folders, or both. Use **Add more files** to keep adding pack files.
-3. Click **Create .mcworld**.
-4. When processing finishes, the view moves to **Download .mcworld** and focuses the button. Uploaded inputs and options reset for a new world, while the generated download stays available. If processing fails, inputs are kept for retry.
+3. Optionally choose a PNG, JPG or JPEG in **World image (optional)**. It will be converted and renamed to `world_icon.jpeg` automatically.
+4. Click **Create .mcworld**.
+5. When processing finishes, the view moves to **Download .mcworld** and focuses the button. Uploaded inputs (including the optional image) and options reset for a new world, while the generated download stays available. If processing fails, inputs are kept for retry.
 
 ## Create a World Template
 
@@ -74,6 +78,7 @@ The inspector can remove unsupported pack files and dot-prefixed or empty folder
 
 - `.mcworld`: up to **150 MB**
 - Total `.mcpack` + `.mcaddon`: up to **100 MB**
+- Optional world image: up to **10 MB** and **16 million pixels**
 
 ## Privacy
 

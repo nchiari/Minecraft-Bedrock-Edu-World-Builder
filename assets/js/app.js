@@ -1,4 +1,5 @@
-import { I18N } from "./i18n.js?v=20261029-1";
+import { I18N } from "./i18n.js?v=20261103-1";
+import { convertWorldIcon, validateWorldIconFile, WorldIconError } from "./world-icon.js?v=20261103-1";
 import { initLocalizedTextsTool } from "./localized-texts.js?v=20261029-1";
 import { initTemplateTool } from "./template.js";
 import { initWorldInspector } from "./inspector.js";
@@ -15,6 +16,7 @@ const state = {
   lang: detectInitialLang(),
   activeTool: detectInitialTool(),
   worldFile: null,
+  worldIconFile: null,
   packFiles: [],
   packFolderSelections: [],
   cleanExistingPacks: true,
@@ -27,6 +29,10 @@ const state = {
 
 const nodes = {
   worldInput: document.getElementById("world-input"),
+  worldIconInput: document.getElementById("world-icon-input"),
+  worldIconPickerBtn: document.getElementById("world-icon-picker-btn"),
+  worldIconPickerText: document.getElementById("world-icon-picker-text"),
+  worldIconInfo: document.getElementById("world-icon-info"),
   packsInput: document.getElementById("packs-input"),
   behaviorFolderInput: document.getElementById("behavior-folder-input"),
   resourceFolderInput: document.getElementById("resource-folder-input"),
@@ -131,6 +137,18 @@ function bindEvents() {
     nodes.packsInput.click();
   });
 
+  nodes.worldIconPickerBtn.addEventListener("click", () => nodes.worldIconInput.click());
+  nodes.worldIconInput.addEventListener("change", () => {
+    const file = nodes.worldIconInput.files?.[0];
+    if (!file) return;
+    state.worldIconFile = file;
+    nodes.worldIconInput.value = "";
+    clearGeneratedOutput();
+    refreshSelectedFiles();
+    updateActionState();
+    updateStatusForInputs();
+  });
+
   nodes.packsInput.addEventListener("change", () => {
     const newFiles = nodes.packsInput.files ? Array.from(nodes.packsInput.files) : [];
     state.packFiles = mergePackFiles(state.packFiles, newFiles);
@@ -157,6 +175,10 @@ function bindEvents() {
     state.worldFile = null;
     nodes.worldInput.value = "";
   }, nodes.worldPickerBtn);
+  bindRemoveButton("world-icon-remove-btn", () => {
+    state.worldIconFile = null;
+    nodes.worldIconInput.value = "";
+  }, nodes.worldIconPickerBtn);
   for (const type of ["behavior", "resource"]) {
     bindRemoveButton(`${type}-folder-remove-btn`, () => {
       state.packFolderSelections = state.packFolderSelections.filter((item) => item.expectedType !== type);
@@ -400,6 +422,11 @@ function bindRemoveButton(id, remove, focusTarget) {
 
 function refreshSelectedFiles() {
   document.getElementById("world-remove-btn").hidden = !state.worldFile;
+  document.getElementById("world-icon-remove-btn").hidden = !state.worldIconFile;
+  nodes.worldIconPickerText.textContent = state.worldIconFile?.name || t("worldIcon.unchanged");
+  nodes.worldIconInfo.hidden = !state.worldIconFile;
+  nodes.worldIconInfo.textContent = state.worldIconFile
+    ? t("worldIcon.selected", { size: formatBytes(state.worldIconFile.size) }) : "";
   nodes.packsPickerBtn.textContent = t(state.packFiles.length ? "upload.addMorePacks" : "upload.choosePacks");
   nodes.packsList.replaceChildren();
   for (const file of state.packFiles) {
@@ -494,6 +521,8 @@ function updateActionState() {
   nodes.cleanExistingPacks.disabled = state.busy;
   nodes.regeneratePackUuids.disabled = state.busy;
   nodes.worldPickerBtn.disabled = state.busy;
+  nodes.worldIconPickerBtn.disabled = state.busy;
+  nodes.worldIconInput.disabled = state.busy;
   nodes.packsPickerBtn.disabled = state.busy;
   nodes.behaviorFolderPickerBtn.disabled = state.busy;
   nodes.resourceFolderPickerBtn.disabled = state.busy;
@@ -547,6 +576,8 @@ function updateProgressLog(percent) {
 
 function clearUploadedInputs() {
   state.worldFile = null;
+  state.worldIconFile = null;
+  nodes.worldIconInput.value = "";
   state.packFiles = [];
   state.packFolderSelections = [];
   state.cleanExistingPacks = true;
@@ -582,6 +613,12 @@ async function compileWorld() {
     nodes.statusSummary.scrollIntoView({ block: "start" });
     appendLog(t("log.start"));
     validateInputs();
+
+    let worldIconBytes = null;
+    if (state.worldIconFile) {
+      appendLog(t("worldIcon.logConvert"));
+      worldIconBytes = await convertWorldIcon(state.worldIconFile, t);
+    }
 
     appendLog(t("log.readWorld", { name: state.worldFile.name }));
     const worldZip = await loadZipFromFile(state.worldFile);
@@ -626,6 +663,17 @@ async function compileWorld() {
     appendLog(t("log.writeWorldRefs"));
     writeWorldReferenceFiles(worldZip, worldState);
 
+    if (worldIconBytes) {
+      // Only replace root world icons, never images belonging to embedded packs.
+      for (const name of Object.keys(worldZip.files)) {
+        if (/^world_icon\.(png|jpe?g)$/i.test(normalizePackPath(name)) && !worldZip.files[name].dir) {
+          worldZip.remove(name);
+        }
+      }
+      worldZip.file("world_icon.jpeg", worldIconBytes);
+      appendLog(t("worldIcon.logReplaced"));
+    }
+
     const outputName = makeCompiledName(state.worldFile.name);
     appendLog(t("log.generating"));
     let lastLoggedProgress = -1;
@@ -657,8 +705,12 @@ async function compileWorld() {
     nodes.downloadBox.scrollIntoView({ block: "start" });
     nodes.downloadBtn.focus({ preventScroll: true });
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    setStatus("error", "", {}, message);
+    if (error instanceof WorldIconError) {
+      setStatus("error", error.key);
+    } else {
+      const message = error instanceof Error ? error.message : String(error);
+      setStatus("error", "", {}, message);
+    }
   } finally {
     state.busy = false;
     updateActionState();
@@ -678,6 +730,9 @@ function validateInputs() {
   }
   if (state.worldFile.size > LIMITS.maxWorldBytes) {
     throw new Error(t("error.worldSize", { limit: formatBytes(LIMITS.maxWorldBytes) }));
+  }
+  if (state.worldIconFile) {
+    validateWorldIconFile(state.worldIconFile, t);
   }
 
   const folderFilesSize = state.packFolderSelections.reduce(
