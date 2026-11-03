@@ -42,15 +42,19 @@ export async function convertWorldIcon(file, t) {
     if (!width || !height || width * height > MAX_WORLD_ICON_PIXELS) {
       throw new WorldIconError("worldIcon.errorDimensions", t);
     }
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = 800;
+    canvas.height = 450;
     const context = canvas.getContext("2d");
     if (!context) {
       throw new WorldIconError("worldIcon.errorConvert", t);
     }
     context.fillStyle = "#ffffff";
-    context.fillRect(0, 0, width, height);
-    context.drawImage(image, 0, 0);
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    const scale = Math.min(canvas.width / width, canvas.height / height);
+    const drawWidth = width * scale;
+    const drawHeight = height * scale;
+    context.imageSmoothingQuality = "high";
+    context.drawImage(image, (canvas.width - drawWidth) / 2, (canvas.height - drawHeight) / 2, drawWidth, drawHeight);
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.95));
     // Some browsers fall back to PNG when an encoder is unavailable.
     if (!blob || blob.size === 0 || blob.type !== "image/jpeg") {

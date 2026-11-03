@@ -36,7 +36,7 @@ Packs remain independent: bundling does not resolve content conflicts or guarant
 - Generates a new downloadable file: `*_compiled.mcworld`
 - Optionally replaces the world image with an uploaded `.png`, `.jpg` or `.jpeg`. The browser converts the actual image data to JPEG and saves it at the archive root as exactly `world_icon.jpeg` (including the **e**), replacing existing root `world_icon.png`, `.jpg` or `.jpeg` variants regardless of letter case. Embedded pack images are not changed. Without a selected image, the existing world image is preserved.
 
-The optional image supports up to **10 MB** and **16 million pixels**. Dimensions are preserved without cropping or resizing; transparent PNG areas become white because JPEG does not support transparency. Invalid or unreadable images stop export and keep the selected inputs for retry. Use the image's **×** to keep the original world image instead.
+The optional image supports up to **10 MB** and **16 million pixels**. It is automatically resized to **800 × 450 pixels**, preserving its aspect ratio without cropping or stretching. Images with a different aspect ratio are centered with white padding; transparent PNG areas also become white because JPEG does not support transparency. Invalid or unreadable images stop export and keep the selected inputs for retry. Use the image's **×** to keep the original world image instead.
 
 ## How to Use
 
