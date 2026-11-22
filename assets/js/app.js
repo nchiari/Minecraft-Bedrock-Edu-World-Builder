@@ -8,7 +8,7 @@ import { initExperimentsTool } from "./experiments.js";
 
 const MB = 1024 * 1024;
 const LIMITS = {
-  maxWorldBytes: 150 * MB,
+  maxWorldBytes: 300 * MB,
   maxPacksBytes: 100 * MB
 };
 

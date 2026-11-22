@@ -76,7 +76,7 @@ The inspector can remove unsupported pack files and dot-prefixed or empty folder
 
 ## File Size Limits
 
-- `.mcworld`: up to **150 MB**
+- `.mcworld`: up to **300 MB**
 - Total `.mcpack` + `.mcaddon`: up to **100 MB**
 - Optional world image: up to **10 MB** and **16 million pixels**
 
