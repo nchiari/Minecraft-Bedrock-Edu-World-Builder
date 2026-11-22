@@ -1233,6 +1233,7 @@ function detectPackType(modules) {
   }
   let hasData = false;
   let hasResources = false;
+  let hasScript = false;
   for (const module of modules) {
     const type = typeof module?.type === "string" ? module.type.toLowerCase() : "";
     if (type === "data") {
@@ -1241,12 +1242,18 @@ function detectPackType(modules) {
     if (type === "resources") {
       hasResources = true;
     }
+    if (type === "script") {
+      hasScript = true;
+    }
   }
   if (hasData) {
     return "behavior";
   }
   if (hasResources) {
     return "resource";
+  }
+  if (hasScript) {
+    return "behavior";
   }
   return null;
 }

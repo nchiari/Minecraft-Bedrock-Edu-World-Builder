@@ -67,6 +67,7 @@ The inspector can remove unsupported pack files and dot-prefixed or empty folder
 
 ## Important Notes
 
+- The add-packs tool and add-on merger recognize a pack with a `script` module and no `data` or `resources` module as a Behavior Pack.
 - If any uploaded pack is invalid, the tool stops and shows an error.
 - The add-packs tool can either replace or preserve existing embedded packs.
 - Duplicate packs (same UUID) are skipped.
