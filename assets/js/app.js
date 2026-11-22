@@ -1,4 +1,4 @@
-import { I18N } from "./i18n.js?v=20261103-4";
+import { I18N } from "./i18n.js?v=20261122-3";
 import { convertWorldIcon, validateWorldIconFile, WorldIconError } from "./world-icon.js?v=20261103-3";
 import { initLocalizedTextsTool } from "./localized-texts.js?v=20261029-1";
 import { initTemplateTool } from "./template.js";
@@ -974,6 +974,9 @@ async function extractFromFolderSelection(selection, sourceId) {
       }));
     }
     const packType = detectPackType(manifest.modules);
+    if (packType === "skin") {
+      throw new Error(t("error.skinPack", { label: selection.label }));
+    }
     if (packType) {
       parsedManifests.push({ manifestRecord, manifest, packType });
     }
@@ -1179,6 +1182,9 @@ async function extractDirectPacksFromZip(options) {
     }
 
     const packType = detectPackType(manifest.modules);
+    if (packType === "skin") {
+      throw new Error(t("error.skinPack", { label: containerLabel }));
+    }
     if (!packType) {
       throw new Error(t("error.invalidPackAbort", {
         detail: t("error.packNoType", { label: `${containerLabel} :: ${headerName}` })
@@ -1234,6 +1240,7 @@ function detectPackType(modules) {
   let hasData = false;
   let hasResources = false;
   let hasScript = false;
+  let hasSkins = false;
   for (const module of modules) {
     const type = typeof module?.type === "string" ? module.type.toLowerCase() : "";
     if (type === "data") {
@@ -1245,6 +1252,9 @@ function detectPackType(modules) {
     if (type === "script") {
       hasScript = true;
     }
+    if (type === "skin_pack") {
+      hasSkins = true;
+    }
   }
   if (hasData) {
     return "behavior";
@@ -1254,6 +1264,9 @@ function detectPackType(modules) {
   }
   if (hasScript) {
     return "behavior";
+  }
+  if (hasSkins) {
+    return "skin";
   }
   return null;
 }
